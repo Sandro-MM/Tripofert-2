@@ -2,8 +2,24 @@
 import Image from 'next/image'
 import DrawerOpen from "@/components/drawer open";
 import SearchTable from "@/components/table";
+import {Calendar} from "@/components/ui/calendar";
+import {useState} from "react";
+import {addMonths, format } from 'date-fns';
 
 const SearchItem = () => {
+    const [date, setDate] = useState<Date | string | undefined>('Date');
+
+    const today = new Date()
+
+    const displayDate = (item: any) => {
+        if (item instanceof Date) {
+            return format(item, 'dd MMM');
+        } else {
+            return item; // This will display 'Date' or any other string as it is
+        }
+    };
+
+
     return (
         <div
             className='max-w-[1080px] w-[95%] bg-background/80 border border-border lg:px-10 px-4 py-6 rounded-3xl mx-auto my-[35vh] items-center justify-center   gap-9 min-[1115px]:flex child:cursor-pointer'>
@@ -49,11 +65,20 @@ const SearchItem = () => {
                             height={32}
                             alt="Picture of the author"/>
                         <div className='ml-3 text-left'>
-                            <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Date</h2>
+                            <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>{displayDate(date)}</h2>
                             <span
                                 className='lg:text-base  md:text-sm text-subText text-[10px] md:font-normal font-light'>Add date</span>
                         </div>
-                    </div>} title={'Date'} subtitle={'Add date'} content={undefined}/>
+                    </div>} title={'Date'} subtitle={'Select date'} content={
+                        <Calendar
+                        fromDate={new Date()}
+                        toDate={addMonths(new Date(), 3)}
+                        mode="single"
+                        min={today}
+                        selected={date}
+                        onSelect={(date)=>(setDate(date))}
+                        className="rounded-md border bg-background/90"
+                    />}/>
                     <DrawerOpen trigger={<div className={'flex'}>
                         <Image
                             // className='max-md:hidden'
