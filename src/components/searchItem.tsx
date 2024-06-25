@@ -11,6 +11,7 @@ import Counter from "@/components/counter";
 
 const SearchItem = () => {
     const [date, setDate] = useState<Date | string | undefined>('Add date');
+    const [passengers, setPassengers] = useState<number | string | undefined>('How many?');
 
     const today = new Date()
 
@@ -38,12 +39,12 @@ const SearchItem = () => {
                         <div className='ml-3 text-left'>
                             <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Pick-up</h2>
                             <span
-                                className='lg:text-base md:text-sm text-subText text-[10px]  md:font-normal font-light'>Your location</span>
+                                className='lg:text-base md:text-sm text-subText text-[12px]  md:font-normal font-light'>Your location</span>
                         </div>
                     </div>} title={'Pick-up'} subtitle={'Your location'} content={<SearchTable data={[{name:'madrid', countryName:'spain'}, {name:'barcelona', countryName:'spain'}]}/>}/>
 
 
-                    <DrawerOpen trigger={<div className={'flex lg:w-[220px] md:w-[198px]'}>
+                    <DrawerOpen trigger={<div className={'flex lg:w-[200px] md:w-[178px]'}>
                         <Image
                             // className='max-md:hidden'
                             src="/arrow.svg"
@@ -51,9 +52,9 @@ const SearchItem = () => {
                             height={32}
                             alt="Picture of the author"/>
                         <div className='ml-3 text-left'>
-                            <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Destination</h2>
+                            <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Departure</h2>
                             <span
-                                className='lg:text-base  md:text-sm text-[10px] text-subText  md:font-normal font-light'>Where are you going?</span>
+                                className='lg:text-base  md:text-sm text-[12px] text-subText  md:font-normal font-light'> Your Destination </span>
                         </div>
                     </div>} title={'Destination'} subtitle={'Where are you going?'} content={<SearchTable data={[{name:'madrid', countryName:'spain'}, {name:'barcelona', countryName:'spain'}]}/>}/>
                 </div>
@@ -70,7 +71,7 @@ const SearchItem = () => {
                         <div className='ml-3 text-left'>
                             <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Date</h2>
                             <span
-                                className='lg:text-base  md:text-sm text-subText text-[10px] md:font-normal font-light'>{displayDate(date)}</span>
+                                className='lg:text-base  md:text-sm text-subText text-[12px] md:font-normal font-light'>{displayDate(date)}</span>
                         </div>
                     </div>} title={'Date'} subtitle={'Select date'} content={
                         <div className='flex flex-col justify-center items-center'>
@@ -102,9 +103,9 @@ const SearchItem = () => {
                         <div className='ml-3 text-left'>
                             <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Passengers</h2>
                             <span
-                                className='lg:text-base md:text-sm text-subText text-[10px] md:font-normal font-light'>How many?</span>
+                                className='lg:text-base md:text-sm text-subText text-[12px] md:font-normal font-light'>{passengers}</span>
                         </div>
-                    </div>} title={'Passengers'} subtitle={'How many?'} content={<Counter/>}/>
+                    </div>} title={'Passengers'} subtitle={'How many?'} content={<Counter count={passengers} setCount={setPassengers}/>}/>
                 </div>
             </div>
             <div

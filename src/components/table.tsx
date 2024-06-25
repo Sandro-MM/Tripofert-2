@@ -17,8 +17,8 @@ const SearchTable = ({data}) => {
                 <TableBody className='w-full'>
                     {
                         data.map((item, index)=>(
-                            <DrawerClose asChild>
-                            <TableRow className='w-full' key={index}>
+                            <DrawerClose key={index} asChild>
+                            <TableRow className='w-full' >
                                 <TableCell className="font-medium w-1/3">{item.name}</TableCell>
                                 <TableCell>{item.countryName}</TableCell>
                                 <TableCell className='p-0 w-7 h-7'>
