@@ -9,10 +9,10 @@ import {
     DrawerTrigger
 } from "@/components/ui/drawer";
 
-const DrawerOpen = ({trigger , title , subtitle, content }) => {
+const DrawerOpen = ({trigger , title , subtitle, content, disable }) => {
     return (
         <Drawer>
-            <DrawerTrigger>{trigger}</DrawerTrigger>
+            <DrawerTrigger disabled={disable === true}>{trigger}</DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
                     <DrawerTitle>{title}</DrawerTitle>
