@@ -17,6 +17,9 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        custom: '0px 15px 15px 0px rgba(0, 0, 0, 0.25)',
+      },
       colors: {
         header: "rgba(var(--header), <alpha-value>)",
         subText: "rgba(var(--subText), <alpha-value>)",
@@ -24,6 +27,7 @@ const config = {
         bg: "rgba(var(--bg), <alpha-value>)",
         transparentSurface: "rgba(var(--transparentSurface), <alpha-value>)",
         buttons: "rgba(var(--buttons), <alpha-value>)",
+        surface2: "rgba(var(--surface2), <alpha-value>)",
         buttonsText: "rgba(var(--buttonsText), <alpha-value>)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
