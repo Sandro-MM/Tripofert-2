@@ -74,7 +74,7 @@ export default function FeaturesBlock() {
                                src='/img.png'
                                alt='lugage-image'/>
                         <div
-                            className='flex shadow-xl bg-surface2/70 rounded-full gap-4 py-3 px-4 items-center w-[240px] absolute bottom-[10px] left-[37%] sm:left-[24%] backdrop-blur-md'>
+                            className='flex shadow-xl bg-surface2/70 rounded-full gap-4 py-3 px-4 items-center w-[240px] absolute bottom-[10px] right-[-2%] sm:left-[24%] backdrop-blur-md'>
                             <Image className='size-10' src='/user2.png' width={40} height={40}
                                    alt='user-image'/>
                             <div>

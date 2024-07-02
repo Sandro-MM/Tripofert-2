@@ -15,8 +15,8 @@ const SearchItem = () => {
     const [departure, setDeparture] = useState<searchPlaceInterface>({ name: 'Your location', id: null});
     const [destination, setDestination] = useState<searchPlaceInterface>({ name:'Your Destination', id: null});
     const today = new Date()
-    const departureData = [{name:'madrid', countryName:'spain', id: 1}, {name:'barcelona', countryName:'spain', id: 2}];
-    const destinationData = [{name:'madrid', countryName:'spain', id: 1}, {name:'barcelona', countryName:'spain', id: 2}];
+    const departureData = [{name:'madrid', countryName:'spain', id: 1}, {name:'barcelona', countryName:'spain', id: 2},{name:'lisbon', countryName:'portugal', id: 3}, {name:'valencia', countryName:'spain', id: 4},{name:'paris', countryName:'france', id: 5}, {name:'malaga', countryName:'spain', id: 6},{name:'Seville', countryName:'spain', id: 7}, {name:'Porto', countryName:'portugal', id: 8},];
+    const destinationData = [{name:'madrid', countryName:'spain', id: 1}, {name:'barcelona', countryName:'spain', id: 2},{name:'lisbon', countryName:'portugal', id: 3}, {name:'valencia', countryName:'spain', id: 4},{name:'paris', countryName:'france', id: 5}, {name:'malaga', countryName:'spain', id: 6},{name:'Seville', countryName:'spain', id: 7}, {name:'Porto', countryName:'portugal', id: 8},];
     interface searchPlaceInterface {name:string , id: number | null}
 
 

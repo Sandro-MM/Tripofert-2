@@ -28,7 +28,7 @@ const Counter = ({count, setCount}) => {
     const incrementCount = () => {
         setCount((prevCount) => {
             const newCount = prevCount === '' ? 1 : prevCount;
-            return Math.min(newCount + 1, 12);
+            return Math.min(newCount + 1, 7);
         });
     };
 
@@ -36,7 +36,7 @@ const Counter = ({count, setCount}) => {
         const value = event.target.value;
         if (/^\d*$/.test(value)) {
             const numericValue = parseInt(value, 10);
-            setCount(isNaN(numericValue) ? '' : Math.min(numericValue, 12));
+            setCount(isNaN(numericValue) ? '' : Math.min(numericValue, 7));
         }
     };
 
