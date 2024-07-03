@@ -1,17 +1,15 @@
-<svg width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_262_4741)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M33.477 56.0459C47.0207 56.0459 58 45.0666 58 31.5229C58 17.9793 47.0207 7 33.477 7C19.9334 7 8.9541 17.9793 8.9541 31.5229C8.9541 45.0666 19.9334 56.0459 33.477 56.0459Z" fill="#001119"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 49 49" style="enable-background:new 0 0 49 49;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#001119;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#00AFFF;}
+</style>
+<g>
+	<path class="st0" d="M24.5,49C38.1,49,49,38.1,49,24.5C49,11,38.1,0,24.5,0C11,0,0,11,0,24.5C0,38.1,11,49,24.5,49z"/>
 </g>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M26.4327 24.2883C24.8326 24.414 23.6232 25.7151 23.5454 27.3182C23.4812 28.639 23.4209 30.1589 23.4209 31.2081C23.4209 32.2693 23.4826 33.8121 23.5476 35.1433C23.6248 36.7259 24.8065 38.0183 26.3843 38.164C28.1308 38.3252 30.6578 38.4875 33.7547 38.4875C36.8435 38.4875 39.3654 38.3261 41.1114 38.1652C42.6953 38.0193 43.8793 36.7185 43.9555 35.1298C44.0227 33.7282 44.0884 32.1245 44.0884 31.2081C44.0884 30.3016 44.0241 28.7223 43.9577 27.3316C43.8808 25.7223 42.6695 24.4132 41.0633 24.2873C39.3442 24.1525 36.8646 24.0203 33.7547 24.0203C30.6367 24.0203 28.1523 24.1532 26.4327 24.2883ZM31.6879 28.1407L37.0155 31.2081L31.6879 34.2755V28.1407Z" fill="#00AFFF"/>
-<defs>
-<filter id="filter0_d_262_4741" x="0.44395" y="0.191879" width="66.0662" height="66.0662" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="1.70203"/>
-<feGaussianBlur stdDeviation="4.25508"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_262_4741"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_262_4741" result="shape"/>
-</filter>
-</defs>
+<path class="st1" d="M17.5,17.3c-1.6,0.1-2.8,1.4-2.9,3c-0.1,1.3-0.1,2.8-0.1,3.9c0,1.1,0.1,2.6,0.1,3.9c0.1,1.6,1.3,2.9,2.8,3
+	c1.7,0.2,4.3,0.3,7.4,0.3c3.1,0,5.6-0.2,7.4-0.3c1.6-0.1,2.8-1.4,2.8-3c0.1-1.4,0.1-3,0.1-3.9c0-0.9-0.1-2.5-0.1-3.9
+	c-0.1-1.6-1.3-2.9-2.9-3c-1.7-0.1-4.2-0.3-7.3-0.3C21.7,17,19.2,17.2,17.5,17.3z M22.7,21.1l5.3,3.1l-5.3,3.1V21.1z"/>
 </svg>

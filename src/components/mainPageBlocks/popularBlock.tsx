@@ -33,27 +33,27 @@ export default function PopularBlock() {
 
 
     return (
-        <div className="w-full h-max bg-bg/90 backdrop-blur-sm sm:pt-[120px] pt-[60px] lg:pb-[30px] pb-[200px]">
+        <div className="w-full h-max sm:pt-[120px] pt-[60px] lg:pb-[30px] pb-[200px]">
             <div className='max-w-[1280px] w-full mx-auto'>
-                <div className='text-xl px-[5%] font-medium text-buttons py-6 text-center'>
+                <div className='text-xl px-[5%] font-medium text-buttons py-6 text-center pointer-events-none'>
                     Plan A Trip
                 </div>
                 <div
-                    className='lg:text-7xl px-[5%] md:text-5xl text-3xl font-extrabold text-header text-center sm:max-w-[80%] mx-auto'>
+                    className='lg:text-7xl px-[5%] md:text-5xl text-3xl font-extrabold text-header text-center sm:max-w-[80%] mx-auto pointer-events-none'>
                     Popular Destinations
                 </div>
-                <div className='sm:text-xl px-[5%] text-sm font-medium text-subText py-6 text-center sm:max-w-[60%] mx-auto'>Our
+                <div className='sm:text-xl px-[5%] text-sm font-medium text-subText py-6 text-center sm:max-w-[60%] mx-auto pointer-events-none'>Our
                     Choose your starting point and destination, and discover the best routes and attractions along the way.
                 </div>
                 <div className='mt-6 w-full  sm:mt-12 relative'>
                     <div className='child:mb-6 w-full child:sm:mb-8'>
                     <Image className='w-full max-h-[710px] max-w-[880px]' src={'/eu-map.svg'} width={2500} height={2500} alt='europe-map'/>
                         <div  className=' absolute top-4  right-0 w-full max-w-[700px]'>
-                            <Carousel opts={{loop:true}}  className='w-full max-w-[700px]' orientation="vertical">
+                            <Carousel opts={{loop:true}}  className='w-full px-2 max-w-[700px]' orientation="vertical">
                                 <CarouselContent  className='w-full max-w-[700px] lg:h-[650px] h-[450px]'>
                                     {
                                         data.map((item, index) => (
-                                    <CarouselItem key={index} className='w-full max-w-[646px] lg:my-2  mx-auto'>
+                                    <CarouselItem key={index} className='w-full max-w-[646px] lg:my-2  mx-auto pointer-events-none'>
                                         <div
                                             className='w-full max-w-[646px] flex rounded-[40px] lg:h-[190px] h-[130px] bg-bg backdrop-blur-sm'>
                                             <Image className='lg:w-[204px] w-[145px] lg:h-[190px] h-[130px] rounded-[40px]' src={item.img} width={300} height={300} alt={item.city}/>

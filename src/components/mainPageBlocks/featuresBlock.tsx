@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function FeaturesBlock() {
     return (
-        <div className="w-full h-max bg-bg/90 backdrop-blur-sm">
+        <div className="w-full h-max  pointer-events-none">
             <div className='max-w-[1280px] w-[95%] mx-auto'>
                 <div className='text-xl font-medium text-buttons py-6 text-center'>
                     Our Service
