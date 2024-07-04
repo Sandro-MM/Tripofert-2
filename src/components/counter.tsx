@@ -10,7 +10,12 @@ import {DrawerClose} from "@/components/ui/drawer";
 import {Input} from "@/components/ui/input";
 import {useEffect} from "react";
 
-const Counter = ({count, setCount}) => {
+type CounterProps = {
+    count: number | string;
+    setCount: React.Dispatch<React.SetStateAction<number | string>>;
+};
+
+const Counter: React.FC<CounterProps> = ({ count, setCount }) => {
 
     useEffect(() => {
         if (typeof count === 'string') {
@@ -20,19 +25,19 @@ const Counter = ({count, setCount}) => {
 
     const decrementCount = () => {
         setCount((prevCount) => {
-            const newCount = prevCount === '' ? 1 : prevCount;
+            const newCount = typeof prevCount === "number" ? prevCount : 1;
             return Math.max(newCount - 1, 1);
         });
     };
 
     const incrementCount = () => {
         setCount((prevCount) => {
-            const newCount = prevCount === '' ? 1 : prevCount;
+            const newCount = typeof prevCount === "number" ? prevCount : 1;
             return Math.min(newCount + 1, 7);
         });
     };
 
-    const handleInputChange = (event) => {
+    const handleInputChange = (event:any) => {
         const value = event.target.value;
         if (/^\d*$/.test(value)) {
             const numericValue = parseInt(value, 10);
