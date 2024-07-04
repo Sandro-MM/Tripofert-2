@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from './providers'
 const poppins = Poppins({ subsets: ["latin"], weight:['400', '500', '600', '700', '800']});
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
         <body  className={poppins.className}>
+        <SpeedInsights/>
         <Providers>
             {children}
         </Providers>
