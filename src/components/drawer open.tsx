@@ -9,7 +9,17 @@ import {
     DrawerTrigger
 } from "@/components/ui/drawer";
 
-const DrawerOpen = ({trigger , title , subtitle, content, disable }) => {
+
+type DrawerOpenProps = {
+    trigger: any;
+    title: string;
+    subtitle: string;
+    content: any;
+    disable: boolean;
+};
+
+
+const DrawerOpen: React.FC<DrawerOpenProps> = ({trigger , title , subtitle, content, disable }) => {
     return (
         <Drawer>
             <DrawerTrigger disabled={disable === true}>{trigger}</DrawerTrigger>

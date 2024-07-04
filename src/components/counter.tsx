@@ -11,8 +11,8 @@ import {Input} from "@/components/ui/input";
 import {useEffect} from "react";
 
 type CounterProps = {
-    count: number | string;
-    setCount: React.Dispatch<React.SetStateAction<number | string>>;
+    count: number | string | undefined;
+    setCount: any;
 };
 
 const Counter: React.FC<CounterProps> = ({ count, setCount }) => {
@@ -24,14 +24,14 @@ const Counter: React.FC<CounterProps> = ({ count, setCount }) => {
     }, []);
 
     const decrementCount = () => {
-        setCount((prevCount) => {
+        setCount((prevCount:any) => {
             const newCount = typeof prevCount === "number" ? prevCount : 1;
             return Math.max(newCount - 1, 1);
         });
     };
 
     const incrementCount = () => {
-        setCount((prevCount) => {
+        setCount((prevCount:any) => {
             const newCount = typeof prevCount === "number" ? prevCount : 1;
             return Math.min(newCount + 1, 7);
         });
