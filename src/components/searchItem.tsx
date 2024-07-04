@@ -8,9 +8,10 @@ import {addMonths, format } from 'date-fns';
 import {DrawerClose} from "@/components/ui/drawer";
 import {Button} from "@/components/ui/button";
 import Counter from "@/components/counter";
+import {Matcher} from "react-day-picker";
 
 const SearchItem = () => {
-    const [date, setDate] = useState<Date | string | undefined>('Add date');
+    const [date, setDate] = useState<Date | undefined>();
     const [passengers, setPassengers] = useState<number | string | undefined>('How many?');
     const [departure, setDeparture] = useState<searchPlaceInterface>({ name: 'Your location', id: null});
     const [destination, setDestination] = useState<searchPlaceInterface>({ name:'Your Destination', id: null});
@@ -76,7 +77,7 @@ const SearchItem = () => {
                         <div className='ml-3 text-left'>
                             <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Date</h2>
                             <span
-                                className='lg:text-base  md:text-sm text-subText text-[12px] md:font-normal font-light'>{displayDate(date)}</span>
+                                className='lg:text-base  md:text-sm text-subText text-[12px] md:font-normal font-light'>{displayDate(date) || 'Add date'}</span>
                         </div>
                     </div>} title={'Date'} subtitle={'Select date'} content={
                         <div className='flex flex-col justify-center items-center'>
@@ -85,7 +86,6 @@ const SearchItem = () => {
                                     fromDate={new Date()}
                                     toDate={addMonths(new Date(), 3)}
                                     mode="single"
-                                    min={today}
                                     selected={date}
                                     onSelect={(date)=>(setDate(date))}
                                     className="rounded-md border bg-background/90"
