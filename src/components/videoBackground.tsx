@@ -6,8 +6,9 @@ const BackgroundVideo = () => {
                 autoPlay
                 loop
                 muted
+
             >
-                <source src="/11969278_3840_2160_30fps.mp4" type="video/mp4"/>
+                <source src="/tripofert-short.mp4" type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
         </div>
