@@ -1,5 +1,4 @@
 import Image from "next/image";
-import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
 import React from "react";
 export default function ArticlesPreviewBlock() {
 
@@ -52,7 +51,7 @@ export default function ArticlesPreviewBlock() {
                         {
                             data.map((item, index) => (
                                 <div
-                                    className='max-w-[628px] rounded-[40px] max-h-[575px] w-full sm:w-[calc(50%-32px)] bg-red-300 relative group hover:max-h-[650px] transition-all duration-300'
+                                    className='max-w-[628px] rounded-[40px] max-h-[575px] w-full sm:w-[calc(50%-32px)] relative group hover:max-h-[650px] transition-all duration-300'
                                     key={index}>
                                     <Image className='h-full rounded-[40px]' src={item.img} height={700} width={700}
                                            alt={item.city}/>
