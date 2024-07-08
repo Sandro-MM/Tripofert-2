@@ -37,12 +37,12 @@ export default function SearchFilter() {
         const numPassengers = typeof passengers === 'string' ? parseInt(passengers, 10) : passengers;
 
         if (!isNaN(numPassengers)) {
-            if (numPassengers < 4 && !checked) {
+            if (numPassengers < 5 && !checked) {
                 setCarType('Sedan');
-            } else if (numPassengers >= 4) {
+            } else if (numPassengers >= 5) {
                 setCarType('Minivan');
                 setChecked(false)
-            }  else if (numPassengers < 4 && checked) {
+            }  else if (numPassengers < 5 && checked) {
                 setCarType('Premium Sedan')
             }
         } else {
@@ -156,7 +156,7 @@ export default function SearchFilter() {
 
                 </div>
                 {
-                    +passengers < 4 &&
+                    +passengers < 5 &&
                     <div><Checkbox
                         checked={checked}
                         onCheckedChange={(checked) => {
@@ -178,6 +178,9 @@ export default function SearchFilter() {
 
                 }
 
+                <div className='mx-auto  h-16 w-[70%] bg-buttons rounded-xl text-base text-buttonsText font-semibold px-9 py-5 mt-8'>
+                    <div className='w-full text-center'> Book a trip for</div>
+                </div>
             </div>
         </div>
 );
