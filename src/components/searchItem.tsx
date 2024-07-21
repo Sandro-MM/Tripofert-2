@@ -3,22 +3,67 @@ import Image from 'next/image'
 import DrawerOpen from "@/components/drawer open";
 import SearchTable from "@/components/table";
 import {Calendar} from "@/components/ui/calendar";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {addMonths, format } from 'date-fns';
 import {DrawerClose} from "@/components/ui/drawer";
 import {Button} from "@/components/ui/button";
 import Counter from "@/components/counter";
-import {Matcher} from "react-day-picker";
+
+import {cities, getCitiesInRange, searchPlaceInterface} from "@/directions-functions/direction-functions";
+import { useRouter } from 'next/navigation';
 
 const SearchItem = () => {
+    const router = useRouter();
     const [date, setDate] = useState<Date | undefined>();
     const [passengers, setPassengers] = useState<number | string | undefined>('How many?');
     const [departure, setDeparture] = useState<searchPlaceInterface>({ name: 'Your location', id: null});
     const [destination, setDestination] = useState<searchPlaceInterface>({ name:'Your Destination', id: null});
-    const today = new Date()
-    const departureData = [{name:'madrid', countryName:'spain', id: 1}, {name:'barcelona', countryName:'spain', id: 2},{name:'lisbon', countryName:'portugal', id: 3}, {name:'valencia', countryName:'spain', id: 4},{name:'paris', countryName:'france', id: 5}, {name:'malaga', countryName:'spain', id: 6},{name:'Seville', countryName:'spain', id: 7}, {name:'Porto', countryName:'portugal', id: 8},];
-    const destinationData = [{name:'madrid', countryName:'spain', id: 1}, {name:'barcelona', countryName:'spain', id: 2},{name:'lisbon', countryName:'portugal', id: 3}, {name:'valencia', countryName:'spain', id: 4},{name:'paris', countryName:'france', id: 5}, {name:'malaga', countryName:'spain', id: 6},{name:'Seville', countryName:'spain', id: 7}, {name:'Porto', countryName:'portugal', id: 8},];
-    interface searchPlaceInterface {name:string , id: number | null}
+
+    const departureData = cities;
+    const [destinationDataFiltered, setDestinationDataFiltered] = useState<any>();
+
+
+
+
+    useEffect(() => {
+        if (departure) {
+            console.log("Departure city:", departure);
+            const result = getCitiesInRange(departure.latitude, departure.longitude, 800, cities);
+            console.log("Filtered cities:", result);
+            setDestinationDataFiltered(result);
+        }
+    }, [departure]);
+
+
+    const handleSearch = () => {
+        if (!departure || !destination || !date || !passengers || !/^[1-7]$/.test(passengers.toString())) {
+            console.error("Invalid search criteria");
+            return;
+        }
+
+
+        const queryParams = {
+            departureId: departure.id,
+            departureName: departure.name,
+            departureLatitude: departure.latitude,
+            departureLongitude: departure.longitude,
+            departureCountry: departure.country,
+            destinationId:  destination.id,
+            destinationName: destination.name,
+            destinationLatitude:  destination.latitude,
+            destinationLongitude:  destination.longitude,
+            destinationCountry:  destination.country,
+            date: date,
+            passengers: passengers.toString(),
+        };
+
+        const queryString = new URLSearchParams(queryParams).toString();
+        const searchRoute = `/searchResults?${queryString}`;
+
+        // Navigate to the search results page
+        router.push(searchRoute);
+    };
+
 
 
     const displayDate = (item: any) => {
@@ -62,7 +107,7 @@ const SearchItem = () => {
                             <span
                                 className='lg:text-base  md:text-sm text-[12px] text-subText  md:font-normal font-light'> {destination.name} </span>
                         </div>
-                    </div>} title={'Destination'} subtitle={'Where are you going?'} content={<SearchTable setChosenItem={setDestination} data={destinationData}/>}/>
+                    </div>} title={'Destination'} subtitle={'Where are you going?'} content={<SearchTable setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
                 </div>
                 <div className='justify-around child:max-sm:w-1/2 max-sm:w-full'>
 
@@ -113,7 +158,7 @@ const SearchItem = () => {
                     </div>} title={'Passengers'} subtitle={'How many?'} content={<Counter count={passengers} setCount={setPassengers}/>}/>
                 </div>
             </div>
-            <div
+            <div  onClick={handleSearch}
                 className='ml-9  h-16 w-32 bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
                 Search
             </div>

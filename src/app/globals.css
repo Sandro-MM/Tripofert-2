@@ -2,12 +2,17 @@
   @tailwind components;
   @tailwind utilities;
 
+
+
   @layer base {
     :root {
       --header: 9, 15, 17;
+      --headerHex: #090f11;
       --subText: 88, 88, 88;
       --grayBg: 242, 246, 246;
+      --grayBgHex: #f2f6f6;
       --bg: 255, 255, 255;
+      --bgHex: #fff ;
       --transparentSurface: 255, 255, 255;
       --buttons: 0, 175, 255;
       --buttonsText: 255, 255, 255;
@@ -37,6 +42,7 @@
       --destructive-foreground: 0 0% 98%;
 
       --border: 240 5.9% 90%;
+      --borderHex: #e4e4e7;
       --input: 240 5.9% 90%;
       --ring: 240 10% 3.9%;
 
@@ -46,9 +52,12 @@
     .dark {
 
       --header: 239, 239, 239;
+      --headerHex: #efefef;
       --subText: 217, 217, 217;
       --grayBg: 0, 17, 26;
+      --grayBgHex: #00111a;
       --bg: 9, 15, 17;
+      --bgHex: #090f11 ;
       --transparentSurface: 9, 15, 17;
       --buttons: 0, 175, 255;
       --buttonsText: 9, 15, 17;
@@ -78,6 +87,7 @@
       --destructive-foreground: 0 0% 98%;
 
       --border: 240 3.7% 15.9%;
+      --borderHex: #27272a;
       --input: 240 3.7% 15.9%;
       --ring: 240 4.9% 83.9%;
     }
@@ -91,3 +101,108 @@
       @apply bg-background text-foreground;
     }
   }
+
+
+.custom-marker {
+  min-width: 60px;
+  width: max-content;
+  height: 60px;
+
+  .container{
+    z-index: 1;
+    border-radius: 8px;
+    text-align: center;
+    background: var(--grayBgHex);
+    width: max-content;
+    padding: 8px 16px;
+    height: 33px;
+
+    .marker-label{
+      color: var(--headerHex);
+      text-align: center;
+      width: max-content;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .marker-description{
+      display: none;
+    }
+    .add-button{
+      display: none;
+    }
+    .remove-button{
+      display: none;
+    }
+  }
+  .triangle{
+
+    margin: 0 auto;
+    width: 30px;
+    height: 10px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    background: var(--grayBgHex);
+  }
+}
+
+
+.custom-marker:hover{
+  .container{
+    border-top: 1px solid var(--borderHex);
+    border-left: 1px solid var(--borderHex);
+    border-right: 1px solid var(--borderHex);
+  }
+
+
+
+}
+
+
+
+.custom-marker .add-button,
+.custom-marker .remove-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.highlightedMapView{
+  .container{
+    border: 1px solid var(--borderHex);
+    z-index: 10 !important;
+    width: 280px;
+    height: 200px;
+
+    .marker-label{
+      margin: 0 auto;
+
+      text-align: center;
+      width: max-content;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .marker-description{
+      display: block;
+    }
+    .add-button{
+      display: block;
+    }
+    .remove-button{
+      display: block;
+    }
+  }
+  .triangle{
+    display: none;
+
+  }
+}
+
+.selected-marker {
+  .triangle {
+    background-color: #00afffd9 !important;
+  }
+
+  .container {
+    background-color: #00afffd9 !important;
+  }
+}
