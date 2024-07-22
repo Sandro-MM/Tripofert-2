@@ -239,9 +239,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
                 }
 
-                <div className='mx-auto  h-16 w-[70%] bg-buttons rounded-xl text-base text-buttonsText font-semibold px-9 py-5 mt-8'>
-                    <div className='w-full text-center'> Book a trip for</div>
-                </div>
+
             </div>
             <div className='flex w-full mt-4 justify-center'>
                 <div onClick={()=> console.log('buy')}

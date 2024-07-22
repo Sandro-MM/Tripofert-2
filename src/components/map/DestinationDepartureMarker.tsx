@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSelected, image }) => {
+const DestinationDepartureMarker = ({ map, position, label, description, image, Pointclass }) => {
     const markerRef = useRef(null);
 
     useEffect(() => {
@@ -12,32 +12,21 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
 
             const markerContent = document.createElement('div');
             markerContent.classList.add('custom-marker');
-            if (isSelected) {
-                markerContent.classList.add('selected-marker'); // Add class if selected
-            }
+            markerContent.classList.add('direction-point');
             markerContent.innerHTML = `
                 <div class="container">
+                    <div class=${Pointclass}></div>
                     <div class="marker-label">${label}</div>
                     <Image class="image_for_container" src=${image} alt="img"/>
                     <div class="marker-description">${description}</div>
-                    <div class="action_area">
-                    <button class="add-button">+</button>
-                    <div class="marker-description"> 60 min stop for 60$</div>
-                    <button class="remove-button">-</button>
-                    </div>
+                    
                 </div>
                 <div class="triangle"></div>
             `;
 
             // Add click event listeners for the buttons
-            markerContent.querySelector('.add-button').addEventListener('click', (e) => {
-                e.stopPropagation();
-                onAdd(position);
-            });
-            markerContent.querySelector('.remove-button').addEventListener('click', (e) => {
-                e.stopPropagation();
-                onRemove(position);
-            });
+
+
 
             const marker = new AdvancedMarkerElement({
                 map,
@@ -66,13 +55,6 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
 
         if (map && !markerRef.current) {
             initMarker();
-        } else if (markerRef.current) {
-            // Update marker content if isSelected changes
-            if (isSelected) {
-                markerRef.current.content.classList.add('selected-marker');
-            } else {
-                markerRef.current.content.classList.remove('selected-marker');
-            }
         }
 
         return () => {
@@ -81,9 +63,9 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                 markerRef.current = null;
             }
         };
-    }, [map, position, label, onAdd, onRemove, isSelected]);
+    }, [map, position, label]);
 
     return null;
 };
 
-export default CustomMarker;
+export default DestinationDepartureMarker;

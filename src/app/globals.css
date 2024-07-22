@@ -106,7 +106,7 @@
 .custom-marker {
   min-width: 60px;
   width: max-content;
-  height: 60px;
+  height: 40px;
 
   .container{
     z-index: 1;
@@ -127,10 +127,12 @@
     .marker-description{
       display: none;
     }
+    .action_area{
     .add-button{
       display: none;
     }
-    .remove-button{
+    }
+    .image_for_container{
       display: none;
     }
   }
@@ -170,8 +172,8 @@
   .container{
     border: 1px solid var(--borderHex);
     z-index: 10 !important;
-    width: 280px;
-    height: 200px;
+    width: 340px;
+    height: 330px;
 
     .marker-label{
       margin: 0 auto;
@@ -183,12 +185,40 @@
     }
     .marker-description{
       display: block;
+      font-size: 14px;
     }
-    .add-button{
-      display: block;
+    .action_area{
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      align-items: center;
+      .add-button{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 32px;
+        background-color: #00Afff;
+        display: block;
+        width: 32px;
+        height: 32px;
+        border-radius: 99px;
+      }
+      .remove-button{
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        background-color: #00Afff;
+        width: 32px;
+        height: 32px;
+        border-radius: 99px;
+      }
     }
-    .remove-button{
+
+    .image_for_container{
+      border-radius: 4px;
       display: block;
+      margin: 10px 0;
+      width: calc(100% );
+      height: 140px;
     }
   }
   .triangle{
@@ -199,10 +229,52 @@
 
 .selected-marker {
   .triangle {
-    background-color: #00afffd9 !important;
+    background-color: #00Afff !important;
   }
 
   .container {
-    background-color: #00afffd9 !important;
+    .marker-label{
+      color: var(--grayBgHex);
+    }
+    .marker-description{
+      color: var(--grayBgHex);
+    }
+    background-color: #00Afff !important;
+  }
+  .action_area{
+
+
+  }
+}
+
+.direction-point{
+  .container{
+    background: #585858 !important;
+
+    .marker-label{
+      color: #e4e4e7;
+    }
+    .marker-description{
+      color: #e4e4e7;
+    }
+  }
+  .triangle{
+    background: #585858 !important;
+
+  }
+}
+
+.remove-button{
+  display: none;
+}
+
+.selected-marker.highlightedMapView{
+  .add-button{
+    display: none !important;
+    background-color: var(--grayBgHex) !important;
+  }
+  .remove-button{
+    display: block;
+    background-color: var(--grayBgHex) !important;
   }
 }

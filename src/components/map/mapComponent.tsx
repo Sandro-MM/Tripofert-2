@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { DirectionsRenderer, DirectionsService, GoogleMap } from '@react-google-maps/api';
+import { DirectionsRenderer, DirectionsService, GoogleMap, Marker } from '@react-google-maps/api';
 import CustomMarker from "@/components/map/CustomMarker";
 import { cities } from "@/directions-functions/direction-functions";
+import DestinationDepartureMarker from "@/components/map/DestinationDepartureMarker";
 
 // Utility functions for distance calculation
 const toRad = (value) => value * Math.PI / 180;
@@ -19,7 +20,11 @@ const distanceBetween = (lat1, lng1, lat2, lng2) => {
 
 // Map's styling
 const defaultMapContainerStyle = {
-    width: '100%',
+    width: '95%',
+    maxWidth:'1080px',
+    marginLeft:'auto',
+    marginTop: '16px',
+    marginRight:'auto',
     height: '600px',
     borderRadius: '15px',
 };
@@ -33,7 +38,7 @@ const defaultMapOptions = {
     tilt: 0,
     gestureHandling: 'auto',
     mapTypeId: 'roadmap',
-    mapId: "8e0a97af9386fef",
+    mapId: "ab333b49f1c59e6c",
 };
 
 const MapComponent = ({ departure, destination }) => {
@@ -121,6 +126,22 @@ const MapComponent = ({ departure, destination }) => {
                 options={defaultMapOptions}
                 onLoad={onLoad}
             >
+                <DestinationDepartureMarker
+                    map={mapRef.current}
+                    image={"/madrid-m.jpg"}
+                    label={departure.name}
+                    position={{ lat: departure.latitude, lng: departure.longitude }}
+                    description={'hello today lorem ipsum very good map paris is city of effel tower that was built long time ago and we can present it to you only for some money if you want to to see effel dl dal adskmkmasd  akda s'}
+                    Pointclass={'departure-point'}
+                />
+                <DestinationDepartureMarker
+                    map={mapRef.current}
+                    image={"/madrid-m.jpg"}
+                    label={destination.name}
+                    position={{ lat: destination.latitude, lng: destination.longitude }}
+                    description={'hello today lorem ipsum very good map paris is city of effel tower that was built long time ago and we can present it to you only for some money if you want to to see effel dl dal adskmkmasd  akda s'}
+                    Pointclass={'destination-point'}
+                />
                 {directions && (
                     <DirectionsRenderer
                         options={{
@@ -135,7 +156,8 @@ const MapComponent = ({ departure, destination }) => {
                         map={mapRef.current}
                         position={{ lat: city.latitude, lng: city.longitude }}
                         label={city.name}
-                        description={'hello today lorem ipsum very good map'}
+                        image={"/madrid-m.jpg"}
+                        description={'hello today lorem ipsum very good map paris is city of effel tower that was built long time ago and we can present it to you only for some money if you want to to see effel dl dal adskmkmasd  akda s'}
                         isSelected={selectedWaypoints.includes(city.id)}
                         onAdd={() => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
                         onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
