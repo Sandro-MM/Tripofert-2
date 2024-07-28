@@ -3,8 +3,8 @@ import { DirectionsRenderer, DirectionsService, GoogleMap, Marker } from '@react
 import CustomMarker from "@/components/map/CustomMarker";
 import { cities } from "@/directions-functions/direction-functions";
 import DestinationDepartureMarker from "@/components/map/DestinationDepartureMarker";
-
-// Utility functions for distance calculation
+import { FiMap , FiList  } from "react-icons/fi";
+import StopItem from "@/components/map/StopItem";
 const toRad = (value) => value * Math.PI / 180;
 
 const distanceBetween = (lat1, lng1, lat2, lng2) => {
@@ -18,21 +18,18 @@ const distanceBetween = (lat1, lng1, lat2, lng2) => {
     return R * c; // Distance in km
 };
 
-// Map's styling
 const defaultMapContainerStyle = {
     width: '95%',
-    maxWidth:'1080px',
-    marginLeft:'auto',
+    maxWidth: '1080px',
+    marginLeft: 'auto',
     marginTop: '16px',
-    marginRight:'auto',
+    marginRight: 'auto',
     height: '600px',
-    borderRadius: '15px',
+    borderRadius: '1.5rem',
 };
 
-// Default zoom level, can be adjusted
 const defaultMapZoom = 14;
 
-// Map options
 const defaultMapOptions = {
     zoomControl: true,
     tilt: 0,
@@ -42,13 +39,16 @@ const defaultMapOptions = {
 };
 
 const MapComponent = ({ departure, destination }) => {
+    const [mapKey, setMapKey] = useState(Date.now());
     const mapRef = useRef(null);
+    const directionsRendererRef = useRef(null);
     const [directions, setDirections] = useState(null);
     const [mapCenter, setMapCenter] = useState({ lat: (departure.latitude + destination.latitude) / 2, lng: (departure.longitude + destination.longitude) / 2 });
     const [directionsRequested, setDirectionsRequested] = useState(false);
     const [nearbyCities, setNearbyCities] = useState([]);
     const [waypoints, setWaypoints] = useState([]);
     const [selectedWaypoints, setSelectedWaypoints] = useState([]);
+    const [showMap, setShowMap] = useState(false);
 
     const directionsCallback = (response) => {
         if (response !== null) {
@@ -56,10 +56,7 @@ const MapComponent = ({ departure, destination }) => {
                 setDirections(response);
                 setDirectionsRequested(true);
 
-                // Extract route path
                 const route = response.routes[0].overview_path;
-
-                // Find nearby cities
                 const nearby = cities.filter(city => {
                     const isNearRoute = route.some(point => distanceBetween(city.latitude, city.longitude, point.lat(), point.lng()) < 30);
                     const isNotDeparture = city.latitude !== departure.latitude || city.longitude !== departure.longitude;
@@ -69,15 +66,14 @@ const MapComponent = ({ departure, destination }) => {
 
                 setNearbyCities(nearby);
 
-                if (mapRef.current) {
-                    const directionsRenderer = new google.maps.DirectionsRenderer({
+                if (directionsRendererRef.current) {
+                    directionsRendererRef.current.setDirections(response);
+                } else {
+                    directionsRendererRef.current = new google.maps.DirectionsRenderer({
                         map: mapRef.current,
                         directions: response,
-                        suppressMarkers: true, // This hides the default markers
+                        suppressMarkers: true,
                     });
-
-                    directionsRenderer.setMap(mapRef.current);
-                    directionsRenderer.setDirections(response);
                 }
             } else {
                 console.error('Directions request failed due to ' + response.status);
@@ -89,7 +85,7 @@ const MapComponent = ({ departure, destination }) => {
         if (waypoints.length < 10) {
             setWaypoints([...waypoints, position]);
             setSelectedWaypoints([...selectedWaypoints, cityId]);
-            setDirectionsRequested(false); // Trigger new directions request
+            setDirectionsRequested(false);
         } else {
             console.log('Maximum of 10 waypoints reached.');
         }
@@ -98,7 +94,7 @@ const MapComponent = ({ departure, destination }) => {
     const removeWaypoint = (position, cityId) => {
         setWaypoints(waypoints.filter(wp => wp.lat !== position.lat || wp.lng !== position.lng));
         setSelectedWaypoints(selectedWaypoints.filter(id => id !== cityId));
-        setDirectionsRequested(false); // Trigger new directions request
+        setDirectionsRequested(false);
     };
 
     const onLoad = useCallback((map) => {
@@ -106,75 +102,110 @@ const MapComponent = ({ departure, destination }) => {
     }, []);
 
     useEffect(() => {
-        const center = { lat: (departure.latitude + destination.latitude) / 2, lng: (departure.longitude + destination.longitude) / 2 };
-        setMapCenter(center);
+        setMapCenter({ lat: (departure.latitude + destination.latitude) / 2, lng: (departure.longitude + destination.longitude) / 2 });
+        setMapKey(Date.now());  // Update the key to force remount
+
+        setDirections(null);
+        setNearbyCities([]);
+        setWaypoints([]);
+        setSelectedWaypoints([]);
         setDirectionsRequested(false);
     }, [departure, destination]);
 
     useEffect(() => {
         if (!directionsRequested) {
-            setDirections(null); // Clear previous directions to force re-render
+            setDirections(null);
+        }
+
+        if (directionsRendererRef.current) {
+            directionsRendererRef.current.setMap(null);
+            directionsRendererRef.current = null;
         }
     }, [waypoints, directionsRequested]);
 
     return (
         <div className="w-full">
-            <GoogleMap
-                mapContainerStyle={defaultMapContainerStyle}
-                center={mapCenter}
-                zoom={defaultMapZoom}
-                options={defaultMapOptions}
-                onLoad={onLoad}
-            >
-                <DestinationDepartureMarker
-                    map={mapRef.current}
-                    image={"/madrid-m.jpg"}
-                    label={departure.name}
-                    position={{ lat: departure.latitude, lng: departure.longitude }}
-                    description={'hello today lorem ipsum very good map paris is city of effel tower that was built long time ago and we can present it to you only for some money if you want to to see effel dl dal adskmkmasd  akda s'}
-                    Pointclass={'departure-point'}
-                />
-                <DestinationDepartureMarker
-                    map={mapRef.current}
-                    image={"/madrid-m.jpg"}
-                    label={destination.name}
-                    position={{ lat: destination.latitude, lng: destination.longitude }}
-                    description={'hello today lorem ipsum very good map paris is city of effel tower that was built long time ago and we can present it to you only for some money if you want to to see effel dl dal adskmkmasd  akda s'}
-                    Pointclass={'destination-point'}
-                />
-                {directions && (
-                    <DirectionsRenderer
-                        options={{
-                            directions,
-                            suppressMarkers: true, // Hide default markers
-                        }}
-                    />
-                )}
-                {nearbyCities.map((city, index) => (
-                    <CustomMarker
-                        key={city.id + index}
+            <div className="flex w-[95%] max-w-[1080px] mx-auto gap-4 justify-end items-center mt-4">
+                <FiList size={30} onClick={() => setShowMap(false)} />
+                <FiMap size={30} onClick={() => setShowMap(true)} />
+            </div>
+
+            <div style={{ display: showMap ? 'block' : 'none' }}>
+                <GoogleMap
+                    key={mapKey}  // Use unique key to force remount
+                    mapContainerStyle={defaultMapContainerStyle}
+                    center={mapCenter}
+                    zoom={defaultMapZoom}
+                    options={defaultMapOptions}
+                    onLoad={onLoad}
+                >
+                    <DestinationDepartureMarker
                         map={mapRef.current}
-                        position={{ lat: city.latitude, lng: city.longitude }}
-                        label={city.name}
                         image={"/madrid-m.jpg"}
-                        description={'hello today lorem ipsum very good map paris is city of effel tower that was built long time ago and we can present it to you only for some money if you want to to see effel dl dal adskmkmasd  akda s'}
-                        isSelected={selectedWaypoints.includes(city.id)}
-                        onAdd={() => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
-                        onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
+                        label={departure.name}
+                        position={{ lat: departure.latitude, lng: departure.longitude }}
+                        description={'Description of departure'}
+                        Pointclass={'departure-point'}
                     />
-                ))}
-                {!directionsRequested && (
-                    <DirectionsService
-                        options={{
-                            origin: { lat: departure.latitude, lng: departure.longitude },
-                            destination: { lat: destination.latitude, lng: destination.longitude },
-                            waypoints: waypoints.map(wp => ({ location: wp })),
-                            travelMode: 'DRIVING',
-                        }}
-                        callback={directionsCallback}
+                    <DestinationDepartureMarker
+                        map={mapRef.current}
+                        image={"/madrid-m.jpg"}
+                        label={destination.name}
+                        position={{ lat: destination.latitude, lng: destination.longitude }}
+                        description={'Description of destination'}
+                        Pointclass={'destination-point'}
                     />
-                )}
-            </GoogleMap>
+                    {directions && (
+                        <DirectionsRenderer
+                            options={{
+                                directions,
+                                suppressMarkers: true,
+                            }}
+                        />
+                    )}
+                    {nearbyCities.map((city, index) => (
+                        <CustomMarker
+                            key={city.id + index}
+                            map={mapRef.current}
+                            position={{ lat: city.latitude, lng: city.longitude }}
+                            label={city.name}
+                            image={"/madrid-m.jpg"}
+                            description={'Description of city'}
+                            isSelected={selectedWaypoints.includes(city.id)}
+                            onAdd={() => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
+                            onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
+                        />
+                    ))}
+                    {!directionsRequested && (
+                        <DirectionsService
+                            options={{
+                                origin: { lat: departure.latitude, lng: departure.longitude },
+                                destination: { lat: destination.latitude, lng: destination.longitude },
+                                waypoints: waypoints.map(wp => ({ location: wp })),
+                                travelMode: 'DRIVING',
+                            }}
+                            callback={directionsCallback}
+                        />
+                    )}
+                </GoogleMap>
+            </div>
+
+            {!showMap && (
+                <div className='w-full max-w-[1080px] mx-auto'>
+                    {nearbyCities.map((city, index) => (
+                        <StopItem
+                            key={city.id + index}
+                            position={{ lat: city.latitude, lng: city.longitude }}
+                            label={city.name}
+                            image={"/madrid-m.jpg"}
+                            description={'Description of city'}
+                            isSelected={selectedWaypoints.includes(city.id)}
+                            onAdd={() => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
+                            onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
