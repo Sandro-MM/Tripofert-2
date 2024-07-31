@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSelected, image }) => {
+const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSelected, image, time }) => {
     const markerRef = useRef(null);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     <div class="action_area">
                     <div class="min_30 visible">
                         <button class="add-button button-30_add">+</button>
-                        <div class="marker-description"> 30 min stop for 60$</div>
+                        <div class="marker-description"> 30 min stop for 30€</div>
                         <div class="button_area_transparent"></div>
                         <div class="add-item-button button-30_select">
                         Add
@@ -31,7 +31,7 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     </div>
                      <div class="min_60">
                         <button class="add-button button-60_add">+</button>
-                        <div class="marker-description"> 60 min stop for 60$</div>
+                        <div class="marker-description"> 60 min stop for 48€</div>
                         <button class="remove-button button-60_del">-</button>
                         <div class="add-item-button button-60_select">
                         Add
@@ -39,7 +39,7 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     </div>
                         <div class="min_90">
                         <button class="add-button button-90_add">+</button>
-                        <div class="marker-description"> 90 min stop for 60$</div>
+                        <div class="marker-description"> 90 min stop for 66€</div>
                         <button class="remove-button button-90_del">-</button>
                         <div class="add-item-button button-90_select">
                         Add
@@ -47,7 +47,7 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     </div>
                         <div class="min_120">
                         <button class="add-button button-120_add">+</button>
-                        <div class="marker-description"> 120 min stop for 60$</div>
+                        <div class="marker-description"> 120 min stop for 82€</div>
                         <button class="remove-button button-120_del">-</button>
                         <div class="add-item-button button-120_select">
                         Add
@@ -55,7 +55,7 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     </div>
                      <div class="min_150">
                         <button class="add-button button-150_add">+</button>
-                        <div class="marker-description"> 150 min stop for 60$</div>
+                        <div class="marker-description"> 150 min stop for 100€</div>
                         <button class="remove-button button-150_del">-</button>
                         <div class="add-item-button button-150_select">
                         Add
@@ -63,7 +63,7 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     </div>
                     <div class="min_180">
                         <button class="add-button button-180_add">+</button>
-                        <div class="marker-description"> 180 min stop for 60$</div>
+                        <div class="marker-description"> 180 min stop for 117€</div>
                         <button class="remove-button button-180_del">-</button>
                         <div class="add-item-button button-180_select">
                         Add
@@ -71,7 +71,7 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     </div>
                      <div class="min_210">
                         <button class="add-button button-210_add">+</button>
-                        <div class="marker-description"> 210 min stop for 60$</div>
+                        <div class="marker-description"> 210 min stop for 135€</div>
                         <button class="remove-button button-210_del">-</button>
                         <div class="add-item-button button-210_select">
                         Add
@@ -79,16 +79,24 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     </div>
                      <div class="min_240">
                         <div class="button_area_transparent"></div>
-                        <div class="marker-description"> 240 min stop for 60$</div>
+                        <div class="marker-description"> 240 min stop for 153€</div>
                         <button class="remove-button button-240_del">-</button>
                         <div class="add-item-button button-240_select">
                         Add
                         </div>
                     </div>
                     </div>
+                   
+                    <div class="remove_area">
+                      <div class="visit-time-container">
+                        ${time} min stop
+                    </div>
                     <div class="remove-item-button">
                         remove
                     </div>
+                    </div>
+                   
+                    
                 </div>
                 <div class="triangle"></div>
             `;
@@ -199,42 +207,43 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
 
             markerContent.querySelector('.button-30_select').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                onAdd(30);
             });
 
             markerContent.querySelector('.button-60_select').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                onAdd(60);
             });
 
             markerContent.querySelector('.button-90_select').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                onAdd(90);
             });
 
             markerContent.querySelector('.button-120_select').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                onAdd(120);
             });
             markerContent.querySelector('.button-150_select').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                onAdd(150);
             });
             markerContent.querySelector('.button-180_select').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                onAdd(180);
             });
             markerContent.querySelector('.button-210_select').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                onAdd(210);
             });
             markerContent.querySelector('.button-240_select').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                onAdd(240);
             });
             if (isSelected) {
                 markerContent.querySelector('.min_30').classList.remove('visible');
                 markerContent.querySelector('.remove-item-button').classList.add('visible_block');
+                markerContent.querySelector('.visit-time-container').classList.add('visible_block');
             }
 
             const marker = new AdvancedMarkerElement({

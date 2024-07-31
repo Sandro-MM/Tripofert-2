@@ -144,7 +144,7 @@
   }
   .triangle{
 
-    margin: 0 auto;
+    margin: -1px auto 0;
     width: 30px;
     height: 10px;
     clip-path: polygon(50% 100%, 0 0, 100% 0);
@@ -194,6 +194,9 @@
       font-size: 14px;
     }
     .add-item-button{
+      display: block;
+    }
+    .remove_area{
       display: block;
     }
 
@@ -326,7 +329,7 @@
   font-weight: 500;
   position: absolute;
   bottom: -280px;
-  left: calc(340px/2 - 42.5px);
+  left: calc(340px/2 - 45px);
 }
 
 .visible_block{
@@ -360,3 +363,16 @@
   left: calc(340px/2 - 42.5px);
 }
 
+.visit-time-container{
+  width: 306px;
+  text-align: center;
+  color: var(--grayBgHex);
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  display: none;
+  bottom: -230px;
+}
+.remove_area{
+  display: none;
+}

@@ -16,6 +16,10 @@ export default function Page({params}) {
     const [passengers, setPassengers] = useState<number | string | undefined>(searchParams.get('passengers'));
     const [mapDeparture, setMapDeparture] = useState<searchPlaceInterface>(departure)
     const [mapDestination, setMapDestination] = useState<searchPlaceInterface>(destination)
+    const [duration, setDuration] = useState<any>(undefined);
+    const [distance, setDistance] = useState<any>(undefined);
+    const [points, setPoints] = useState<any>(undefined);
+
     const parseDateFromQuery = (dateString) => {
         if (!dateString) return undefined;
 
@@ -43,10 +47,15 @@ export default function Page({params}) {
     const id = params.data
     return (
         <main className="relative w-full min-h-screen">
-            <ThemeSwitch />
-            <SearchFilter setMapDeparture={setMapDeparture} setMapDestination={setMapDestination} departure={departure} destination={destination} setDeparture={setDeparture} setDestination={setDestination} date={date} setDate={setDate} passengers={passengers} setPassengers={setPassengers} />
+            <ThemeSwitch/>
+            <SearchFilter setMapDeparture={setMapDeparture} setMapDestination={setMapDestination} departure={departure}
+                          destination={destination} setDeparture={setDeparture} setDestination={setDestination}
+                          date={date} setDate={setDate} passengers={passengers} setPassengers={setPassengers}/>
+            <div>{distance?.text}</div>
+            <div>{duration?.text}</div>
             <MapProvider>
-                <MapComponent departure={mapDeparture} destination={mapDestination} />
+                <MapComponent departure={mapDeparture} setPoints={setPoints} setDistance={setDistance}
+                              setDuration={setDuration} destination={mapDestination}/>
             </MapProvider>
         </main>
     );

@@ -38,7 +38,7 @@ const defaultMapOptions = {
     mapId: "ab333b49f1c59e6c",
 };
 
-const MapComponent = ({ departure, destination }) => {
+const MapComponent = ({ departure, destination, setDistance, setDuration, setPoints }) => {
     const [mapKey, setMapKey] = useState(Date.now());
     const mapRef = useRef(null);
     const directionsRendererRef = useRef(null);
@@ -54,6 +54,8 @@ const MapComponent = ({ departure, destination }) => {
         if (response !== null) {
             if (response.status === 'OK') {
                 setDirections(response);
+                setDistance(response.routes[0].legs[0].distance)
+                setDuration(response.routes[0].legs[0].duration)
                 setDirectionsRequested(true);
 
                 const route = response.routes[0].overview_path;
@@ -64,7 +66,25 @@ const MapComponent = ({ departure, destination }) => {
                     return isNearRoute && isNotDeparture && isNotDestination;
                 }).map(city => ({ ...city, visitTime: 0 }));
 
-                setNearbyCities(nearby);
+                // Calculate distance from departure and sort nearby cities
+                const calculateDistance = (lat1, lon1, lat2, lon2) => {
+                    const R = 6371; // Radius of the Earth in km
+                    const dLat = (lat2 - lat1) * Math.PI / 180;
+                    const dLon = (lon2 - lon1) * Math.PI / 180;
+                    const a =
+                        0.5 - Math.cos(dLat)/2 +
+                        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                        (1 - Math.cos(dLon))/2;
+                    return R * 2 * Math.asin(Math.sqrt(a));
+                };
+
+                const sortedNearby = nearby.sort((a, b) => {
+                    const distanceA = calculateDistance(departure.latitude, departure.longitude, a.latitude, a.longitude);
+                    const distanceB = calculateDistance(departure.latitude, departure.longitude, b.latitude, b.longitude);
+                    return distanceA - distanceB;
+                });
+
+                setNearbyCities(sortedNearby);
 
                 if (directionsRendererRef.current) {
                     directionsRendererRef.current.setDirections(response);
@@ -112,6 +132,11 @@ const MapComponent = ({ departure, destination }) => {
         setDirectionsRequested(false);
     }, [departure, destination]);
 
+    const findVisitTime = (cityId) => {
+        const waypoint = selectedWaypoints.find(waypoint => waypoint.id === cityId);
+        return waypoint ? waypoint.visitTime : null; // Return null or a default value if not found
+    };
+
     useEffect(() => {
         if (!directionsRequested) {
             setDirections(null);
@@ -128,7 +153,8 @@ const MapComponent = ({ departure, destination }) => {
             <div className="flex w-[95%] max-w-[1080px] mx-auto gap-4 justify-end items-center mt-4">
                 <FiList size={30} onClick={() => setShowMap(false)} />
                 <FiMap size={30} onClick={() => setShowMap(true)} />
-                <FiMap size={30} onClick={() => console.log(selectedWaypoints)} />
+                <FiMap size={30} onClick={() => console.log(directions.routes[0].legs[0])} />
+
             </div>
 
             <div style={{ display: showMap ? 'block' : 'none' }}>
@@ -170,7 +196,7 @@ const MapComponent = ({ departure, destination }) => {
                             map={mapRef.current}
                             position={{ lat: city.latitude, lng: city.longitude }}
                             label={city.name}
-
+                            time={findVisitTime(city.id)}
                             image={"/madrid-m.jpg"}
                             description={'Description of city'}
                             isSelected={selectedWaypoints.some(waypoint => waypoint.id === city.id)}
@@ -196,6 +222,7 @@ const MapComponent = ({ departure, destination }) => {
                 <div className='w-full max-w-[1080px] mx-auto'>
                     {nearbyCities.map((city, index) => (
                         <StopItem
+                            time={findVisitTime(city.id)}
                             key={city.id + index}
                             position={{ lat: city.latitude, lng: city.longitude }}
                             label={city.name}
