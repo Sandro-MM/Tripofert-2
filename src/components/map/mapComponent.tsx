@@ -62,7 +62,7 @@ const MapComponent = ({ departure, destination }) => {
                     const isNotDeparture = city.latitude !== departure.latitude || city.longitude !== departure.longitude;
                     const isNotDestination = city.latitude !== destination.latitude || city.longitude !== destination.longitude;
                     return isNearRoute && isNotDeparture && isNotDestination;
-                });
+                }).map(city => ({ ...city, visitTime: 0 }));
 
                 setNearbyCities(nearby);
 
@@ -81,10 +81,10 @@ const MapComponent = ({ departure, destination }) => {
         }
     };
 
-    const addWaypoint = (position, cityId) => {
+    const addWaypoint = (position, cityId, visitTime) => {
         if (waypoints.length < 10) {
             setWaypoints([...waypoints, position]);
-            setSelectedWaypoints([...selectedWaypoints, cityId]);
+            setSelectedWaypoints([...selectedWaypoints, { id: cityId, visitTime }]);
             setDirectionsRequested(false);
         } else {
             console.log('Maximum of 10 waypoints reached.');
@@ -93,7 +93,7 @@ const MapComponent = ({ departure, destination }) => {
 
     const removeWaypoint = (position, cityId) => {
         setWaypoints(waypoints.filter(wp => wp.lat !== position.lat || wp.lng !== position.lng));
-        setSelectedWaypoints(selectedWaypoints.filter(id => id !== cityId));
+        setSelectedWaypoints(selectedWaypoints.filter(waypoint => waypoint.id !== cityId));
         setDirectionsRequested(false);
     };
 
@@ -128,6 +128,7 @@ const MapComponent = ({ departure, destination }) => {
             <div className="flex w-[95%] max-w-[1080px] mx-auto gap-4 justify-end items-center mt-4">
                 <FiList size={30} onClick={() => setShowMap(false)} />
                 <FiMap size={30} onClick={() => setShowMap(true)} />
+                <FiMap size={30} onClick={() => console.log(selectedWaypoints)} />
             </div>
 
             <div style={{ display: showMap ? 'block' : 'none' }}>
@@ -169,10 +170,11 @@ const MapComponent = ({ departure, destination }) => {
                             map={mapRef.current}
                             position={{ lat: city.latitude, lng: city.longitude }}
                             label={city.name}
+
                             image={"/madrid-m.jpg"}
                             description={'Description of city'}
-                            isSelected={selectedWaypoints.includes(city.id)}
-                            onAdd={() => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
+                            isSelected={selectedWaypoints.some(waypoint => waypoint.id === city.id)}
+                            onAdd={(visitTime) => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id, visitTime)}
                             onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
                         />
                     ))}
@@ -199,8 +201,8 @@ const MapComponent = ({ departure, destination }) => {
                             label={city.name}
                             image={"/madrid-m.jpg"}
                             description={'Description of city'}
-                            isSelected={selectedWaypoints.includes(city.id)}
-                            onAdd={() => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
+                            isSelected={selectedWaypoints.some(waypoint => waypoint.id === city.id)}
+                            onAdd={(visitTime) => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id, visitTime)}
                             onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
                         />
                     ))}

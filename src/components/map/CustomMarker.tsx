@@ -21,23 +21,221 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                     <Image class="image_for_container" src=${image} alt="img"/>
                     <div class="marker-description">${description}</div>
                     <div class="action_area">
-                    <button class="add-button">+</button>
-                    <div class="marker-description"> 60 min stop for 60$</div>
-                    <button class="remove-button">-</button>
+                    <div class="min_30 visible">
+                        <button class="add-button button-30_add">+</button>
+                        <div class="marker-description"> 30 min stop for 60$</div>
+                        <div class="button_area_transparent"></div>
+                        <div class="add-item-button button-30_select">
+                        Add
+                        </div>
+                    </div>
+                     <div class="min_60">
+                        <button class="add-button button-60_add">+</button>
+                        <div class="marker-description"> 60 min stop for 60$</div>
+                        <button class="remove-button button-60_del">-</button>
+                        <div class="add-item-button button-60_select">
+                        Add
+                        </div>
+                    </div>
+                        <div class="min_90">
+                        <button class="add-button button-90_add">+</button>
+                        <div class="marker-description"> 90 min stop for 60$</div>
+                        <button class="remove-button button-90_del">-</button>
+                        <div class="add-item-button button-90_select">
+                        Add
+                        </div>
+                    </div>
+                        <div class="min_120">
+                        <button class="add-button button-120_add">+</button>
+                        <div class="marker-description"> 120 min stop for 60$</div>
+                        <button class="remove-button button-120_del">-</button>
+                        <div class="add-item-button button-120_select">
+                        Add
+                        </div>
+                    </div>
+                     <div class="min_150">
+                        <button class="add-button button-150_add">+</button>
+                        <div class="marker-description"> 150 min stop for 60$</div>
+                        <button class="remove-button button-150_del">-</button>
+                        <div class="add-item-button button-150_select">
+                        Add
+                        </div>
+                    </div>
+                    <div class="min_180">
+                        <button class="add-button button-180_add">+</button>
+                        <div class="marker-description"> 180 min stop for 60$</div>
+                        <button class="remove-button button-180_del">-</button>
+                        <div class="add-item-button button-180_select">
+                        Add
+                        </div>
+                    </div>
+                     <div class="min_210">
+                        <button class="add-button button-210_add">+</button>
+                        <div class="marker-description"> 210 min stop for 60$</div>
+                        <button class="remove-button button-210_del">-</button>
+                        <div class="add-item-button button-210_select">
+                        Add
+                        </div>
+                    </div>
+                     <div class="min_240">
+                        <div class="button_area_transparent"></div>
+                        <div class="marker-description"> 240 min stop for 60$</div>
+                        <button class="remove-button button-240_del">-</button>
+                        <div class="add-item-button button-240_select">
+                        Add
+                        </div>
+                    </div>
+                    </div>
+                    <div class="remove-item-button">
+                        remove
                     </div>
                 </div>
                 <div class="triangle"></div>
             `;
 
             // Add click event listeners for the buttons
-            markerContent.querySelector('.add-button').addEventListener('click', (e) => {
+            markerContent.querySelector('.button-30_add').addEventListener('click', (e) => {
                 e.stopPropagation();
-                onAdd(position);
+                markerContent.querySelector('.min_30').classList.remove('visible');
+                markerContent.querySelector('.min_60').classList.add('visible');
+                // onAdd(position);
             });
-            markerContent.querySelector('.remove-button').addEventListener('click', (e) => {
+
+            markerContent.querySelector('.button-60_add').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_90').classList.add('visible');
+                markerContent.querySelector('.min_60').classList.remove('visible');
+                // onAdd(position);
+            });
+            markerContent.querySelector('.button-60_del').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_30').classList.add('visible');
+                markerContent.querySelector('.min_60').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-90_add').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_120').classList.add('visible');
+                markerContent.querySelector('.min_90').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-90_del').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_60').classList.add('visible');
+                markerContent.querySelector('.min_90').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-120_add').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_150').classList.add('visible');
+                markerContent.querySelector('.min_120').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-120_del').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_90').classList.add('visible');
+                markerContent.querySelector('.min_120').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-150_add').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_180').classList.add('visible');
+                markerContent.querySelector('.min_150').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-150_del').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_120').classList.add('visible');
+                markerContent.querySelector('.min_150').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-180_add').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_210').classList.add('visible');
+                markerContent.querySelector('.min_180').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-180_del').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_150').classList.add('visible');
+                markerContent.querySelector('.min_180').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-210_add').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_240').classList.add('visible');
+                markerContent.querySelector('.min_210').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.button-210_del').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_180').classList.add('visible');
+                markerContent.querySelector('.min_210').classList.remove('visible');
+                // onAdd(position);
+            });
+
+
+            markerContent.querySelector('.button-240_del').addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerContent.querySelector('.min_210').classList.add('visible');
+                markerContent.querySelector('.min_240').classList.remove('visible');
+                // onAdd(position);
+            });
+
+            markerContent.querySelector('.remove-item-button').addEventListener('click', (e) => {
                 e.stopPropagation();
                 onRemove(position);
             });
+
+            markerContent.querySelector('.button-30_select').addEventListener('click', (e) => {
+                e.stopPropagation();
+                onAdd(position);
+            });
+
+            markerContent.querySelector('.button-60_select').addEventListener('click', (e) => {
+                e.stopPropagation();
+                onAdd(position);
+            });
+
+            markerContent.querySelector('.button-90_select').addEventListener('click', (e) => {
+                e.stopPropagation();
+                onAdd(position);
+            });
+
+            markerContent.querySelector('.button-120_select').addEventListener('click', (e) => {
+                e.stopPropagation();
+                onAdd(position);
+            });
+            markerContent.querySelector('.button-150_select').addEventListener('click', (e) => {
+                e.stopPropagation();
+                onAdd(position);
+            });
+            markerContent.querySelector('.button-180_select').addEventListener('click', (e) => {
+                e.stopPropagation();
+                onAdd(position);
+            });
+            markerContent.querySelector('.button-210_select').addEventListener('click', (e) => {
+                e.stopPropagation();
+                onAdd(position);
+            });
+            markerContent.querySelector('.button-240_select').addEventListener('click', (e) => {
+                e.stopPropagation();
+                onAdd(position);
+            });
+            if (isSelected) {
+                markerContent.querySelector('.min_30').classList.remove('visible');
+                markerContent.querySelector('.remove-item-button').classList.add('visible_block');
+            }
 
             const marker = new AdvancedMarkerElement({
                 map,

@@ -4,7 +4,7 @@ const StopItem = ({ position, label, onAdd, onRemove, description, isSelected, i
     const [localCount, setLocalCount] = useState(0);
 
     const handleLocalAdd = () => {
-        if (localCount < 4) {
+        if (localCount < 8) {
             setLocalCount(localCount + 1);
         }
     };
@@ -17,7 +17,7 @@ const StopItem = ({ position, label, onAdd, onRemove, description, isSelected, i
 
     const handleUpdate = () => {
         if (localCount > 0) {
-            onAdd(position, localCount);
+            onAdd(localCount);
         } else {
             onRemove(position);
         }
@@ -32,7 +32,7 @@ const StopItem = ({ position, label, onAdd, onRemove, description, isSelected, i
                 <div className="text-[15px] tracking-tighter font-normal px-4 mt-8 w-full text-center" style={{ marginTop: '10px' }}>{description}</div>
                 <div className="flex items-center justify-center gap-8 absolute bottom-4 left-0 w-full">
                     <button
-                        className={`font-medium text-2xl leading-8 bg-[#00Afff] w-8 h-8 rounded-full ${localCount === 4 ? 'hidden' : 'block'}`}
+                        className={`font-medium text-2xl leading-8 bg-[#00Afff] w-8 h-8 rounded-full ${localCount === 8 ? 'hidden' : 'block'}`}
                         onClick={handleLocalAdd}>+
                     </button>
                     <button className="font-medium text-2xl leading-8 bg-purple-500 w-24 h-8 rounded-full"

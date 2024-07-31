@@ -127,6 +127,12 @@
     .marker-description{
       display: none;
     }
+    .add-item-button{
+      display: none;
+    }
+    .remove-item-button{
+      display: none;
+    }
     .action_area{
     .add-button{
       display: none;
@@ -187,6 +193,10 @@
       display: block;
       font-size: 14px;
     }
+    .add-item-button{
+      display: block;
+    }
+
     .action_area{
       display: flex;
       justify-content: space-between;
@@ -265,7 +275,7 @@
 }
 
 .remove-button{
-  display: none;
+
 }
 
 .selected-marker.highlightedMapView{
@@ -278,3 +288,75 @@
     background-color: var(--grayBgHex) !important;
   }
 }
+
+.min_60{
+  display: none;
+}
+.min_30{
+  display: none;
+}
+.min_90{
+  display: none;
+}
+.min_120{
+  display: none;
+}
+.min_150{
+  display: none;
+}
+.min_180{
+  display: none;
+}
+.min_210{
+  display: none;
+}
+.min_240{
+  display: none;
+}
+
+.remove-item-button{
+  display: none;
+  width: 90px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: var(--grayBgHex);
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  bottom: -280px;
+  left: calc(340px/2 - 42.5px);
+}
+
+.visible_block{
+  display: block !important;
+}
+
+.visible{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button_area_transparent{
+  width: 32px;
+  height: 32px;
+  background: transparent;
+}
+
+.add-item-button{
+  width: 90px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #00Afff;
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  bottom: -280px;
+  left: calc(340px/2 - 42.5px);
+}
+
