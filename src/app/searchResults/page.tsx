@@ -46,7 +46,7 @@ export default function Page({params}) {
             <ThemeSwitch/>
             <SearchFilter setMapDeparture={setMapDeparture} setMapDestination={setMapDestination} departure={departure}
                           destination={destination} setDeparture={setDeparture} setDestination={setDestination}
-                          date={date} setDate={setDate} passengers={passengers} setPassengers={setPassengers} duration={duration} distance={distance} points={points}/>
+                          date={date} setDate={setDate} passengers={passengers} setPassengers={setPassengers} distance={distance} points={points}/>
 
             <RouteBarComponent points={points} departure={mapDeparture.name} destination={mapDestination.name}/>
             <MapProvider>
