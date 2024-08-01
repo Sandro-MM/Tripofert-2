@@ -2,7 +2,7 @@
 import ThemeSwitch from "@/components/themeSwitchButton";
 import SearchFilter from "@/components/searchPageComponents/searchFilter";
 import {useSearchParams} from 'next/navigation'
-import {useEffect, useState} from "react";
+import {Suspense, useEffect, useState} from "react";
 import {searchPlaceInterface} from "@/directions-functions/direction-functions";
 import {MapProvider} from "@/components/map/mapProvider";
 import RouteBarComponent from "@/components/searchPageComponents/routeBarComponent";
@@ -48,6 +48,8 @@ export default function Page({params}) {
     return (
         <main className="relative w-full min-h-screen">
             <ThemeSwitch/>
+            <Suspense fallback={<div>Loading search results...</div>}>
+
             <SearchFilter setMapDeparture={setMapDeparture} setMapDestination={setMapDestination} departure={departure}
                           destination={destination} setDeparture={setDeparture} setDestination={setDestination}
                           date={date} setDate={setDate} passengers={passengers} setPassengers={setPassengers} distance={distance} points={points}/>
@@ -57,6 +59,7 @@ export default function Page({params}) {
                 <MapComponent departure={mapDeparture} setPoints={setPoints} setDistance={setDistance}
                               setDuration={setDuration} destination={mapDestination}/>
             </MapProvider>
+            </Suspense>
         </main>
     );
 }
