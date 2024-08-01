@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from './providers'
 const poppins = Poppins({ subsets: ["latin"], weight:['400', '500', '600', '700', '800']});
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import {Suspense} from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <body  className={poppins.className}>
         <SpeedInsights/>
         <Providers>
+            <Suspense>
             {children}
+            </Suspense>
         </Providers>
         </body>
         </html>
