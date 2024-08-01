@@ -8,11 +8,11 @@ import {FiMinus, FiPlus} from "react-icons/fi";
 import {Button} from "@/components/ui/button";
 import {DrawerClose} from "@/components/ui/drawer";
 import {Input} from "@/components/ui/input";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 
 type CounterProps = {
     count: number | string | undefined;
-    setCount: any;
+    setCount: React.Dispatch<React.SetStateAction<number | string | undefined>>;
 };
 
 const Counter: React.FC<CounterProps> = ({ count, setCount }) => {
