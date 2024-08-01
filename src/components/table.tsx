@@ -10,7 +10,7 @@ import {searchPlaceInterface} from "@/directions-functions/direction-functions";
 
 type SearchTableProps = {
     data:any;
-    setChosenItem: React.Dispatch<React.SetStateAction<number | string | undefined>>;
+    setChosenItem: any;
 };
 
 

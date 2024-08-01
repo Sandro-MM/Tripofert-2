@@ -57,8 +57,11 @@ const SearchItem = () => {
             date: date,
             passengers: passengers.toString(),
         };
+        const stringifiedQueryParams = Object.fromEntries(
+            Object.entries(queryParams).map(([key, value]) => [key, String(value)])
+        );
 
-        const queryString = new URLSearchParams(queryParams).toString();
+        const queryString = new URLSearchParams(stringifiedQueryParams).toString();
         const searchRoute = `/searchResults?${queryString}`;
 
         // Navigate to the search results page
