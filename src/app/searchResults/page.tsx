@@ -2,7 +2,7 @@
 import ThemeSwitch from "@/components/themeSwitchButton";
 import SearchFilter from "@/components/searchPageComponents/searchFilter";
 import {useSearchParams} from 'next/navigation'
-import {Suspense, useEffect, useState} from "react";
+import React, {Suspense, useEffect, useState} from "react";
 import {searchPlaceInterface} from "@/directions-functions/direction-functions";
 import {MapProvider} from "@/components/map/mapProvider";
 import RouteBarComponent from "@/components/searchPageComponents/routeBarComponent";
@@ -13,7 +13,7 @@ const MapComponent = dynamic(() => import('@/components/map/mapComponent'), {
 });
 
 export default function Page({ params }) {
-    const searchParams = useSearchParams();
+    const [searchParams] = React.useState(useSearchParams());
     const [departure, setDeparture] = useState<searchPlaceInterface>({
         id: +searchParams.get('departureId') || 0,
         name: searchParams.get('departureName') || '',
