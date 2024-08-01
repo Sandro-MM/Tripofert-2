@@ -4,9 +4,13 @@ import SearchFilter from "@/components/searchPageComponents/searchFilter";
 import {useSearchParams} from 'next/navigation'
 import {useEffect, useState} from "react";
 import {searchPlaceInterface} from "@/directions-functions/direction-functions";
-import MapComponent from "@/components/map/mapComponent";
 import {MapProvider} from "@/components/map/mapProvider";
 import RouteBarComponent from "@/components/searchPageComponents/routeBarComponent";
+import dynamic from 'next/dynamic';
+
+const MapComponent = dynamic(() => import('@/components/map/mapComponent'), {
+    ssr: false,
+});
 
 export default function Page({params}) {
     const searchParams = useSearchParams()
