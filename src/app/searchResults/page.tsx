@@ -21,17 +21,11 @@ export default function Page({params}) {
     const [distance, setDistance] = useState<any>(undefined);
     const [points, setPoints] = useState<any>(undefined);
 
-    const parseDateFromQuery = (dateString) => {
+    const parseDateFromQuery = (dateString: string): Date | undefined => {
         if (!dateString) return undefined;
-
-        // Decode the URI component
         const decodedDate = decodeURIComponent(dateString);
-
-        // Create a new Date object
         const dateObject = new Date(decodedDate);
-
-        // Check if the date is valid
-        if (!isNaN(dateObject)) {
+        if (!isNaN(dateObject.getTime())) {
             return dateObject;
         } else {
             console.error("Invalid date format");
