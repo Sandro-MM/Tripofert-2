@@ -5,12 +5,16 @@ import { Input } from "@/components/ui/input"
 
 import Image from "next/image";
 import {DrawerClose} from "@/components/ui/drawer";
-import {useState} from "react";
+import React, {useState} from "react";
+import {searchPlaceInterface} from "@/directions-functions/direction-functions";
+
+type SearchTableProps = {
+    data:[searchPlaceInterface];
+    setChosenItem: React.Dispatch<React.SetStateAction<number | string | undefined>>;
+};
 
 
-
-
-const SearchTable = ({data, setChosenItem}) => {
+const SearchTable : React.FC<SearchTableProps> = ({data, setChosenItem}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredData = data.filter(item =>
