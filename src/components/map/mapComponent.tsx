@@ -1,3 +1,5 @@
+'use client'
+
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {DirectionsRenderer, DirectionsService, GoogleMap} from '@react-google-maps/api';
 import CustomMarker from "@/components/map/CustomMarker";
