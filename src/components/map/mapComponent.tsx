@@ -1,10 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { DirectionsRenderer, DirectionsService, GoogleMap, Marker } from '@react-google-maps/api';
+import {useCallback, useEffect, useRef, useState} from 'react';
+import {DirectionsRenderer, DirectionsService, GoogleMap} from '@react-google-maps/api';
 import CustomMarker from "@/components/map/CustomMarker";
-import { cities } from "@/directions-functions/direction-functions";
+import {cities} from "@/directions-functions/direction-functions";
 import DestinationDepartureMarker from "@/components/map/DestinationDepartureMarker";
-import { FiMap , FiList  } from "react-icons/fi";
+import {FiList, FiMap} from "react-icons/fi";
 import StopItem from "@/components/map/StopItem";
+import TravelMode = google.maps.TravelMode;
+
 const toRad = (value) => value * Math.PI / 180;
 
 const distanceBetween = (lat1, lng1, lat2, lng2) => {
@@ -212,7 +214,7 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
                                 origin: { lat: departure.latitude, lng: departure.longitude },
                                 destination: { lat: destination.latitude, lng: destination.longitude },
                                 waypoints: waypoints.map(wp => ({ location: wp })),
-                                travelMode: 'DRIVING',
+                                travelMode: TravelMode.DRIVING,
                             }}
                             callback={directionsCallback}
                         />
