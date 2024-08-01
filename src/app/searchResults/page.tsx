@@ -24,6 +24,7 @@ export default function Page({params}) {
     const parseDateFromQuery = (dateString: string): Date | undefined => {
         if (!dateString) return undefined;
         const decodedDate = decodeURIComponent(dateString);
+
         const dateObject = new Date(decodedDate);
         if (!isNaN(dateObject.getTime())) {
             return dateObject;
