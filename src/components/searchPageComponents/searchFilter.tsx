@@ -126,6 +126,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                 className='child:flex  child:md:gap-9 child:gap-5 child:flex-nowrap flex items-center justify-center gap-9 flex-wrap'>
                 <div className='justify-around child:max-sm:w-1/2 max-sm:w-full'>
                     <DrawerOpen disable={false}
+
                                 trigger={<div className={'flex cursor-pointer lg:w-[150px] md:w-[136px]'}>
                                     <Image className='size-8'
                                         // className='max-md:hidden'

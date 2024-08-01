@@ -14,9 +14,9 @@ export default function RouteBarComponent({ departure, destination, points }) {
 
             {points &&
                 points.map((point, index) => (
-                    <div className='flex gap-1 justify-center items-center'>
-                        <div className='w-max text-center py-1 px-2 bg-buttons rounded-xl' key={index}>
-                            <div className='font-medium'> {getCityNameById(point.id)}</div>
+                    <div className = {'flex gap-1 justify-center items-center'} key={index}>
+                        <div className='w-max text-center py-1 px-2 bg-buttons rounded-xl'>
+                            <div className='font-medium'>{getCityNameById(point.id)}</div>
                             <div className='text-xs text-subText'>{point.visitTime} min</div>
                         </div>
                         <div className='w-8 h-[1.5px] bg-subText rounded-3xl'></div>
