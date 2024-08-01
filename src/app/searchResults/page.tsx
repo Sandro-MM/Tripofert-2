@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import {searchPlaceInterface} from "@/directions-functions/direction-functions";
 import MapComponent from "@/components/map/mapComponent";
 import {MapProvider} from "@/components/map/mapProvider";
+import RouteBarComponent from "@/components/searchPageComponents/routeBarComponent";
 
 export default function Page({params}) {
     const searchParams = useSearchParams()
@@ -50,9 +51,9 @@ export default function Page({params}) {
             <ThemeSwitch/>
             <SearchFilter setMapDeparture={setMapDeparture} setMapDestination={setMapDestination} departure={departure}
                           destination={destination} setDeparture={setDeparture} setDestination={setDestination}
-                          date={date} setDate={setDate} passengers={passengers} setPassengers={setPassengers}/>
-            <div>{distance?.text}</div>
-            <div>{duration?.text}</div>
+                          date={date} setDate={setDate} passengers={passengers} setPassengers={setPassengers} duration={duration} distance={distance} points={points}/>
+
+            <RouteBarComponent points={points} departure={mapDeparture.name} destination={mapDestination.name}/>
             <MapProvider>
                 <MapComponent departure={mapDeparture} setPoints={setPoints} setDistance={setDistance}
                               setDuration={setDuration} destination={mapDestination}/>

@@ -27,10 +27,11 @@ const SearchItem = () => {
 
     useEffect(() => {
         if (departure) {
-            console.log("Departure city:", departure);
+            // console.log("Departure city:", departure);
             const result = getCitiesInRange(departure.latitude, departure.longitude, 800, cities);
-            console.log("Filtered cities:", result);
+            // console.log("Filtered cities:", result);
             setDestinationDataFiltered(result);
+            setDestination({ name:'Your Destination', id: null})
         }
     }, [departure]);
 

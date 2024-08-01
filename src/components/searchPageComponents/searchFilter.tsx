@@ -10,15 +10,19 @@ import {DrawerClose} from "@/components/ui/drawer";
 import {Button} from "@/components/ui/button";
 import Counter from "@/components/counter";
 import { Checkbox } from "@/components/ui/checkbox";
-import {cities, getCitiesInRange} from "@/directions-functions/direction-functions";
+import {calculatePrice, cities, getCitiesInRange} from "@/directions-functions/direction-functions";
 import { useRouter } from 'next/navigation';
 
 
-export default function SearchFilter({departure, setDeparture, destination,setDestination,date,setDate, passengers, setPassengers, setMapDeparture,setMapDestination,}) {
+export default function SearchFilter({departure, setDeparture, destination,setDestination,date,setDate, passengers, setPassengers, setMapDeparture,setMapDestination, distance, points}) {
     const router = useRouter();
     const [showSearch, setShowSearch] = useState(false);
     const [hasChangedOnce, setHasChangedOnce] = useState(false);
-
+    const [destinationDataFiltered, setDestinationDataFiltered] = useState<any>();
+    const [carType, setCarType] = useState<string>('');
+    const [checked, setChecked] = useState<boolean>(false);
+    const [distancePrice, setDistancePrice] = useState<number>(undefined);
+    const [stopsPrice, setStopsPrice] = useState<number>(undefined);
     useEffect(() => {
         if (hasChangedOnce) {
             setShowSearch(true);
@@ -27,11 +31,18 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
         }
     }, [departure, destination]);
 
+    useEffect(() => {
+        const prices = calculatePrice(distance, carType, points);
+        setDistancePrice(Math.round(prices.distancePrice));
+        setStopsPrice(Math.round(prices.stopsPrice));
+        // console.log("Distance Price:", prices.distancePrice);
+        // console.log("Stops Price:", prices.stopsPrice);
+        // console.log("Total Price:", prices.totalPrice);
+    }, [points,distance,carType]);
 
 
 
     const departureData = cities;
-    const [destinationDataFiltered, setDestinationDataFiltered] = useState<any>();
 
     const handleSearch = () => {
         console.log(123)
@@ -43,6 +54,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
         setMapDeparture(departure)
         setMapDestination(destination)
+
 
         const queryParams = {
             departureId: departure.id,
@@ -61,7 +73,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
         const queryString = new URLSearchParams(queryParams).toString();
         const searchRoute = `/searchResults?${queryString}`;
-
+        setShowSearch(false)
         // Navigate to the search results page
         router.push(searchRoute);
     };
@@ -69,10 +81,11 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
     useEffect(() => {
         if (departure) {
-            console.log("Departure city:", departure);
+            // console.log("Departure city:", departure);
             const result = getCitiesInRange(departure.latitude, departure.longitude, 800, cities);
-            console.log("Filtered cities:", result);
+            // console.log("Filtered cities:", result);
             setDestinationDataFiltered(result);
+            setDestination({ name:'Your Destination', id: null})
         }
     }, [departure]);
 
@@ -85,8 +98,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
         }
     };
 
-    const [carType, setCarType] = useState<string>('');
-    const [checked, setChecked] = useState<boolean>(false);
+
 
     useEffect(() => {
         const numPassengers = typeof passengers === 'string' ? parseInt(passengers, 10) : passengers;
@@ -115,7 +127,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                 <div className='justify-around child:max-sm:w-1/2 max-sm:w-full'>
                     <DrawerOpen disable={false}
                                 trigger={<div className={'flex cursor-pointer lg:w-[150px] md:w-[136px]'}>
-                                    <Image
+                                    <Image className='size-8'
                                         // className='max-md:hidden'
                                         src="/arrow.svg"
                                         width={32}
@@ -132,7 +144,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
                     <DrawerOpen disable={departure.id === null}
                                 trigger={<div className={'flex lg:w-[200px] cursor-pointer md:w-[178px]'}>
-                                    <Image
+                                    <Image className='size-8'
                                         // className='max-md:hidden'
                                         src="/arrow.svg"
                                         width={32}
@@ -151,7 +163,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                     <DrawerOpen disable={false}
                                 trigger={<div className={'flex cursor-pointer  lg:w-[120px] md:w-[110px]'}>
 
-                                    <Image
+                                    <Image className='size-8'
                                         // className='max-md:hidden'
                                         src="/calendar.svg"
                                         width={32}
@@ -183,7 +195,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                     }/>
                     <DrawerOpen disable={false}
                                 trigger={<div className={'flex lg:w-[186px] cursor-pointer md:w-[162px]'}>
-                                    <Image
+                                    <Image className='size-8'
                                         // className='max-md:hidden'
                                         src="/person.svg"
                                         width={32}
@@ -244,7 +256,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
             <div className='flex w-full mt-4 justify-center'>
                 <div onClick={()=> console.log('buy')}
                      className='ml-9  h-16 w-[80%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
-                    Order for
+                    Order for {stopsPrice + distancePrice }€
                 </div>
                 {
                     showSearch &&

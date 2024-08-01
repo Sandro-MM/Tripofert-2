@@ -445,13 +445,6 @@ export const cities = [
     {"id": 229, "name": "Nazare", "country": "Portugal", "latitude": 39.6015, "longitude": -9.0706},
     {"id": 230, "name": "Batalha", "country": "Portugal", "latitude": 39.6590, "longitude": -8.8254},
     {"id": 231, "name": "Fatima", "country": "Portugal", "latitude": 39.6254, "longitude": -8.6656},
-    {"id": 232, "name": "Aveiro", "country": "Portugal", "latitude": 40.6443, "longitude": -8.6455},
-    {"id": 233, "name": "Braga", "country": "Portugal", "latitude": 41.5503, "longitude": -8.4200},
-    {"id": 234, "name": "Guimaraes", "country": "Portugal", "latitude": 41.4418, "longitude": -8.2956},
-    {"id": 235, "name": "Viseu", "country": "Portugal", "latitude": 40.6610, "longitude": -7.9097},
-    {"id": 236, "name": "Faro", "country": "Portugal", "latitude": 37.0194, "longitude": -7.9304},
-    {"id": 237, "name": "Castillo de los Moros", "country": "Spain", "latitude": 37.5971, "longitude": -1.0276},
-    {"id": 238, "name": "Oporto", "country": "Portugal", "latitude": 41.1496, "longitude": -8.6109},
 ]
 
 
@@ -469,7 +462,7 @@ export const getCitiesInRange = (latitude, longitude, range, cities) => {
 
         // Check if the city's latitude and longitude are the same as the input values
         if (parseFloat(city.latitude) === parseFloat(latitude) && parseFloat(city.longitude) === parseFloat(longitude)) {
-            console.log("City has same coordinates as input values and will be removed", city);
+            // console.log("City has same coordinates as input values and will be removed", city);
             return false;
         }
 
@@ -478,13 +471,56 @@ export const getCitiesInRange = (latitude, longitude, range, cities) => {
             { latitude: parseFloat(city.latitude), longitude: parseFloat(city.longitude) }
         );
 
-        console.log(`Distance from ${latitude}, ${longitude} to ${city.latitude}, ${city.longitude}:`, distance);
-        console.log("Is within range:", distance <= range * 1000);
+        // console.log(`Distance from ${latitude}, ${longitude} to ${city.latitude}, ${city.longitude}:`, distance);
+        // console.log("Is within range:", distance <= range * 1000);
 
         return distance <= range * 1000;
     });
 };
 
 
+export const priceMap = {
+    30: 30,
+    60: 48,
+    90: 66,
+    120: 82,
+    150: 100,
+    180: 117,
+    210: 135,
+    240: 153,
+};
 
+export const carTypes = {
+    Sedan: { costPerKm: 1.21, basePrice: 100 },
+    'Premium Sedan': { costPerKm: 1.30, basePrice: 120 },
+    Minivan: { costPerKm: 1.75, basePrice: 140 }
+};
+
+export const calculatePrice = (distance, carType, stops) => {
+    const baseDistance = distance?.value / 1000 - 40;
+    let distancePrice = 0;
+    if (baseDistance > 0) {
+        distancePrice = baseDistance * carTypes[carType]?.costPerKm + carTypes[carType]?.basePrice;
+    } else {
+        distancePrice = carTypes[carType]?.basePrice;
+    }
+
+
+
+    let stopsPrice = 0;
+    if (stops){
+        stops?.forEach(stop => {
+            stopsPrice += priceMap[stop?.visitTime] || 0;
+        });
+    }
+
+
+    const totalPrice = distancePrice + stopsPrice;
+
+    return {
+        distancePrice,
+        stopsPrice,
+        totalPrice
+    };
+};
 

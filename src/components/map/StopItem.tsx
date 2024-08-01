@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {priceMap} from "@/directions-functions/direction-functions";
 
 const StopItem = ({ position, label, onAdd, onRemove, description, isSelected, image, time }) => {
     const [localCount, setLocalCount] = useState(30);
@@ -24,16 +25,7 @@ const StopItem = ({ position, label, onAdd, onRemove, description, isSelected, i
     }
 
     const calculateLocalPrice = (count) => {
-        const priceMap = {
-            30: 30,
-            60: 48,
-            90: 66,
-            120: 82,
-            150: 100,
-            180: 117,
-            210: 135,
-            240: 153,
-        };
+
         return priceMap[count] || 0;
     };
 

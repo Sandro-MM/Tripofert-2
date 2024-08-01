@@ -109,12 +109,14 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
         } else {
             console.log('Maximum of 10 waypoints reached.');
         }
+        setPoints([...selectedWaypoints, { id: cityId, visitTime }])
     };
 
     const removeWaypoint = (position, cityId) => {
         setWaypoints(waypoints.filter(wp => wp.lat !== position.lat || wp.lng !== position.lng));
         setSelectedWaypoints(selectedWaypoints.filter(waypoint => waypoint.id !== cityId));
         setDirectionsRequested(false);
+        setPoints(selectedWaypoints.filter(waypoint => waypoint.id !== cityId))
     };
 
     const onLoad = useCallback((map) => {
@@ -130,6 +132,7 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
         setWaypoints([]);
         setSelectedWaypoints([]);
         setDirectionsRequested(false);
+        setPoints([])
     }, [departure, destination]);
 
     const findVisitTime = (cityId) => {
@@ -153,7 +156,6 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
             <div className="flex w-[95%] max-w-[1080px] mx-auto gap-4 justify-end items-center mt-4">
                 <FiList size={30} onClick={() => setShowMap(false)} />
                 <FiMap size={30} onClick={() => setShowMap(true)} />
-                <FiMap size={30} onClick={() => console.log(directions.routes[0].legs[0])} />
 
             </div>
 
