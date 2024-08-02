@@ -114,109 +114,119 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                 });
             };
 
-            // Add click event listeners for the buttons
             const handleButtonEvent = (e) => {
                 e.stopPropagation();
                 const classList = e.currentTarget.classList;
 
+                // Utility function to handle visibility changes
+                const updateVisibility = (fromClass, toClass) => {
+                    markerContent.querySelector(fromClass).classList.remove('visible');
+                    markerContent.querySelector(toClass).classList.add('visible');
+                };
+
+                // Handle add and remove buttons
                 if (classList.contains('button-30_add')) {
-                    markerContent.querySelector('.min_30').classList.remove('visible');
-                    markerContent.querySelector('.min_60').classList.add('visible');
+                    updateVisibility('.min_30', '.min_60');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-60_add')) {
-                    markerContent.querySelector('.min_90').classList.add('visible');
-                    markerContent.querySelector('.min_60').classList.remove('visible');
+                    updateVisibility('.min_60', '.min_90');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-60_del')) {
-                    markerContent.querySelector('.min_30').classList.add('visible');
-                    markerContent.querySelector('.min_60').classList.remove('visible');
+                    updateVisibility('.min_60', '.min_30');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-90_add')) {
-                    markerContent.querySelector('.min_120').classList.add('visible');
-                    markerContent.querySelector('.min_90').classList.remove('visible');
+                    updateVisibility('.min_90', '.min_120');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-90_del')) {
-                    markerContent.querySelector('.min_60').classList.add('visible');
-                    markerContent.querySelector('.min_90').classList.remove('visible');
+                    updateVisibility('.min_90', '.min_60');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-120_add')) {
-                    markerContent.querySelector('.min_150').classList.add('visible');
-                    markerContent.querySelector('.min_120').classList.remove('visible');
+                    updateVisibility('.min_120', '.min_150');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-120_del')) {
-                    markerContent.querySelector('.min_90').classList.add('visible');
-                    markerContent.querySelector('.min_120').classList.remove('visible');
+                    updateVisibility('.min_120', '.min_90');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-150_add')) {
-                    markerContent.querySelector('.min_180').classList.add('visible');
-                    markerContent.querySelector('.min_150').classList.remove('visible');
+                    updateVisibility('.min_150', '.min_180');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-150_del')) {
-                    markerContent.querySelector('.min_120').classList.add('visible');
-                    markerContent.querySelector('.min_150').classList.remove('visible');
+                    updateVisibility('.min_150', '.min_120');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-180_add')) {
-                    markerContent.querySelector('.min_210').classList.add('visible');
-                    markerContent.querySelector('.min_180').classList.remove('visible');
+                    updateVisibility('.min_180', '.min_210');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-180_del')) {
-                    markerContent.querySelector('.min_150').classList.add('visible');
-                    markerContent.querySelector('.min_180').classList.remove('visible');
+                    updateVisibility('.min_180', '.min_150');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-210_add')) {
-                    markerContent.querySelector('.min_240').classList.add('visible');
-                    markerContent.querySelector('.min_210').classList.remove('visible');
+                    updateVisibility('.min_210', '.min_240');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-210_del')) {
-                    markerContent.querySelector('.min_180').classList.add('visible');
-                    markerContent.querySelector('.min_210').classList.remove('visible');
+                    updateVisibility('.min_210', '.min_180');
                     markerContent.classList.add('highlightedMapView');
                     marker.zIndex = 1;
                 } else if (classList.contains('button-240_del')) {
-                    markerContent.querySelector('.min_210').classList.add('visible');
-                    markerContent.querySelector('.min_240').classList.remove('visible');
-                } else if (classList.contains('remove-item-button')) {
+                    updateVisibility('.min_240', '.min_210');
+                }
+
+                // Handle action buttons
+                if (classList.contains('remove-item-button')) {
+                    console.log('remove-item-button');
                     onRemove(position);
                 } else if (classList.contains('button-30_select')) {
+                    console.log('button-30_select');
                     onAdd(30);
                 } else if (classList.contains('button-60_select')) {
+                    console.log('button-60_select');
                     onAdd(60);
                 } else if (classList.contains('button-90_select')) {
+                    console.log('button-90_select');
                     onAdd(90);
                 } else if (classList.contains('button-120_select')) {
+                    console.log('button-120_select');
                     onAdd(120);
                 } else if (classList.contains('button-150_select')) {
+                    console.log('button-150_select');
                     onAdd(150);
                 } else if (classList.contains('button-180_select')) {
+                    console.log('button-180_select');
                     onAdd(180);
                 } else if (classList.contains('button-210_select')) {
+                    console.log('button-210_select');
                     onAdd(210);
                 } else if (classList.contains('button-240_select')) {
+                    console.log('button-240_select');
                     onAdd(240);
                 }
             };
 
-            // Add event listeners for buttons
-            addEventListeners('.add-button, .remove-button, .add-item-button', ['click', 'touchend'], handleButtonEvent);
-            addEventListeners('.remove-item-button, .add-item-button', ['click', 'touchend'], handleButtonEvent);
+            // markerContent.querySelector('.remove-item-button').addEventListener('click', (e) => {
+            //     e.stopPropagation();
+            //     onRemove(position);
+            // });
+
+
 
             if (isSelected) {
                 markerContent.querySelector('.min_30').classList.remove('visible');
                 markerContent.querySelector('.remove-item-button').classList.add('visible_block');
                 markerContent.querySelector('.visit-time-container').classList.add('visible_block');
             }
+
+            addEventListeners('.add-button, .remove-button, .add-item-button', ['click', 'touchend'], handleButtonEvent);
+            addEventListeners('.remove-item-button', ['click', 'touchend'], handleButtonEvent);
 
             const marker = new AdvancedMarkerElement({
                 map,
