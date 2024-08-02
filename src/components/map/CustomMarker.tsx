@@ -244,10 +244,8 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                 onAdd(240);
             });
 
-            markerContent.querySelector('.marker-top_area').addEventListener('click', (e) => {
-                e.stopPropagation();
-                closeMarker(marker)
-            });
+
+
 
 
             if (isSelected) {
@@ -263,6 +261,15 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                 title: label,
             });
 
+            // markerContent.querySelector('.marker-top_area').addEventListener('click', (e) => {
+            //     if (markerContent.querySelector('.marker-top_area').classList.contains('marker-top_area_close')){
+            //         e.stopPropagation();
+            //         closeMarker(marker)
+            //     }
+            // });
+
+
+
             // Add click event listener for the marker
             marker.addListener('click', () => {
                 toggleHighlight(marker);
@@ -272,13 +279,21 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
         };
 
         const toggleHighlight = (marker) => {
+            console.log(111)
+            if (marker.content.classList.contains('highlightedMapView')) {
+                return
+            } else {
                 marker.content.classList.add('highlightedMapView');
+                marker.content.querySelector('.marker-top_area').classList.add('marker-top_area_close');
                 marker.zIndex = 1;
+            }
+
         };
 
         const closeMarker = (marker) => {
             if (marker.content.classList.contains('highlightedMapView')) {
                 marker.content.classList.remove('highlightedMapView');
+                marker.content.querySelector('.marker-top_area').classList.remove('marker-top_area_close');
                 marker.zIndex = null;
             } else {
                 marker.content.classList.add('highlightedMapView');
@@ -298,6 +313,7 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                 markerRef.current.content.classList.remove('selected-marker');
             }
         }
+
 
         return () => {
             if (markerRef.current) {
