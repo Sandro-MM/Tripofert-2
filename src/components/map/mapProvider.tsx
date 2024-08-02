@@ -1,6 +1,7 @@
 'use client';
 import { Libraries, useJsApiLoader } from '@react-google-maps/api';
 import { ReactNode } from 'react';
+import {Spinner} from "@/components/ui/spinner";
 const libraries = ['places', 'drawing', 'geometry'];
 export function MapProvider({ children }: { children: ReactNode }) {
 
@@ -9,7 +10,17 @@ export function MapProvider({ children }: { children: ReactNode }) {
         libraries: libraries as Libraries,
     });
 
-    if(loadError) return <p>Encountered error while loading google maps</p>
-    if(!scriptLoaded) return <p>Map Script is loading ...</p>
+    if(loadError) return (
+        <div className='w-full h-full min-h-[400px] flex items-center justify-center mt-8'>
+            <p>Encountered error while loading google maps</p>
+        </div>
+    )
+    if (!scriptLoaded) return (
+        <div className='w-full h-full min-h-[400px] flex items-center justify-center mt-8'>
+            <Spinner size={160}/>
+        </div>
+    )
+
+
     return children;
 }

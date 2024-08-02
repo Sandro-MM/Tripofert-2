@@ -162,8 +162,12 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
                 <FiMap size={30} onClick={() => setShowMap(true)} />
 
             </div>
+            {
+                nearbyCities?.length > 0 && <div className='w-full text-center text-3xl font-semibold mt-6'>Visit these sights along the way</div>
 
-            <div style={{ display: showMap ? 'block' : 'none' }}>
+            }
+
+            <div style={{display: showMap ? 'block' : 'none' }}>
                 <GoogleMap
                     key={mapKey}  // Use unique key to force remount
                     mapContainerStyle={defaultMapContainerStyle}

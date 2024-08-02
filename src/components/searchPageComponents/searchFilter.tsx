@@ -23,13 +23,14 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
     const [checked, setChecked] = useState<boolean>(false);
     const [distancePrice, setDistancePrice] = useState<number>(undefined);
     const [stopsPrice, setStopsPrice] = useState<number>(undefined);
+    const departureChangeCount = useRef(0);
     useEffect(() => {
         if (hasChangedOnce) {
             setShowSearch(true);
         } else {
             setHasChangedOnce(true);
         }
-    }, [departure, destination]);
+    }, [destination]);
 
     useEffect(() => {
         const prices = calculatePrice(distance, carType, points);
@@ -85,9 +86,24 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
             const result = getCitiesInRange(departure.latitude, departure.longitude, 800, cities);
             // console.log("Filtered cities:", result);
             setDestinationDataFiltered(result);
-            setDestination({ name:'Your Destination', id: null})
+            // setDestination({ name:'Your Destination', id: null})
         }
     }, [departure]);
+
+    // useEffect(() => {
+    //     departureChangeCount.current += 1;
+    //     console.log(`Change count: ${departureChangeCount.current}`);
+    //     if (departureChangeCount.current > 2) {
+    //
+    //     }
+    // }, [departure]);
+
+    const changeDeparture = (data) => {
+        setDeparture(data)
+        setShowSearch(true);
+        setDestination({ name: 'Your Destination', id: null });
+    }
+
 
 
     const displayDate = (item: any) => {
@@ -140,7 +156,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                             className='lg:text-base md:text-sm text-subText text-[12px]  md:font-normal font-light'>{departure.name}</span>
                                     </div>
                                 </div>} title={'Pick-up'} subtitle={'Your location'}
-                                content={<SearchTable setChosenItem={setDeparture} data={departureData}/>}/>
+                                content={<SearchTable setChosenItem={changeDeparture} data={departureData}/>}/>
 
 
                     <DrawerOpen disable={departure.id === null}

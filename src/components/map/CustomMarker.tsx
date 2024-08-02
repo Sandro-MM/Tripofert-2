@@ -17,9 +17,12 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
             }
             markerContent.innerHTML = `
                 <div class="container">
+                <div class="marker-top_area">
                     <div class="marker-label">${label}</div>
                     <Image class="image_for_container" src=${image} alt="img"/>
                     <div class="marker-description">${description}</div>
+                </div>
+                
                     <div class="action_area">
                     <div class="min_30 visible">
                         <button class="add-button button-30_add">+</button>
@@ -240,6 +243,13 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                 e.stopPropagation();
                 onAdd(240);
             });
+
+            markerContent.querySelector('.marker-top_area').addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMarker(marker)
+            });
+
+
             if (isSelected) {
                 markerContent.querySelector('.min_30').classList.remove('visible');
                 markerContent.querySelector('.remove-item-button').classList.add('visible_block');
@@ -262,6 +272,11 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
         };
 
         const toggleHighlight = (marker) => {
+                marker.content.classList.add('highlightedMapView');
+                marker.zIndex = 1;
+        };
+
+        const closeMarker = (marker) => {
             if (marker.content.classList.contains('highlightedMapView')) {
                 marker.content.classList.remove('highlightedMapView');
                 marker.zIndex = null;
@@ -270,6 +285,8 @@ const CustomMarker = ({ map, position, label, onAdd, onRemove, description, isSe
                 marker.zIndex = 1;
             }
         };
+
+
 
         if (map && !markerRef.current) {
             initMarker();

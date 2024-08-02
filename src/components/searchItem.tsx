@@ -11,6 +11,7 @@ import Counter from "@/components/counter";
 
 import {cities, getCitiesInRange, searchPlaceInterface} from "@/directions-functions/direction-functions";
 import { useRouter } from 'next/navigation';
+import {Spinner} from "@/components/ui/spinner";
 
 const SearchItem = () => {
     const router = useRouter();
@@ -18,6 +19,7 @@ const SearchItem = () => {
     const [passengers, setPassengers] = useState<number | string | undefined>('How many?');
     const [departure, setDeparture] = useState<searchPlaceInterface>({ name: 'Your location', id: null});
     const [destination, setDestination] = useState<searchPlaceInterface>({ name:'Your Destination', id: null});
+    const [loading, seLoading] = useState<boolean>(false);
 
     const departureData = cities;
     const [destinationDataFiltered, setDestinationDataFiltered] = useState<any>();
@@ -42,6 +44,7 @@ const SearchItem = () => {
             return;
         }
 
+        seLoading(true)
 
         const queryParams = {
             departureId: departure.id,
@@ -162,10 +165,12 @@ const SearchItem = () => {
                     </div>} title={'Passengers'} subtitle={'How many?'} content={<Counter count={passengers} setCount={setPassengers}/>}/>
                 </div>
             </div>
-            <div  onClick={handleSearch}
-                className='ml-9  h-16 w-32 bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
-                Search
-            </div>
+            <button disabled={loading}  onClick={handleSearch}
+                  className='ml-9  h-16 w-32 bg-buttons rounded-xl flex justify-center items-center text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
+                {
+                    loading?<Spinner/>:<p>Search</p>
+                }
+            </button>
         </div>
     );
 };
