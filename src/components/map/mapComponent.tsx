@@ -40,6 +40,8 @@ const defaultMapOptions = {
     gestureHandling: 'auto',
     mapTypeId: 'roadmap',
     mapId: "ab333b49f1c59e6c",
+    mapTypeControl: false,
+    streetViewControl: false,
 };
 
 const MapComponent = ({ departure, destination, setDistance, setDuration, setPoints }) => {

@@ -16,7 +16,12 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
-        <body  className={poppins.className}>
+        <head>
+            <meta charSet="UTF-8"/>
+            <title>Tripofert</title>
+        </head>
+        <body className={poppins.className}>
+
         <SpeedInsights/>
         <Providers>
             <Suspense>

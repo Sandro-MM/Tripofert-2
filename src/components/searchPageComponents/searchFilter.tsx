@@ -12,6 +12,7 @@ import Counter from "@/components/counter";
 import { Checkbox } from "@/components/ui/checkbox";
 import {calculatePrice, cities, getCitiesInRange} from "@/directions-functions/direction-functions";
 import { useRouter } from 'next/navigation';
+import Checkout from "@/app/searchResults/checkout";
 
 
 export default function SearchFilter({departure, setDeparture, destination,setDestination,date,setDate, passengers, setPassengers, setMapDeparture,setMapDestination, distance, points}) {
@@ -41,7 +42,20 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
         // console.log("Total Price:", prices.totalPrice);
     }, [points,distance,carType]);
 
-
+    const queryParams = {
+        departureId: departure.id,
+        departureName: departure.name,
+        departureLatitude: departure.latitude,
+        departureLongitude: departure.longitude,
+        departureCountry: departure.country,
+        destinationId:  destination.id,
+        destinationName: destination.name,
+        destinationLatitude:  destination.latitude,
+        destinationLongitude:  destination.longitude,
+        destinationCountry:  destination.country,
+        date: date,
+        passengers: passengers.toString(),
+    };
 
     const departureData = cities;
 
@@ -57,20 +71,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
         setMapDestination(destination)
 
 
-        const queryParams = {
-            departureId: departure.id,
-            departureName: departure.name,
-            departureLatitude: departure.latitude,
-            departureLongitude: departure.longitude,
-            departureCountry: departure.country,
-            destinationId:  destination.id,
-            destinationName: destination.name,
-            destinationLatitude:  destination.latitude,
-            destinationLongitude:  destination.longitude,
-            destinationCountry:  destination.country,
-            date: date,
-            passengers: passengers.toString(),
-        };
+
 
         const queryString = new URLSearchParams(queryParams).toString();
         const searchRoute = `/searchResults?${queryString}`;
@@ -270,14 +271,18 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
 
             </div>
-            <div className='flex w-full mt-4 justify-center'>
-                <div onClick={()=> console.log('buy')}
-                     className='ml-9  h-16 w-[80%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
-                    Order for {stopsPrice + distancePrice }€
-                </div>
+            <div className='flex gap-9 w-full mt-4 justify-center'>
+
+                <Checkout departureLat={queryParams.departureLatitude} departureLng={queryParams.departureLongitude}  trigger={<div
+                                        className='ml-9  h-16 w-[110%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
+                    Order for {stopsPrice + distancePrice}€
+                </div>}/>
+
+
                 {
                     showSearch &&
-                    <div onClick={handleSearch} className='ml-9  h-16 w-32  border-border rounded-xl text-center text-base border bg-bg/90 max-[1115px]:mt-8 max-[1115px]:mx-auto text-header font-semibold px-9 py-5'>
+                    <div onClick={handleSearch}
+                         className='ml-9  h-16 w-32 border-border rounded-xl text-center text-base border bg-bg/90 max-[1115px]:mt-8 max-[1115px]:mx-auto text-header font-semibold px-9 py-5'>
                         Search
                     </div>
                 }

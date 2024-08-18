@@ -1,18 +1,22 @@
 "use client"
 import ThemeSwitch from "@/components/themeSwitchButton";
 import SearchFilter from "@/components/searchPageComponents/searchFilter";
-import {useSearchParams} from 'next/navigation'
+import {useRouter, useSearchParams} from 'next/navigation'
 import React, {Suspense, useEffect, useState} from "react";
 import {searchPlaceInterface} from "@/directions-functions/direction-functions";
 import {MapProvider} from "@/components/map/mapProvider";
 import RouteBarComponent from "@/components/searchPageComponents/routeBarComponent";
 import dynamic from 'next/dynamic';
+import {router} from "next/client";
+import Image from "next/image";
 
 const MapComponent = dynamic(() => import('@/components/map/mapComponent'), {
     ssr: false,
 });
 
 export default function Page({ params }) {
+    const router = useRouter();
+
     const [searchParams] = React.useState(useSearchParams());
     const [departure, setDeparture] = useState<searchPlaceInterface>({
         id: +searchParams.get('departureId') || 0,
@@ -59,7 +63,11 @@ export default function Page({ params }) {
 
     return (
         <main className="relative w-full min-h-screen">
-            <ThemeSwitch />
+            <ThemeSwitch/>
+            <div onClick={() => router.push('/')} className={'absolute left-4 top-1  items-center hidden xl:flex'}>
+                <Image width={55} height={55} src={'./Logo.svg'} alt={'logo'}/>
+                <p className={'text-2xl font-bold text-buttons'}>Tripofert</p>
+            </div>
             <SearchFilter
                 setMapDeparture={setMapDeparture}
                 setMapDestination={setMapDestination}
@@ -74,7 +82,7 @@ export default function Page({ params }) {
                 distance={distance}
                 points={points}
             />
-            <RouteBarComponent points={points} departure={mapDeparture.name} destination={mapDestination.name} />
+            <RouteBarComponent points={points} departure={mapDeparture.name} destination={mapDestination.name}/>
             <MapProvider>
                 <MapComponent
                     departure={mapDeparture}
