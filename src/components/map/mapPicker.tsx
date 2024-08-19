@@ -23,7 +23,7 @@ const libraries:Library[] = ["places"];
 const MapPicker = ({ onLocationSelect, initialRegion }) => {
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [addressValue, setAddressValue] = useState(null);
-    const mapRef = useRef(null);
+    const mapRef = useRef<google.maps.Map | null>(null);
 
 
     const { isLoaded } = useLoadScript({
@@ -104,7 +104,9 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
                 center={initialRegion}
                 zoom={13}
                 onClick={handleMapClick}
-                onLoad={(map) => (mapRef.current = map)}  // Ensure mapRef is set correctly
+                onLoad={(map: google.maps.Map) => {
+                    mapRef.current = map;
+                }}
                 options={{
                     mapTypeControl: false,
                     streetViewControl: false,
