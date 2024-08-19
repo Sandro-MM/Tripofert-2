@@ -71,7 +71,7 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
     const moveMarkerAnimate = async (lat, lng) => {
         // Ensure the map reference is available
         if (mapRef.current) {
-            // Smoothly pan the map to the new coordinates
+
             mapRef.current.panTo({ lat, lng });
 
             // Optionally, you can adjust the zoom level here
