@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import GooglePlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+import {Library} from "@googlemaps/js-api-loader/src";
 
-const libraries = ["places"];
+const libraries:Library[] = ["places"];
 
 const MapPicker = ({ onLocationSelect, initialRegion }) => {
     const [selectedLocation, setSelectedLocation] = useState(null);
