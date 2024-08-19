@@ -1,7 +1,22 @@
 import React, { useState, useRef } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import GooglePlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
-import {Library} from "@googlemaps/js-api-loader/src";
+
+type Library =
+    | "core"
+    | "maps"
+    | "places"
+    | "geocoding"
+    | "routes"
+    | "marker"
+    | "geometry"
+    | "elevation"
+    | "streetView"
+    | "journeySharing"
+    | "drawing"
+    | "visualization";
+
+ type Libraries = Library[];
 
 const libraries:Library[] = ["places"];
 
