@@ -97,30 +97,14 @@ export default function Checkout({trigger, departureLat, departureLng}) {
        <div>
            <DrawerOpen disable={false}
                        trigger={trigger} title={'Checkout'} subtitle={'Please fill information below'} content={
-               <div className={'w-max h-[calc(100vh-140px)] flex flex-col'}>
+               <div className={'w-max h-[calc(100vh-180px)] flex flex-col'}>
                    <div>
                        <div className={'text-sm font-medium ml-[2px] mb-[2px]'}>Full name</div>
                        <Input
                            className='!w-[70%] mx-[0px] min-[500px]:min-w-[400px] min-[400px]:min-w-[320px] min-[340px]:min-w-[290px] min-[300px]:min-w-[230px] min-[260px]:min-w-[200px] mb-3  bg-background/90'
                            type="" placeholder={'Full name'}></Input>
                    </div>
-                   <div>
-                       <div className={'text-sm font-medium ml-[2px] mb-[2px]'}>Email address</div>
-                       <Input
-                           className='!w-[70%] mx-[0px] min-[500px]:min-w-[400px] min-[400px]:min-w-[320px] min-[340px]:min-w-[290px] min-[300px]:min-w-[230px] min-[260px]:min-w-[200px] mb-3  bg-background/90'
-                           type="" placeholder={'Email address'}></Input>
-                   </div>
-                   <div className={'text-sm font-medium ml-[2px] mb-[2px] w-max'}>Date of birth</div>
-                   <div className={'relative'}>
-                       <Input
-                           className='!w-[22%] mx-[0px] min-[500px]:min-w-[126px] min-[400px]:min-w-[102px] min-[340px]:min-w-[90px] min-[300px]:min-w-[70px] min-[260px]:min-w-[60px]  mb-3  bg-background/90'
-                           type="" placeholder={'DD'}></Input>
-                       <Dropdown left={'left-[34%]'} placeholder={'MM'} data={months}/>
-                       <Input
-                           className='!w-[22%] mx-[0px] min-[500px]:min-w-[126px] min-[400px]:min-w-[102px] min-[340px]:min-w-[90px] min-[300px]:min-w-[70px] min-[260px]:min-w-[60px]  mb-3  bg-background/90 absolute right-0 top-0'
-                           type="" placeholder={'YYYY'}></Input>
 
-                   </div>
                    <div className={'text-sm font-medium ml-[2px] mb-[2px] w-max'}>Phone Number</div>
                    <div className={'relative h-12'}>
                        <DropdownPhoneCodes/>
@@ -129,7 +113,24 @@ export default function Checkout({trigger, departureLat, departureLng}) {
                            type="" placeholder={'Phone Number'}></Input>
 
                    </div>
+                   <div className={'text-sm font-medium ml-[2px] mb-[2px] w-max'}>Date of birth</div>
+                   <div className={'relative'}>
+                       <Input
+                           className='!w-[22%] mx-[0px] min-[500px]:min-w-[126px] min-[400px]:min-w-[102px] min-[340px]:min-w-[90px] min-[300px]:min-w-[70px] min-[260px]:min-w-[60px]  mb-3  bg-background/90'
+                           type="" placeholder={'DD'}></Input>
+                       <Dropdown left={'left-[34%]'} placeholder={'MM'} data={months}/>
+                       <Dropdown left={'left-[34%]'} placeholder={'MM'} data={months}/>
+                       <Input
+                           className='!w-[22%] mx-[0px] min-[500px]:min-w-[126px] min-[400px]:min-w-[102px] min-[340px]:min-w-[90px] min-[300px]:min-w-[70px] min-[260px]:min-w-[60px]  mb-3  bg-background/90 absolute right-0 top-0'
+                           type="" placeholder={'YYYY'}></Input>
 
+                   </div>
+                   <div>
+                       <div className={'text-sm font-medium ml-[2px] mb-[2px]'}>Email address</div>
+                       <Input
+                           className='!w-[70%] mx-[0px] min-[500px]:min-w-[400px] min-[400px]:min-w-[320px] min-[340px]:min-w-[290px] min-[300px]:min-w-[230px] min-[260px]:min-w-[200px] mb-3  bg-background/90'
+                           type="" placeholder={'Email address'}></Input>
+                   </div>
 
                    <div className={'text-base font-medium ml-[2px] mb-[8px] w-max'}>Pick Up details</div>
                    <div className={'flex justify-between'}>
@@ -155,9 +156,10 @@ export default function Checkout({trigger, departureLat, departureLng}) {
                                <DialogHeader>
                                    <DialogTitle>Set Address</DialogTitle>
                                    <DialogDescription>{location}</DialogDescription>
-                                   <MapPicker initialRegion={{ lat: departureLat, lng: departureLng }} onLocationSelect={handleLocationSelect} />
+                                   <MapPicker initialRegion={{lat: departureLat, lng: departureLng}}
+                                              onLocationSelect={handleLocationSelect}/>
                                    <DialogClose asChild>
-                                       <Button  type="button">
+                                       <Button type="button">
                                            Set
                                        </Button>
                                    </DialogClose>

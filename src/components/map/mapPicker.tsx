@@ -1,6 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef, useCallback} from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import GooglePlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+import Image from "next/image";
+import {useDebouncedCallback} from "use-debounce";
 
 type Library =
     | "core"
@@ -20,15 +22,17 @@ type Library =
 
 const libraries:Library[] = ["places"];
 
-const MapPicker = ({ onLocationSelect, initialRegion }) => {
-    const [selectedLocation, setSelectedLocation] = useState(null);
-    const [addressValue, setAddressValue] = useState(null);
-    const mapRef = useRef<google.maps.Map | null>(null);
 
+
+const MapPicker = ({ onLocationSelect, initialRegion }) => {
+    const [center, setCenter] = useState(initialRegion);
+    const [addressValue, setAddressValue] = useState(null);
+    const mapRef = useRef(null);
+    const centerTimeoutRef = useRef(null);
 
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: 'AIzaSyDaS2UHnLtpquY4hupwPoDlvYrCiOGg1QM',
-        libraries,
+        libraries: ['places'],
     });
 
     const reverseGeocode = async (lat, lng) => {
@@ -40,7 +44,6 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
             if (data.status === 'OK' && data.results.length > 0) {
                 const address = data.results[0].formatted_address;
                 setAddressValue(address);
-                setSelectedLocation({ lat, lng, address });
                 onLocationSelect({ lat, lng, address });
             } else {
                 console.error('Address not found');
@@ -50,12 +53,35 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
         }
     };
 
+    const handleMapIdle = useCallback(() => {
+        if (centerTimeoutRef.current) {
+            clearTimeout(centerTimeoutRef.current);
+        }
+
+        centerTimeoutRef.current = setTimeout(() => {
+            if (mapRef.current) {
+                const center = mapRef.current.getCenter();
+                if (center) {
+                    const lat = center.lat();
+                    const lng = center.lng();
+                    console.log('Map center:', lat, lng); // Debug log
+                    reverseGeocode(lat, lng);
+                }
+            }
+        }, 1000);
+    }, []);
+
+    const handleMapLoad = (map) => {
+        mapRef.current = map;
+        setCenter(initialRegion); // Set initial center on load
+    };
+
     const handlePlaceSelect = async (place) => {
         try {
             const results = await geocodeByAddress(place.label);
             const { lat, lng } = await getLatLng(results[0]);
             setAddressValue(place.label);
-            setSelectedLocation({ lat, lng, address: place.label });
+            onLocationSelect({ lat, lng, address: place.label });
             onLocationSelect({ lat, lng, address: place.label });
             moveMarkerAnimate(lat, lng);
         } catch (error) {
@@ -63,11 +89,6 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
         }
     };
 
-    const handleMapClick = async (event) => {
-        const lat = event.latLng.lat();
-        const lng = event.latLng.lng();
-        await moveMarkerAnimate(lat, lng);
-    };
     const moveMarkerAnimate = async (lat, lng) => {
         // Ensure the map reference is available
         if (mapRef.current) {
@@ -85,46 +106,36 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
         await reverseGeocode(lat, lng);
     };
 
+
     if (!isLoaded) return <div>Loading...</div>;
 
     return (
         <div className="relative">
             <div className="p-4 z-1">
                 <GooglePlacesAutocomplete
-                    apiKey="YOUR_GOOGLE_MAPS_API_KEY"
+                    apiKey="AIzaSyDaS2UHnLtpquY4hupwPoDlvYrCiOGg1QM"
                     selectProps={{
                         value: addressValue,
-                        onChange: handlePlaceSelect,
-                        placeholder: 'Search for a location',
+                        onChange: (value) => {handlePlaceSelect(value); console.log(value)},
+                        placeholder:addressValue
                     }}
                 />
             </div>
             <GoogleMap
                 mapContainerStyle={{ height: '400px', width: '100%' }}
-                center={initialRegion}
+                center={center}
                 zoom={13}
-                onClick={handleMapClick}
-                onLoad={(map: google.maps.Map) => {
-                    mapRef.current = map;
-                }}
+                onIdle={handleMapIdle}
+                onLoad={handleMapLoad}
                 options={{
                     mapTypeControl: false,
                     streetViewControl: false,
                 }}
             >
-                {selectedLocation && (
-                    <Marker
-                        position={{
-                            lat: selectedLocation.lat,
-                            lng: selectedLocation.lng,
-                        }}
-                        icon={{
-                            url: 'marker.svg', // Replace with your image URL
-                            scaledSize: new window.google.maps.Size(50, 50),
-                        }}
-                    />
-                )}
             </GoogleMap>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Image src="/marker.svg" width={50} height={50} alt="marker" />
+            </div>
         </div>
     );
 };
