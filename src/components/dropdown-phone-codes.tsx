@@ -1,24 +1,19 @@
 'use client';
 
-import { FiSun, FiMoon } from "react-icons/fi";
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
-import Image from "next/image";
+import { useState } from 'react';
 import {
     Select,
     SelectContent,
     SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue
 } from "@/components/ui/select";
 import {mobileNumberCodes} from "@/directions-functions/mobile-number-codes";
 import {Input} from "@/components/ui/input";
 
-export default function DropdownPhoneCodes() {
-
-    const data = mobileNumberCodes
+export default function DropdownPhoneCodes({ value, onChange, name }) {
+    const data = mobileNumberCodes;
     const [searchQuery, setSearchQuery] = useState('');
 
     const filteredItems = data.filter(item =>
@@ -26,7 +21,7 @@ export default function DropdownPhoneCodes() {
     );
 
     return (
-        <Select>
+        <Select value={value} onValueChange={onChange} name={name}>
             <SelectTrigger className="bg-background/90 mx-0 min-[500px]:w-[126px] min-[400px]:w-[102px] w-[102px] mb-3 !absolute top-0">
                 <SelectValue placeholder="Code" />
             </SelectTrigger>
@@ -55,4 +50,4 @@ export default function DropdownPhoneCodes() {
             </SelectContent>
         </Select>
     );
-};
+}

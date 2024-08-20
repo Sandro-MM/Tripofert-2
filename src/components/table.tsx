@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import Image from "next/image";
 import {DrawerClose} from "@/components/ui/drawer";
 import React, {useState} from "react";
-import {searchPlaceInterface} from "@/directions-functions/direction-functions";
 
 type SearchTableProps = {
     data:any;

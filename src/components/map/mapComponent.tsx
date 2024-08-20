@@ -235,7 +235,7 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
                     {nearbyCities.map((city, index) => (
                         <StopItem
                             time={findVisitTime(city.id)}
-                            key={city.id + index}
+                            key={city.id}
                             position={{ lat: city.latitude, lng: city.longitude }}
                             label={city.name}
                             image={"/madrid-m.jpg"}
