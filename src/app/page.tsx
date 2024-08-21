@@ -7,6 +7,7 @@ import PopularBlock from "@/components/mainPageBlocks/popularBlock";
 import ArticlesPreviewBlock from "@/components/mainPageBlocks/articlesPreviewBlock";
 import Footer from "@/components/footer/footer";
 import {router} from "next/client";
+import Logo from "@/components/logo";
 
 
 
@@ -16,10 +17,7 @@ export default function Home() {
             <BackgroundVideo />
             <div className="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center z-10">
                 <ThemeSwitch />
-                <div className={'absolute left-4 top-1 flex items-center'}>
-                    <Image  width={55} height={55} src={'./Logo.svg'} alt={'logo'}/>
-                    <p className={'text-2xl font-bold text-buttons'}>Tripofert</p>
-                </div>
+              <Logo/>
 
                 <SearchItem />
             </div>
