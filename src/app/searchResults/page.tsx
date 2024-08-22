@@ -7,7 +7,6 @@ import {searchPlaceInterface} from "@/directions-functions/direction-functions";
 import {MapProvider} from "@/components/map/mapProvider";
 import RouteBarComponent from "@/components/searchPageComponents/routeBarComponent";
 import dynamic from 'next/dynamic';
-import {router} from "next/client";
 import Image from "next/image";
 
 const MapComponent = dynamic(() => import('@/components/map/mapComponent'), {

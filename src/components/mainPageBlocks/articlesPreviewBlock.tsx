@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 export default function ArticlesPreviewBlock() {
+
 
     const data = [
         {
@@ -67,12 +69,14 @@ export default function ArticlesPreviewBlock() {
                                                 {item.desc}
                                             </div>
                                             <div className='absolute bottom-[20px] w-full mx-auto'>
-                                            <div
-                                                className='hidden group-hover:flex mx-auto w-[90%] bg-buttons max-[400px]:h-[30px] max-sm:h-[60px] max-[800px]:h-[40px] max-lg:h-[40px] max-lg:rounded-[4px] h-[60px] max-[800px]:rounded-[5px] max-h-[60px] rounded-[10px] items-center justify-center cursor-pointer'>
-                                                <div className='text-header w-max h-max text-lg font-semibold pointer-events-none'>
-                                                    Read More
-                                                </div>
-                                            </div>
+                                                <Link href="/blogs">
+                                                    <div
+                                                        className='hidden group-hover:flex mx-auto w-[90%] bg-buttons max-[400px]:h-[30px] max-sm:h-[60px] max-[800px]:h-[40px] max-lg:h-[40px] max-lg:rounded-[4px] h-[60px] max-[800px]:rounded-[5px] max-h-[60px] rounded-[10px] items-center justify-center cursor-pointer'>
+                                                        <div className='text-header w-max h-max text-lg font-semibold pointer-events-none'>
+                                                            Read More
+                                                        </div>
+                                                    </div>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -81,8 +85,9 @@ export default function ArticlesPreviewBlock() {
                         }
                     </div>
                 </div>
-
+                <Link href="/blogs">
                 <div className='border border-border w-[180px] h-[64px] bg-bg/40   mx-auto mt-[40px] rounded-[10px] py-[20px] text-center cursor-pointer font-semibold'>Read More</div>
+                </Link>
             </div>
         </div>
     )

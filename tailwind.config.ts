@@ -21,6 +21,7 @@ const config = {
         custom: '0px 15px 15px 0px rgba(0, 0, 0, 0.25)',
       },
       colors: {
+        blogtext: "rgba(var(--blogtext), <alpha-value>)",
         header: "rgba(var(--header), <alpha-value>)",
         subText: "rgba(var(--subText), <alpha-value>)",
         grayBg: "rgba(var(--grayBg), <alpha-value>)",

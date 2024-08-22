@@ -32,9 +32,9 @@ as
             </div>
                 <div className='w-full max-w-[230px] text-center mx-auto my-4'>
                 <div className='flex w-full justify-between mb-6 child:size-[49px] child:cursor-pointer'>
-                    <Image src={'Social.svg'} width={49} height={49} alt='instagram'/>
-                    <Image src={'fb.svg'} width={49} height={49} alt='facebook'/>
-                    <Image src={'youtu.svg'} width={49} height={49} alt='youtube'/>
+                    <Image src={'/Social.svg'} width={49} height={49} alt='instagram'/>
+                    <Image src={'/fb.svg'} width={49} height={49} alt='facebook'/>
+                    <Image src={'/youtu.svg'} width={49} height={49} alt='youtube'/>
 
                 </div>
                     Check out our Social Media!

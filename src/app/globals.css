@@ -6,6 +6,7 @@
 
   @layer base {
     :root {
+      --blogtext:9, 15, 17;
       --header: 9, 15, 17;
       --headerHex: #090f11;
       --subText: 88, 88, 88;
@@ -50,7 +51,7 @@
     }
 
     .dark {
-
+      --blogtext:186, 186, 191;
       --header: 239, 239, 239;
       --headerHex: #efefef;
       --subText: 217, 217, 217;

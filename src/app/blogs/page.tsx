@@ -2,6 +2,8 @@ import ThemeSwitch from "@/components/themeSwitchButton";
 import Logo from "@/components/logo";
 import {blogsData} from "@/directions-functions/blogs-data";
 import Image from "next/image";
+import Link from "next/link";
+import Footer from "@/components/footer/footer";
 
 const Blogs = () => {
 
@@ -10,10 +12,13 @@ const Blogs = () => {
 
     return (
         <div>
-            <Logo/>
+            <Link href="/">
+                <Logo/>
+            </Link>
             <ThemeSwitch />
-            <div className={'mt-20 max-w-[1280px] w-[95%] mx-auto h-[800px]'}>
-                <div className={'w-full max-h-[701px] relative mx-auto'}>
+            <div className={'mt-20 mb-[90px] max-w-[1280px] w-[95%] mx-auto h-max'}>
+                <Link href={`/blogs/blogPage?id=${blogsData[0].id}`}>
+                <div className={'w-full max-h-[701px] relative mx-auto cursor-pointer'}>
                     <Image className={'w-full max-w-[1280px] max-h-[631px] rounded-[9px]'} width={1280} height={400}
                            src={blogsData[0].img} alt={'blog-image'}/>
                     <div
@@ -35,13 +40,15 @@ const Blogs = () => {
                         </div>
                     </div>
                 </div>
+                </Link>
                 <div className={' text-[18px]  text-header  mt-12 sm:mt-20 sm:mb-6  mb-3 tracking-tight font-semibold'}>Latest
                     Blogs
                 </div>
                 <div className={'w-full flex gap-[15px] flex-wrap justify-center'}>
                     {blogsData.slice(1).map((item, index) => (
+                        <Link href={`/blogs/blogPage?id=${item.id}`}>
                         <div
-                            className={'bg-transparentSurface w-full max-w-[320px] min-[585px]:max-w-[270px]   rounded-[9px] h-[366px] border border-border border-solid px-[13.5px] py-[12px]'}
+                            className={'bg-transparentSurface cursor-pointer w-full max-w-[320px] min-[585px]:max-w-[270px]   rounded-[9px] h-[366px] border border-border border-solid px-[13.5px] py-[12px]'}
                             key={index}>
                             <Image className={'w-full min-[585px]:max-w-[270px] max-w-full max-h-[180px] rounded-[9px]'}
                                    width={400} height={200} src={item.img} alt={'blog-image'}/>
@@ -63,10 +70,12 @@ const Blogs = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     ))}
                 </div>
 
             </div>
+            <Footer/>
         </div>
     );
 };
