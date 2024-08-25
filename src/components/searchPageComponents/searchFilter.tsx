@@ -273,7 +273,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
             </div>
             <div className='flex gap-9 w-full mt-4 justify-center'>
 
-                <Checkout departureLat={queryParams.departureLatitude} departureLng={queryParams.departureLongitude}  trigger={<div
+                <Checkout amount={(stopsPrice+distancePrice)} departureLat={queryParams.departureLatitude} departureLng={queryParams.departureLongitude}  trigger={<div
                                         className='ml-9  h-16 w-[110%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
                     Order for {stopsPrice + distancePrice}€
                 </div>}/>

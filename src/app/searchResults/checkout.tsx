@@ -17,8 +17,10 @@ import {
 } from "@/components/ui/dialog";
 import {Button} from "@/components/ui/button";
 import {Controller, useForm} from "react-hook-form";
+import PaypalCheckout from "@/components/paypalCheckout/paypalCheckout";
+import {addDataToDatabase, supabase} from "@/directions-functions/supabaseClient";
 
-export default function Checkout({trigger, departureLat, departureLng}) {
+export default function Checkout({trigger, departureLat, departureLng,amount}) {
     const [location, setLocation] = useState('Choose location');
 
 
@@ -31,8 +33,20 @@ export default function Checkout({trigger, departureLat, departureLng}) {
 
     const { control, register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const  onSubmit  = async (datas) => {
+        const { data, error } = await supabase
+            .from('test_table')
+            .insert([
+                { id: 1, name: 'value2' }
+            ]);
+
+        if (error) {
+            console.error('Error adding data:', error);
+        } else {
+            console.log('Data added:', data);
+        }
+        console.log(datas);
+
     };
 
 
@@ -207,7 +221,6 @@ export default function Checkout({trigger, departureLat, departureLng}) {
                            />
 
 
-
                            <Dialog>
                                <DialogTrigger>
                                    <Input
@@ -235,7 +248,13 @@ export default function Checkout({trigger, departureLat, departureLng}) {
                        </div>
                        {(errors.pickUpTime) &&
                            <p className="text-red-500 text-xs mt-[1px]">{errors.pickUpTime.message.toString()}</p>}
+                       {
+                           amount && <div className={'text-header font-semibold text-lg my-[8px]'}> Total: {amount.toString()}€</div>
+                       }
+
                        <button type="submit">Submit</button>
+
+                       <PaypalCheckout amount={amount}/>
                    </form>
                </div>
            }/>
