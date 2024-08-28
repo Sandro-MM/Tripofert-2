@@ -16,11 +16,14 @@ import {
     DialogTrigger
 } from "@/components/ui/dialog";
 import {Button} from "@/components/ui/button";
-import {Controller, useForm} from "react-hook-form";
+import {Controller, useForm, useWatch} from "react-hook-form";
 import PaypalCheckout from "@/components/paypalCheckout/paypalCheckout";
 import {addDataToDatabase, supabase} from "@/directions-functions/supabaseClient";
+import {mobileNumberCodes} from "@/directions-functions/mobile-number-codes";
+import {cities} from "@/directions-functions/direction-functions";
+import {Spinner} from "@/components/ui/spinner";
 
-export default function Checkout({trigger, departureLat, departureLng,amount}) {
+export default function Checkout({trigger, departureLat, departureLng,amount,orderData}) {
     const [location, setLocation] = useState('Choose location');
 
 
@@ -31,23 +34,37 @@ export default function Checkout({trigger, departureLat, departureLng,amount}) {
         console.log(`Latitude: ${lat}, Longitude: ${lng}, Address: ${address}`);
     };
 
-    const { control, register, handleSubmit, formState: { errors } } = useForm();
 
-    const  onSubmit  = async (datas) => {
-        const { data, error } = await supabase
-            .from('test_table')
-            .insert([
-                { id: 1, name: 'value2' }
-            ]);
+    const { control,register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'onChange' });
 
-        if (error) {
-            console.error('Error adding data:', error);
-        } else {
-            console.log('Data added:', data);
-        }
-        console.log(datas);
+    const [isFormValid, setIsFormValid] = useState(false);
 
-    };
+   useEffect(() => {
+        setIsFormValid(isValid);
+    }, [isValid]);
+
+    function getCodeFromId(id) {
+        const country = mobileNumberCodes.find(item => item.id === Number(id));
+        return country ? country.code : '';
+    }
+
+
+
+    const formData = useWatch({
+        control,
+    });
+
+
+
+
+    const phoneCodeId = useWatch({
+        control,
+        name: 'phoneCode',
+    });
+
+    const phoneCode = getCodeFromId(phoneCodeId);
+
+
 
 
     const months = [
@@ -116,13 +133,49 @@ export default function Checkout({trigger, departureLat, departureLng,amount}) {
     ];
 
 
+    const dataCustomer = {
+        customer_name:formData?.fullName,
+        phone_number:`${phoneCode}${formData?.phoneNumber}`,
+        email:formData?.email,
+        birth_day:`${formData?.birthDay} ${formData?.birthMonth} ${formData?.birthYear}`,
+        pick_up_time:formData?.pickUpTime,
+    }
+
+    const  onSubmit  = async (transactionId, dataObject) => {
+        console.log(123123123123123123)
+        console.log('formData',dataCustomer)
+        const { data, error } = await supabase
+            .from('order_list')
+            .insert([
+                {
+                    ...dataCustomer,
+                    ...dataObject,
+                    transaction_id:transactionId,
+                    pick_up_address:location,
+                }
+            ]);
+
+        if (error) {
+            console.error('Error adding data:', error);
+        } else {
+            console.log('Data added:', data);
+        }
+    };
+
+
+    const  onSubmits  = async (data) => {
+        console.log(data)
+    }
+
+
     return (
        <div>
            <DrawerOpen disable={false}
                        trigger={trigger} title={'Checkout'} subtitle={'Please fill information below'} content={
                <div className={'w-max h-[calc(100vh-180px)] flex flex-col'}>
 
-                   <form onSubmit={handleSubmit(onSubmit)}>
+
+                   <form onSubmit={handleSubmit(onSubmits)}>
                        <div>
                            <div className={'text-sm font-medium ml-[2px] mb-[2px]'}>Full name</div>
                            <Input
@@ -249,12 +302,21 @@ export default function Checkout({trigger, departureLat, departureLng,amount}) {
                        {(errors.pickUpTime) &&
                            <p className="text-red-500 text-xs mt-[1px]">{errors.pickUpTime.message.toString()}</p>}
                        {
-                           amount && <div className={'text-header font-semibold text-lg my-[8px]'}> Total: {amount.toString()}€</div>
+                           amount && <div
+                               className={'text-header font-semibold text-lg my-[8px]'}> Total: {amount.toString()}€</div>
                        }
+                       <div className={'w-full'}>
+                           {isFormValid && (location !=='Choose location') ? (
+                               <PaypalCheckout amount={amount} orderData={orderData}
+                                                onSubmit={onSubmit} validate={handleSubmit}/>
+                           ) : (
+                               <button className={'w-full'} type='submit'>
+                                   <Spinner className={'mx-auto'} size={70}/>
+                                   Please fill information to continue
+                               </button>
 
-                       <button type="submit">Submit</button>
-
-                       <PaypalCheckout amount={amount}/>
+                           )}
+                       </div>
                    </form>
                </div>
            }/>

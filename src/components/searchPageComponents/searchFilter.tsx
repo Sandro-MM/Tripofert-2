@@ -37,6 +37,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
         const prices = calculatePrice(distance, carType, points);
         setDistancePrice(Math.round(prices.distancePrice));
         setStopsPrice(Math.round(prices.stopsPrice));
+        console.log('points',points)
         // console.log("Distance Price:", prices.distancePrice);
         // console.log("Stops Price:", prices.stopsPrice);
         // console.log("Total Price:", prices.totalPrice);
@@ -273,7 +274,29 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
             </div>
             <div className='flex gap-9 w-full mt-4 justify-center'>
 
-                <Checkout amount={(stopsPrice+distancePrice)} departureLat={queryParams.departureLatitude} departureLng={queryParams.departureLongitude}  trigger={<div
+                <Checkout amount={(stopsPrice+distancePrice)} departureLat={queryParams.departureLatitude} departureLng={queryParams.departureLongitude}
+                          orderData={{
+                              departure:{
+                                  name:queryParams.departureName,
+                                  latitude:queryParams.departureLatitude,
+                                  longitude:queryParams.departureLongitude,
+                                  country:queryParams.departureCountry,
+                                  id:queryParams.departureId
+                              },
+                              destination:{
+                                  name:queryParams.destinationName,
+                                  latitude:queryParams.destinationLatitude,
+                                  longitude:queryParams.destinationLongitude,
+                                  country:queryParams.destinationCountry,
+                                  id:queryParams.destinationId
+                              },
+                              date:queryParams.date,
+                              passengersCount:queryParams.passengers,
+                              carType: carType,
+                              visitLocations:points
+                }}
+
+                          trigger={<div
                                         className='ml-9  h-16 w-[110%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
                     Order for {stopsPrice + distancePrice}€
                 </div>}/>
