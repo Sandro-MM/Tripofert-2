@@ -8,7 +8,7 @@ const BackgroundVideo = () => {
                 muted
 
             >
-                <source src="/tripofert-short.mp4" type="video/mp4"/>
+                <source src="https://videos.pexels.com/video-files/27590232/12177245_2560_1440_30fps.mp4" type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
         </div>

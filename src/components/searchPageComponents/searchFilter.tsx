@@ -13,6 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import {calculatePrice, cities, getCitiesInRange} from "@/directions-functions/direction-functions";
 import { useRouter } from 'next/navigation';
 import Checkout from "@/app/searchResults/checkout";
+import {Spinner} from "@/components/ui/spinner";
 
 
 export default function SearchFilter({departure, setDeparture, destination,setDestination,date,setDate, passengers, setPassengers, setMapDeparture,setMapDestination, distance, points}) {
@@ -24,7 +25,11 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
     const [checked, setChecked] = useState<boolean>(false);
     const [distancePrice, setDistancePrice] = useState<number>(undefined);
     const [stopsPrice, setStopsPrice] = useState<number>(undefined);
+    const [dissabled, setDissabled] = useState<boolean>(true);
+
     const departureChangeCount = useRef(0);
+
+
     useEffect(() => {
         if (hasChangedOnce) {
             setShowSearch(true);
@@ -34,13 +39,17 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
     }, [destination]);
 
     useEffect(() => {
-        const prices = calculatePrice(distance, carType, points);
-        setDistancePrice(Math.round(prices.distancePrice));
-        setStopsPrice(Math.round(prices.stopsPrice));
-        console.log('points',points)
-        // console.log("Distance Price:", prices.distancePrice);
-        // console.log("Stops Price:", prices.stopsPrice);
-        // console.log("Total Price:", prices.totalPrice);
+        console.log(distance)
+        if (distance?.value > 0){
+            const prices = calculatePrice(distance, carType, points);
+            setDistancePrice(Math.round(prices.distancePrice));
+            setStopsPrice(Math.round(prices.stopsPrice));
+            console.log('points',points)
+            // console.log("Distance Price:", prices.distancePrice);
+            // console.log("Stops Price:", prices.stopsPrice);
+            // console.log("Total Price:", prices.totalPrice);
+            setDissabled(false)
+        }
     }, [points,distance,carType]);
 
     const queryParams = {
@@ -296,10 +305,14 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                               visitLocations:points
                 }}
 
-                          trigger={<div
-                                        className='ml-9  h-16 w-[110%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
-                    Order for {stopsPrice + distancePrice}€
-                </div>}/>
+                          trigger={
+                             <div
+                              className='ml-9  h-16 w-[110%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5 flex justify-center items-center'>
+                                 {
+                                     dissabled?<Spinner/>: <p>Order for {stopsPrice + distancePrice}€</p>
+                                 }
+            </div> }
+                />
 
 
                 {
