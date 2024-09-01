@@ -243,7 +243,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                 <div className='lg:text-2xl md:text-xl text-base  text-header font-semibold'>Car details</div>
 
                 <div>
-                    <Image className='h-[60px] w-[128px]'
+                    <Image className='h-[60px] w-[128px] aspect-square'
                            src={carType === 'Sedan' ? '/sedan-eco.png' : carType === 'Minivan' ? '/van2.png' : '/sedan-premium.png'}
                            width={128} height={60} alt={'cartype'}/>
                     <div>
