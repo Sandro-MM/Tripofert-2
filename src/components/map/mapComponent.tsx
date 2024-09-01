@@ -111,7 +111,7 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
         if (waypoints.length < 10) {
             setWaypoints([...waypoints, position]);
             setSelectedWaypoints([...selectedWaypoints, { id: cityId, visitTime }]);
-            setDirectionsRequested(false);
+            // setDirectionsRequested(false);
         } else {
             console.log('Maximum of 10 waypoints reached.');
         }
@@ -121,7 +121,7 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
     const removeWaypoint = (position, cityId) => {
         setWaypoints(waypoints.filter(wp => wp.lat !== position.lat || wp.lng !== position.lng));
         setSelectedWaypoints(selectedWaypoints.filter(waypoint => waypoint.id !== cityId));
-        setDirectionsRequested(false);
+        // setDirectionsRequested(false);
         setPoints(selectedWaypoints.filter(waypoint => waypoint.id !== cityId))
     };
 
