@@ -1,4 +1,5 @@
 export const blogsData =[
+    {},
     {
         id:1,
         img:'/madrid-m.jpg',
