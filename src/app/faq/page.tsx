@@ -11,12 +11,12 @@ export default function FaxPage() {
         <div>
             <ThemeSwitch />
             <Link href={'/'}> <Logo/></Link>
-            <div className={'text-2xl font-semibold w-max mx-auto mb-8 mt-12'}>
+            <div className={'text-2xl font-semibold w-max mx-auto mb-8 mt-[88px]'}>
                 Frequently asked question
             </div>
             <Questions/>
             <PolicySection/>
-            <div className={'absolute bottom-0 w-full'}>
+            <div className={'w-full mt-[90px]'}>
                 <Footer/>
             </div>
 

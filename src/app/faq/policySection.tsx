@@ -15,7 +15,7 @@ export default function PolicySection () {
 
             <div>
 
-                <div className={'text-sm h-[120px]'}>
+                <div className={'text-sm mt-6'}>
                     <div className={'flex justify-start items-center gap-3 my-2'}>
                         <TbMapPinCancel size={30}/>
                         <div className={'text-base font-medium'}>
@@ -26,7 +26,7 @@ export default function PolicySection () {
                     made up to 48 hours before departure. email or call us for cancellation.
                 </div>
 
-                <div className={'text-sm'}>
+                <div className={'text-sm mt-6'}>
                     <div className={'flex justify-start items-center gap-3 my-2'}>
                         <PiPawPrintFill size={30}/>
                         <div className={'text-base font-medium'}>
@@ -37,7 +37,7 @@ export default function PolicySection () {
                     notify before booking.
                 </div>
 
-                <div className={'text-sm'}>
+                <div className={'text-sm mt-6'}>
                     <div className={'flex justify-start items-center gap-3 my-2'}>
                         <PiHandCoinsFill size={30}/>
                         <div className={'text-base font-medium'}>
@@ -51,7 +51,7 @@ export default function PolicySection () {
 
 
             <div>
-                <div className={'text-sm '}>
+                <div className={'text-sm mt-6 '}>
                     <div className={'flex justify-start items-center gap-3 my-2'}>
                         <FaChildren size={30}/>
                         <div className={'text-base font-medium'}>
@@ -66,7 +66,7 @@ export default function PolicySection () {
 
 
 
-                <div className={'text-sm '}>
+                <div className={'text-sm mt-6 '}>
                     <div className={'flex justify-start items-center gap-3 my-2'}>
                         <IoMdResize size={30}/>
                         <div className={'text-base font-medium'}>
@@ -93,7 +93,7 @@ export default function PolicySection () {
                 </div>
 
 
-                <div className={'text-sm'}>
+                <div className={'text-sm mt-6'}>
                     <div className={'flex justify-start items-center gap-3 my-2'}>
                         <GrPaypal size={20}/>
                         <div className={'text-base font-medium'}>
