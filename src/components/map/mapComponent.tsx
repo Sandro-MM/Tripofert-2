@@ -180,18 +180,18 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
                 >
                     <DestinationDepartureMarker
                         map={mapRef.current}
-                        image={"/madrid-m.jpg"}
+                        image={departure.image}
                         label={departure.name}
                         position={{ lat: departure.latitude, lng: departure.longitude }}
-                        description={'Description of departure'}
+                        description={departure.description}
                         Pointclass={'departure-point'}
                     />
                     <DestinationDepartureMarker
                         map={mapRef.current}
-                        image={"/madrid-m.jpg"}
+                        image={destination.image}
                         label={destination.name}
                         position={{ lat: destination.latitude, lng: destination.longitude }}
-                        description={'Description of destination'}
+                        description={destination.description}
                         Pointclass={'destination-point'}
                     />
                     {directions && (
@@ -209,8 +209,8 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
                             position={{ lat: city.latitude, lng: city.longitude }}
                             label={city.name}
                             time={findVisitTime(city.id)}
-                            image={"/madrid-m.jpg"}
-                            description={'Description of city'}
+                            image={city.image}
+                            description={city.description}
                             isSelected={selectedWaypoints.some(waypoint => waypoint.id === city.id)}
                             onAdd={(visitTime) => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id, visitTime)}
                             onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
@@ -238,8 +238,8 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
                             key={city.id}
                             position={{ lat: city.latitude, lng: city.longitude }}
                             label={city.name}
-                            image={"/madrid-m.jpg"}
-                            description={'Description of city'}
+                            image={city.image}
+                            description={city.description}
                             isSelected={selectedWaypoints.some(waypoint => waypoint.id === city.id)}
                             onAdd={(visitTime) => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id, visitTime)}
                             onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}

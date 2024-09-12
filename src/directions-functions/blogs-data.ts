@@ -1,7 +1,6 @@
 export const blogsData =[
-    {},
     {
-        id:1,
+        id:0,
         img:'/madrid-m.jpg',
         category:'Travel',
         title:'The Ultimate Spain Travel Guide: Best Things to Do, See, and Eat',
