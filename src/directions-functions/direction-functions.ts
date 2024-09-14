@@ -235,7 +235,7 @@ export const cities = [
         "latitude": 48.8566,
         "longitude": 2.3522,
         "description": "The iconic capital of France, known for its art, culture, and landmarks like the Eiffel Tower, the Louvre, and Notre-Dame Cathedral. A romantic destination with world-class museums and exquisite cuisine.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/paris.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/paris.jpg"
     },
     {
         "id": 2,
@@ -244,7 +244,7 @@ export const cities = [
         "latitude": 40.4168,
         "longitude": -3.7038,
         "description": "Spain’s vibrant capital, famous for its Royal Palace, art museums like the Prado, and lively plazas. A perfect mix of modern city life and rich historical heritage.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/madrid-m.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/madrid.jpg"
     },
     {
         "id": 4,
@@ -253,7 +253,7 @@ export const cities = [
         "latitude": 48.6493,
         "longitude": -2.0257,
         "description": "A beautiful walled city on the coast of Brittany, known for its history of piracy and stunning beaches. The city boasts dramatic seaside views and charming cobblestone streets.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/saint-malo.jpg?t=2024-09-05T08%3A55%3A08.106Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/saint-malo.jpg"
     },
     {
         "id": 232,
@@ -262,7 +262,7 @@ export const cities = [
         "latitude": 40.6443,
         "longitude": -8.6455,
         "description": "Often called the 'Venice of Portugal', Aveiro is famous for its picturesque canals and colorful Moliceiro boats. A coastal city known for its Art Nouveau architecture and salt production.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/aveiro.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/aveiro.jpg"
     },
     {
         "id": 233,
@@ -271,7 +271,7 @@ export const cities = [
         "latitude": 41.5503,
         "longitude": -8.4200,
         "description": "One of Portugal’s oldest cities, Braga is known for its beautiful churches, religious festivals, and the iconic Bom Jesus do Monte sanctuary.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/braga.jpg?t=2024-09-05T08%3A55%3A32.335Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/braga.jpg"
     },
     {
         "id": 234,
@@ -280,7 +280,7 @@ export const cities = [
         "latitude": 41.4418,
         "longitude": -8.2956,
         "description": "Often called the 'Birthplace of Portugal', Guimarães is rich in medieval architecture, including its well-preserved castle and the Palace of the Dukes of Braganza.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/guimaraes.jpg?t=2024-09-05T08%3A55%3A43.573Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/guimaraes.jpg"
     },
     {
         "id": 235,
@@ -289,7 +289,7 @@ export const cities = [
         "latitude": 40.6610,
         "longitude": -7.9097,
         "description": "A charming city in the heart of Portugal known for its historic center, Romanesque architecture, and wine production in the nearby Dão region.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/viseu.webp?t=2024-09-05T08%3A55%3A55.487Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/viseu.jpg"
     },
     {
         "id": 236,
@@ -298,7 +298,7 @@ export const cities = [
         "latitude": 37.0194,
         "longitude": -7.9304,
         "description": "The gateway to Portugal's Algarve region, Faro is known for its historic old town, Roman walls, and stunning beaches along the Ria Formosa lagoon.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/faro.jpg?t=2024-09-05T08%3A56%3A12.639Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/faro.jpg"
     },
     {
         "id": 237,
@@ -307,7 +307,7 @@ export const cities = [
         "latitude": 37.5971,
         "longitude": -1.0276,
         "description": "An ancient fortress located near Cartagena, Spain. The Castillo de los Moros is a historic site offering panoramic views of the Mediterranean and insights into Spain’s Moorish past.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Castillo%20de%20los%20Moros.jpg?t=2024-09-05T08%3A56%3A22.926Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Castillo%20de%20los%20Moros.jpg"
     },
     {
         "id": 238,
@@ -316,7 +316,7 @@ export const cities = [
         "latitude": 41.1496,
         "longitude": -8.6109,
         "description": "Also known as Porto, this city is famous for its port wine, historic Ribeira district, and the stunning Dom Luís I Bridge that crosses the Douro River.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/oporto.jpg?t=2024-09-05T08%3A56%3A32.411Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/oporto.jpg"
     },
     {
         "id": 8,
@@ -325,7 +325,7 @@ export const cities = [
         "latitude": 49.1193,
         "longitude": 6.1757,
         "description": "A city in northeastern France known for its Gothic Saint-Stephen Cathedral, picturesque streets, and a vibrant cultural scene with museums and theaters.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/metz.jpg?t=2024-09-05T08%3A56%3A46.764Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/metz.jpg"
     },
     {
         "id": 9,
@@ -334,7 +334,7 @@ export const cities = [
         "latitude": 43.6108,
         "longitude": 3.8767,
         "description": "A dynamic city in southern France, known for its medieval streets, modern architecture, and proximity to the Mediterranean coast.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Montpellier.jpg?t=2024-09-05T08%3A56%3A54.021Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Montpellier.jpg"
     },
     {
         "id": 10,
@@ -343,7 +343,7 @@ export const cities = [
         "latitude": 48.6921,
         "longitude": 6.1844,
         "description": "Known for its Art Nouveau architecture and the beautiful Place Stanislas, Nancy is a cultural hub with a rich history in eastern France.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/nancy.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/nancy.jpg?t=2024-09-12T10%3A01%3A12.460Z"
     },
     {
         "id": 11,
@@ -352,7 +352,7 @@ export const cities = [
         "latitude": 47.2184,
         "longitude": -1.5536,
         "description": "A historic city on the Loire River, Nantes is famous for its castle, Château des Ducs de Bretagne, and vibrant arts scene. It’s also home to the mechanical marvels of Les Machines de l'île.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/nantes.jpg?t=2024-09-05T08%3A57%3A12.288Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/nantes.jpg"
     },
     {
         "id": 12,
@@ -361,7 +361,7 @@ export const cities = [
         "latitude": 43.7102,
         "longitude": 7.2620,
         "description": "A glamorous city on the French Riviera, known for its beautiful beaches, promenades, and cultural festivals. Nice offers stunning Mediterranean views and excellent shopping.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/nice.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/nice.jpg"
     },
     {
         "id": 13,
@@ -370,7 +370,7 @@ export const cities = [
         "latitude": 43.8367,
         "longitude": 4.3601,
         "description": "Known for its well-preserved Roman monuments, including the Nîmes Arena and the Maison Carrée, Nîmes is a treasure trove of ancient history.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/nimes.webp?t=2024-09-05T08%3A57%3A28.561Z"
+        "image": "nimes.webp?t=2024-09-05T08%3A57%3A28.561Z"
     },
     {
         "id": 14,
@@ -379,7 +379,7 @@ export const cities = [
         "latitude": 47.9020,
         "longitude": 1.9093,
         "description": "Famous for its association with Joan of Arc, Orléans is a beautiful city located on the banks of the Loire River, with stunning cathedrals and a rich medieval history.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/orleans.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Orleans.jpg?t=2024-09-12T10%3A03%3A50.439Z"
     },
     {
         "id": 15,
@@ -388,7 +388,7 @@ export const cities = [
         "latitude": 42.6887,
         "longitude": 2.8948,
         "description": "Close to the Spanish border, Perpignan boasts a blend of French and Catalan cultures, with sunny streets, historic castles, and a vibrant Mediterranean lifestyle.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Perpignan.jpeg?t=2024-09-05T08%3A57%3A53.983Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Perpignan.jpg?t=2024-09-12T10%3A01%3A46.557Z"
     },
     {
         "id": 16,
@@ -397,7 +397,7 @@ export const cities = [
         "latitude": 45.1845,
         "longitude": 0.7217,
         "description": "Located in the Dordogne region, Périgueux is known for its medieval streets, Roman ruins, and gourmet cuisine, particularly its truffles and foie gras.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Perigueux.webp?t=2024-09-05T08%3A58%3A03.225Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Perigueux.jpg"
     },
     {
         "id": 17,
@@ -406,7 +406,7 @@ export const cities = [
         "latitude": 46.5802,
         "longitude": 0.3404,
         "description": "A charming city known for its Romanesque architecture and historic sites, including the famous Poitiers Cathedral and the modern Futuroscope theme park.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Poitiers.jpg?t=2024-09-05T08%3A58%3A14.876Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Poitiers.jpg"
     },
     {
         "id": 165,
@@ -415,7 +415,7 @@ export const cities = [
         "latitude": 41.6097,
         "longitude": 2.2879,
         "description": "A bustling city near Barcelona, Granollers is known for its vibrant markets, cultural festivals, and modernist architecture.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Granollers.webp?t=2024-09-05T08%3A58%3A25.146Z"
+        "image": "Granollers.webp?t=2024-09-05T08%3A58%3A25.146Z"
     },
     {
         "id": 166,
@@ -424,7 +424,7 @@ export const cities = [
         "latitude": 41.5611,
         "longitude": 2.0088,
         "description": "Located near Barcelona, Terrassa is known for its industrial heritage, Romanesque churches, and modernist buildings. It’s also a hub for arts and culture.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Terrassa.jpeg"
+        "image": "Terrassa.jpeg"
     },
     {
         "id": 167,
@@ -433,7 +433,7 @@ export const cities = [
         "latitude": 41.7288,
         "longitude": 1.8239,
         "description": "A historic town in Catalonia, Manresa is known for its Gothic basilica and its deep ties to Ignatius of Loyola, founder of the Jesuits.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Manresa.jpg?t=2024-09-05T08%3A58%3A43.518Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Manresa.jpg?t=2024-09-12T09%3A59%3A10.821Z"
     },
     {
         "id": 168,
@@ -442,7 +442,7 @@ export const cities = [
         "latitude": 41.5483,
         "longitude": 2.1071,
         "description": "A modern industrial city near Barcelona, Sabadell has a rich cultural scene, parks, and museums, along with vibrant shopping districts.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Sabadell.jpg?t=2024-09-05T08%3A58%3A50.512Z"
+        "image": "Sabadell.jpg?t=2024-09-05T08%3A58%3A50.512Z"
     },
     {
         "id": 169,
@@ -451,7 +451,7 @@ export const cities = [
         "latitude": 41.6176,
         "longitude": 0.6200,
         "description": "Lleida is a historic city in Catalonia, known for its ancient cathedral, La Seu Vella, and its position as a gateway to the Pyrenees.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Lleida.jpg?t=2024-09-05T08%3A59%3A01.537Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Lleida.jpg"
     },
     {
         "id": 170,
@@ -460,7 +460,7 @@ export const cities = [
         "latitude": 42.5078,
         "longitude": 1.5211,
         "description": "The capital of Andorra, nestled in the Pyrenees mountains, Andorra la Vella is known for its ski resorts, shopping, and stunning mountain scenery.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/andora.jpg?t=2024-09-05T12%3A51%3A52.371Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/andorra-3501173_1920.jpg"
     },
     {
         "id": 5,
@@ -469,7 +469,7 @@ export const cities = [
         "latitude": 43.2674,
         "longitude": 6.6407,
         "description": "A glamorous town on the French Riviera, Saint-Tropez is known for its beautiful beaches, luxury yachts, and vibrant nightlife.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Saint-Tropez.webp"
+        "image": "Saint-Tropez.webp"
     },
     {
         "id": 6,
@@ -478,7 +478,7 @@ export const cities = [
         "latitude": 48.5734,
         "longitude": 7.7521,
         "description": "A picturesque city on the French-German border, Strasbourg is famous for its Gothic cathedral, medieval architecture, and its role as the seat of European Parliament.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Strasbourg.webp"
+        "image": "Strasbourg.webp"
     },
     {
         "id": 7,
@@ -487,7 +487,7 @@ export const cities = [
         "latitude": 43.2965,
         "longitude": 5.3698,
         "description": "The oldest city in France, Marseille is known for its historic Old Port, diverse culture, and stunning Mediterranean coastline.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Marseille.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Marseille.jpg"
     },
     {
         "id": 18,
@@ -496,7 +496,7 @@ export const cities = [
         "latitude": 43.2951,
         "longitude": -0.3708,
         "description": "Located at the foot of the Pyrenees, Pau is known for its stunning views, historic Château de Pau, and its mild climate.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/pau.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/pau.jpg"
     },
     {
         "id": 19,
@@ -505,7 +505,7 @@ export const cities = [
         "latitude": 49.2583,
         "longitude": 4.0317,
         "description": "The unofficial capital of France's Champagne region, Reims is known for its magnificent cathedral where French kings were crowned and its world-famous champagne houses.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Reims.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Reims.jpg"
     },
     {
         "id": 20,
@@ -514,7 +514,7 @@ export const cities = [
         "latitude": 48.1173,
         "longitude": -1.6778,
         "description": "A vibrant city in Brittany, Rennes is known for its medieval half-timbered houses, lively student atmosphere, and its historic Saint-Pierre Cathedral.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Rennes.jpg?t=2024-09-05T12%3A54%3A16.670Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Rennes.jpg?t=2024-09-12T10%3A04%3A14.060Z"
     },
     {
         "id": 21,
@@ -523,7 +523,7 @@ export const cities = [
         "latitude": 49.4432,
         "longitude": 1.0993,
         "description": "Famous for its beautiful Gothic cathedral and its role in the trial of Joan of Arc, Rouen is a city rich in history and culture.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Rennes.jpg?t=2024-09-05T12%3A54%3A16.670Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Rouen.jpg"
     },
     {
         "id": 22,
@@ -532,7 +532,7 @@ export const cities = [
         "latitude": 48.9362,
         "longitude": 2.3574,
         "description": "Located just north of Paris, Saint-Denis is home to the famous Saint-Denis Basilica, the burial place of French kings, and the Stade de France.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Saint-Denis2.jpg"
+        "image": "Saint-Denis2.jpg"
     },
     {
         "id": 23,
@@ -541,7 +541,7 @@ export const cities = [
         "latitude": 42.6817,
         "longitude": 9.3054,
         "description": "A picturesque seaside town on the island of Corsica, Saint Florent is known for its stunning beaches, historic citadel, and as a gateway to the Cap Corse region.",
-        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Saint%20Florent.jpg'
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Saint%20Florent.jpg?t=2024-09-12T10%3A04%3A25.492Z'
     },
     {
         "id": 24,
@@ -550,7 +550,7 @@ export const cities = [
         "latitude": 43.2328,
         "longitude": 0.0722,
         "description": "A gateway to the Pyrenees mountains, Tarbes is known for its pleasant parks, beautiful views, and proximity to the famous pilgrimage site of Lourdes.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Tarbes.jpg"
+        "image": "Tarbes.jpg"
     },
     {
         "id": 25,
@@ -559,7 +559,7 @@ export const cities = [
         "latitude": 43.6045,
         "longitude": 1.4442,
         "description": "Nicknamed 'La Ville Rose' for its pink terracotta buildings, Toulouse is a bustling city known for its aerospace industry and vibrant cultural scene.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Toulouse.webp"
+        "image": "Toulouse.webp"
     },
     {
         "id": 26,
@@ -568,7 +568,7 @@ export const cities = [
         "latitude": 44.2049,
         "longitude": 0.6163,
         "description": "Known for its famous prunes, Agen is a charming town in the Lot-et-Garonne region, with picturesque streets and a rich agricultural history.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Agen.jpg"
+        "image": "Agen.jpg"
     },
     {
         "id": 27,
@@ -577,7 +577,7 @@ export const cities = [
         "latitude": 41.9192,
         "longitude": 8.7386,
         "description": "The birthplace of Napoleon Bonaparte, Ajaccio is the capital of Corsica, offering beautiful beaches, a rich history, and stunning Mediterranean landscapes.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Ajaccio.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Ajaccio.jpg?t=2024-09-12T09%3A56%3A13.684Z"
     },
     {
         "id": 28,
@@ -586,7 +586,7 @@ export const cities = [
         "latitude": 43.9298,
         "longitude": 2.148,
         "description": "A UNESCO World Heritage site, Albi is known for its striking red-brick cathedral, Sainte-Cécile, and its charming old town along the Tarn River.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Albi.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Albi.jpg"
     },
     {
         "id": 29,
@@ -595,7 +595,7 @@ export const cities = [
         "latitude": 49.8941,
         "longitude": 2.2951,
         "description": "Amiens is known for its stunning Gothic cathedral, the largest in France, and its beautiful floating gardens called 'hortillonnages.'",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Amiens.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Amiens.jpg"
     },
     {
         "id": 30,
@@ -604,7 +604,7 @@ export const cities = [
         "latitude": 47.4784,
         "longitude": -0.5632,
         "description": "Angers, located in the Loire Valley, is famous for its medieval Château d'Angers and the beautiful Apocalypse Tapestry housed inside.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Angers.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/angers.jpg?t=2024-09-14T14%3A56%3A55.264Z"
     },
     {
         "id": 31,
@@ -613,7 +613,7 @@ export const cities = [
         "latitude": 45.8992,
         "longitude": 6.1294,
         "description": "Known as the 'Venice of the Alps,' Annecy enchants visitors with its crystal-clear lake, canals, and medieval old town.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Annecy.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/annecy-4933126_1920.jpg"
     },
     {
         "id": 32,
@@ -622,7 +622,7 @@ export const cities = [
         "latitude": 43.5804,
         "longitude": 7.1251,
         "description": "A charming coastal town on the French Riviera, Antibes is famous for its Picasso Museum, beautiful beaches, and historic old town.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Antibes.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Antibes.jpg"
     },
     {
         "id": 33,
@@ -631,7 +631,7 @@ export const cities = [
         "latitude": 43.6768,
         "longitude": 4.627,
         "description": "Arles is known for its Roman monuments, including an amphitheater, and its connection to the famous painter Vincent van Gogh.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Arles.jpg"
+        "image": "Arles.jpg"
     },
     {
         "id": 34,
@@ -640,7 +640,7 @@ export const cities = [
         "latitude": 50.292,
         "longitude": 2.7775,
         "description": "Arras boasts beautiful Flemish Baroque architecture and is home to the Grand'Place, a UNESCO World Heritage site.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Arras.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Arras.jpg"
     },
     {
         "id": 35,
@@ -649,7 +649,7 @@ export const cities = [
         "latitude": 43.9493,
         "longitude": 4.8055,
         "description": "Famous for its well-preserved medieval ramparts and the Palais des Papes, Avignon is a key cultural city in the Provence region.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Avignon.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Avignon.jpg?t=2024-09-12T09%3A57%3A53.029Z"
     },
     {
         "id": 36,
@@ -658,7 +658,7 @@ export const cities = [
         "latitude": 43.5297,
         "longitude": 5.4474,
         "description": "Aix-en-Provence is known for its elegant streets, vibrant markets, and its connection to the painter Paul Cézanne.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Aix-en-Provence.jpg"
+        "image": "Aix-en-Provence.jpg"
     },
     {
         "id": 37,
@@ -667,7 +667,7 @@ export const cities = [
         "latitude": 43.2923,
         "longitude": 5.5708,
         "description": "Nestled in the hills near Marseille, Aubagne is famous for its pottery and the picturesque landscapes that inspired writer Marcel Pagnol.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Aubagne.jpg"
+        "image": "Aubagne.jpg"
     },
     {
         "id": 38,
@@ -676,7 +676,7 @@ export const cities = [
         "latitude": 47.7982,
         "longitude": 3.5678,
         "description": "A historic town on the River Yonne, Auxerre is known for its Gothic cathedral and beautifully preserved medieval architecture.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Auxerre.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Auxerre.jpg?t=2024-09-14T14%3A57%3A43.209Z"
     },
     {
         "id": 39,
@@ -685,7 +685,7 @@ export const cities = [
         "latitude": 43.4929,
         "longitude": -1.4748,
         "description": "Bayonne, located in the Basque Country, is famous for its festive spirit, traditional architecture, and delicious chocolate.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Bayonne.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Bayonne.jpg"
     },
     {
         "id": 40,
@@ -694,7 +694,7 @@ export const cities = [
         "latitude": 49.4294,
         "longitude": 2.0886,
         "description": "Beauvais is renowned for its Gothic cathedral, which boasts the highest Gothic choir in the world.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Beauvais.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Beauvais.jpg?t=2024-09-14T14%3A59%3A44.188Z"
     },
     {
         "id": 41,
@@ -703,7 +703,7 @@ export const cities = [
         "latitude": 47.2378,
         "longitude": 6.0241,
         "description": "Besançon, set in a loop of the Doubs River, is known for its impressive citadel designed by Vauban and its rich watchmaking heritage.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Besancon.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Besancon.jpg"
     },
     {
         "id": 42,
@@ -712,7 +712,7 @@ export const cities = [
         "latitude": 43.4832,
         "longitude": -1.5586,
         "description": "A glamorous seaside town on France’s Atlantic coast, Biarritz is famous for its surfing beaches and luxurious resorts.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Biarritz2.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Biarritz.jpg"
     },
     {
         "id": 43,
@@ -721,7 +721,7 @@ export const cities = [
         "latitude": 47.5861,
         "longitude": 1.3359,
         "description": "Blois is a charming city in the Loire Valley, known for its Renaissance Château de Blois and its historic old town.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Blois.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Blois.jpg?t=2024-09-14T14%3A59%3A19.754Z"
     },
     {
         "id": 44,
@@ -730,7 +730,7 @@ export const cities = [
         "latitude": 44.8378,
         "longitude": -0.5792,
         "description": "Bordeaux is known for its world-class wine, beautiful 18th-century architecture, and the scenic Garonne River.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Bordeaux.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Bordeaux.jpg?t=2024-09-14T14%3A59%3A06.582Z"
     },
     {
         "id": 45,
@@ -739,7 +739,7 @@ export const cities = [
         "latitude": 47.081,
         "longitude": 2.3988,
         "description": "Bourges is a historical city renowned for its Gothic cathedral, Saint-Étienne, a UNESCO World Heritage site.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Bourges.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Bourges.jpg?t=2024-09-14T14%3A59%3A31.624Z"
     },
     {
         "id": 46,
@@ -748,7 +748,7 @@ export const cities = [
         "latitude": 48.3904,
         "longitude": -4.4861,
         "description": "Located in Brittany, Brest is a major naval port and offers scenic ocean views and maritime history.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Brest.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/brest.jpg?t=2024-09-14T15%3A00%3A55.118Z"
     },
     {
         "id": 47,
@@ -757,7 +757,7 @@ export const cities = [
         "latitude": 49.1829,
         "longitude": -0.3707,
         "description": "Caen is famous for its role in the Normandy landings and its impressive medieval landmarks, such as the Château de Caen.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Caen.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Caen.jpg"
     },
     {
         "id": 48,
@@ -766,7 +766,7 @@ export const cities = [
         "latitude": 50.9513,
         "longitude": 1.8587,
         "description": "A major port city, Calais is the closest French town to England and is known for the iconic Burghers of Calais statue by Rodin.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Calais.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/calais-2719600_1280.jpg"
     },
     {
         "id": 49,
@@ -775,7 +775,7 @@ export const cities = [
         "latitude": 43.5528,
         "longitude": 7.0174,
         "description": "Cannes, famed for its annual film festival, offers luxury beaches, high-end shopping, and a charming old town.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Cannes.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Cannes%202.jpg"
     },
     {
         "id": 50,
@@ -784,7 +784,7 @@ export const cities = [
         "latitude": 43.2124,
         "longitude": 2.3537,
         "description": "Carcassonne is known for its medieval walled city, which is one of the most well-preserved in Europe and a UNESCO World Heritage site.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Carcassonne.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Carcassonne.jpg"
     },
     {
         "id": 51,
@@ -793,7 +793,7 @@ export const cities = [
         "latitude": 45.5646,
         "longitude": 5.9178,
         "description": "A gateway to the Alps, Chambéry boasts a rich history with its Château des Ducs de Savoie and charming old town.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Chambery.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Chambery.jpg"
     },
     {
         "id": 52,
@@ -802,7 +802,7 @@ export const cities = [
         "latitude": 45.7772,
         "longitude": 3.087,
         "description": "Nestled in a volcanic region, Clermont-Ferrand is known for its black lava stone cathedral and its annual short film festival.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Clermont-Ferrand.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Clermont-Ferrand.jpg?t=2024-09-14T15%3A02%3A58.387Z"
     },
     {
         "id": 53,
@@ -811,7 +811,7 @@ export const cities = [
         "latitude": 48.079,
         "longitude": 7.3585,
         "description": "Colmar is a picturesque town in the Alsace region, famed for its half-timbered houses, canals, and delightful wine route.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Colmar.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Colmar.jpg"
     },
     {
         "id": 54,
@@ -820,7 +820,7 @@ export const cities = [
         "latitude": 47.322,
         "longitude": 5.0415,
         "description": "Dijon, capital of Burgundy, is renowned for its mustard, fine wines, and well-preserved medieval and Renaissance buildings.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Dijon.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Dijon.jpg?t=2024-09-14T15%3A04%3A01.862Z"
     },
     {
         "id": 55,
@@ -829,7 +829,7 @@ export const cities = [
         "latitude": 51.0344,
         "longitude": 2.3768,
         "description": "Dunkirk is known for its pivotal role in World War II and its vibrant annual carnival, one of the most famous in France.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Dunkirk.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/dunkirk.jpg?t=2024-09-14T15%3A04%3A11.821Z"
     },
     {
         "id": 56,
@@ -838,7 +838,7 @@ export const cities = [
         "latitude": 42.967,
         "longitude": 1.6055,
         "description": "Foix is a charming town nestled in the Pyrenees, known for its medieval castle and stunning mountain scenery.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Foix.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Foix.jpg?t=2024-09-14T15%3A03%3A31.472Z"
     },
     {
         "id": 57,
@@ -847,7 +847,7 @@ export const cities = [
         "latitude": 48.403,
         "longitude": 2.7016,
         "description": "Fontainebleau is famous for its opulent royal château and its surrounding forest, a popular destination for hiking and rock climbing.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Fontainebleau.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Fontainebleau.jpg"
     },
     {
         "id": 58,
@@ -856,7 +856,7 @@ export const cities = [
         "latitude": 45.1885,
         "longitude": 5.7245,
         "description": "Grenoble, located at the foot of the French Alps, is known for its winter sports, scenic cable cars, and rich history.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Grenoble.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Grenoble.jpg?t=2024-09-14T15%3A03%3A09.750Z"
     },
     {
         "id": 59,
@@ -865,7 +865,7 @@ export const cities = [
         "latitude": 43.1179,
         "longitude": 6.1286,
         "description": "Hyères is a beautiful coastal town known for its medieval Old Town and its proximity to the scenic Îles d'Hyères.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Hyeres.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Hyeres.jpg"
     },
     {
         "id": 60,
@@ -874,7 +874,7 @@ export const cities = [
         "latitude": 46.1591,
         "longitude": -1.1511,
         "description": "La Rochelle is a historic port city with picturesque towers, a vibrant marina, and the famous Aquarium of La Rochelle.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/La%20Rochelle.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/La%20Rochelle.jpg"
     },
     {
         "id": 61,
@@ -883,7 +883,7 @@ export const cities = [
         "latitude": 49.4944,
         "longitude": 0.1079,
         "description": "Le Havre, a UNESCO-listed city, is known for its modernist architecture and cultural attractions like the Musée Malraux.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Le%20Havre%20(2).jpg'
     },
     {
         "id": 62,
@@ -892,7 +892,7 @@ export const cities = [
         "latitude": 48.0061,
         "longitude": 0.1996,
         "description": "Le Mans is famous for its 24-hour car race and its beautifully preserved medieval Old Town, the Cité Plantagenêt.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Le%20Mans.jpg"
+        "image": "Le%20Mans.jpg"
     },
     {
         "id": 63,
@@ -901,7 +901,7 @@ export const cities = [
         "latitude": 45.0434,
         "longitude": 3.885,
         "description": "Le Puy-en-Velay is a pilgrimage town known for its dramatic volcanic landscape and the iconic Notre-Dame-du-Puy Cathedral.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Le%20Puy-en-Velay.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/le-puy-en-velay-1376290_1920.jpg"
     },
     {
         "id": 64,
@@ -910,7 +910,7 @@ export const cities = [
         "latitude": 50.6292,
         "longitude": 3.0573,
         "description": "Lille is a vibrant city near the Belgian border, famous for its rich Flemish heritage, art museums, and lively markets.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Lille.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Lille%202.jpg"
     },
     {
         "id": 65,
@@ -919,7 +919,7 @@ export const cities = [
         "latitude": 45.8336,
         "longitude": 1.2611,
         "description": "Limoges is renowned for its fine porcelain production and its medieval architecture, including the stunning Saint-Etienne Cathedral.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Limoges.webp"
+        "image": "Limoges.webp"
     },
     {
         "id": 66,
@@ -928,7 +928,7 @@ export const cities = [
         "latitude": 45.764,
         "longitude": 4.8357,
         "description": "Lyon, a UNESCO World Heritage site, is famed for its gastronomy, vibrant cultural scene, and well-preserved Roman and Renaissance architecture.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Lyon.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Lyon.jpg"
     },
     {
         "id": 67,
@@ -937,7 +937,7 @@ export const cities = [
         "latitude": 46.3066,
         "longitude": 4.8287,
         "description": "Mâcon is a charming town in the Burgundy wine region, known for its picturesque riverside and excellent vineyards.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Macon.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Macon.jpg"
     },
     {
         "id": 68,
@@ -946,7 +946,7 @@ export const cities = [
         "latitude": 40.9429,
         "longitude": -4.108,
         "description": "Segovia is a historic city famous for its Roman aqueduct, stunning cathedral, and the fairy-tale-like Alcázar castle.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Segovia%20Alcazar-castle.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Segovia.jpg"
     },
     {
         "id": 69,
@@ -955,7 +955,7 @@ export const cities = [
         "latitude": 43.3623,
         "longitude": -8.4115,
         "description": "A Coruña is a coastal city in Galicia, known for its picturesque old town, Tower of Hercules, and bustling port.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/A%20Coruna.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/coruna-174099_1920.jpg"
     },
     {
         "id": 70,
@@ -964,7 +964,7 @@ export const cities = [
         "latitude": 42.8514,
         "longitude": -2.6691,
         "description": "Álava is a province in the Basque Country, offering beautiful landscapes, historical sites, and renowned vineyards in Rioja Alavesa.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Alava.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/alava.jpg?t=2024-09-14T14%3A57%3A14.054Z"
     },
     {
         "id": 71,
@@ -973,7 +973,7 @@ export const cities = [
         "latitude": 38.9943,
         "longitude": -1.8585,
         "description": "Albacete is known for its rich history, excellent Manchego cheese, and vibrant knife-making industry.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Albacete.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Albacete.jpg?t=2024-09-14T14%3A57%3A29.894Z"
     },
     {
         "id": 72,
@@ -982,7 +982,7 @@ export const cities = [
         "latitude": 38.3452,
         "longitude": -0.481,
         "description": "Alicante is a sunny Mediterranean city famous for its beaches, the imposing Santa Bárbara Castle, and lively festivals.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Alicante.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Alicante.jpg"
     },
     {
         "id": 73,
@@ -991,7 +991,7 @@ export const cities = [
         "latitude": 36.834,
         "longitude": -2.4637,
         "description": "Almería offers stunning beaches, ancient fortresses like the Alcazaba, and is close to the unique landscapes of Cabo de Gata.",
-        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Almeria.jpg'
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Almeria.jpg?t=2024-09-14T14%3A57%3A57.782Z'
     },
     {
         "id": 74,
@@ -1000,7 +1000,7 @@ export const cities = [
         "latitude": 43.3614,
         "longitude": -5.8593,
         "description": "Asturias is known for its rugged coastlines, Picos de Europa mountains, and its rich culinary tradition, including cider and fabada.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Asturias.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Asturias.jpg"
     },
     {
         "id": 75,
@@ -1009,7 +1009,7 @@ export const cities = [
         "latitude": 40.6565,
         "longitude": -4.6816,
         "description": "Ávila is a walled city that boasts medieval charm, Gothic architecture, and is the birthplace of Saint Teresa of Ávila.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Avila.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/avila.jpg"
     },
     {
         "id": 76,
@@ -1018,7 +1018,7 @@ export const cities = [
         "latitude": 38.8794,
         "longitude": -6.9706,
         "description": "Badajoz is a historic city near the Portuguese border, known for its Alcazaba fortress and rich cultural heritage.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Badajoz.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Badajoz.jpg"
     },
     {
         "id": 77,
@@ -1027,7 +1027,7 @@ export const cities = [
         "latitude": 41.3851,
         "longitude": 2.1734,
         "description": "Barcelona is a vibrant city famous for Gaudí’s architecture, including the Sagrada Família, and its beautiful Mediterranean beaches.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/barcelona.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/barcelona.jpg"
     },
     {
         "id": 78,
@@ -1036,7 +1036,7 @@ export const cities = [
         "latitude": 42.3439,
         "longitude": -3.6969,
         "description": "Burgos is a historic city, home to the stunning Gothic Burgos Cathedral and a major stop on the Camino de Santiago.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Burgos.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/burgos-3551330_1920.jpg"
     },
     {
         "id": 79,
@@ -1045,7 +1045,7 @@ export const cities = [
         "latitude": 39.4699,
         "longitude": -6.3708,
         "description": "Cáceres is known for its UNESCO-listed Old Town, featuring medieval architecture and ancient towers.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Caceres.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Caceres.jpg"
     },
     {
         "id": 80,
@@ -1054,7 +1054,7 @@ export const cities = [
         "latitude": 36.5271,
         "longitude": -6.2886,
         "description": "Cádiz is a coastal city with a rich maritime history, beautiful beaches, and an ancient old town dating back over 3,000 years.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Cadiz.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Cadiz.jpg"
     },
     {
         "id": 81,
@@ -1063,7 +1063,7 @@ export const cities = [
         "latitude": 43.1828,
         "longitude": -3.9878,
         "description": "Cantabria is known for its rugged coastline, scenic landscapes, and prehistoric caves like Altamira.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Cantabria.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/Cantabria.jpg"
     },
     {
         "id": 82,
@@ -1072,7 +1072,7 @@ export const cities = [
         "latitude": 39.9864,
         "longitude": -0.0513,
         "description": "Castellón is a sunny Mediterranean city famous for its beaches, mountainous hinterlands, and vibrant cultural festivals.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Castellon.jpg"
+        "image": "Castellon.jpg"
     },
     {
         "id": 83,
@@ -1081,7 +1081,7 @@ export const cities = [
         "latitude": 35.8894,
         "longitude": -5.3198,
         "description": "Ceuta, located on the North African coast, is a Spanish autonomous city known for its multicultural heritage and strategic location.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Ceuta.jpg"
+        "image": "Ceuta.jpg"
     },
     {
         "id": 84,
@@ -1090,7 +1090,7 @@ export const cities = [
         "latitude": 38.9848,
         "longitude": -3.927,
         "description": "Ciudad Real is a historic city in La Mancha, known for its connection to Don Quixote and windmills dotting the surrounding countryside.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/toledo%20big%20Ciudad%20Real.jpg"
+        "image": "toledo%20big%20Ciudad%20Real.jpg"
     },
     {
         "id": 86,
@@ -1099,7 +1099,7 @@ export const cities = [
         "latitude": 40.0704,
         "longitude": -2.1374,
         "description": "Cuenca is renowned for its dramatic cliffs and 'hanging houses,' as well as its beautifully preserved medieval old town.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Cuenca.jpg"
+        "image": "Cuenca.jpg"
     },
     {
         "id": 87,
@@ -1108,7 +1108,7 @@ export const cities = [
         "latitude": 38.7069,
         "longitude": 1.436,
         "description": "Formentera is a small Balearic island known for its pristine beaches, crystal-clear waters, and relaxed vibe.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/formentera%202.webp"
+        "image": "formentera%202.webp"
     },
     {
         "id": 88,
@@ -1117,7 +1117,7 @@ export const cities = [
         "latitude": 41.9794,
         "longitude": 2.8214,
         "description": "Girona is a picturesque city with well-preserved medieval architecture, the Jewish Quarter, and the famous Onyar River houses.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Girona.jpg"
+        "image": "Girona.jpg"
     },
     {
         "id": 89,
@@ -1126,7 +1126,7 @@ export const cities = [
         "latitude": 37.1773,
         "longitude": -3.5986,
         "description": "Granada is home to the Alhambra Palace, a masterpiece of Moorish architecture, and the stunning Sierra Nevada mountains.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Granada.webp"
+        "image": "Granada.webp"
     },
     {
         "id": 90,
@@ -1135,7 +1135,7 @@ export const cities = [
         "latitude": 40.628,
         "longitude": -3.1618,
         "description": "Guadalajara is known for its historic palaces, the Alcázar, and its close proximity to Madrid, offering a blend of modern and ancient charm.",
-        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/places%20images/Guadalajara-spain.jpg'
+        "image": 'Guadalajara-spain.jpg'
     },
     {
         "id": 91,
@@ -1559,7 +1559,7 @@ export const cities = [
         "latitude": 37.8882,
         "longitude": -4.7794,
         "description": "Córdoba is a historic city in Andalusia known for its stunning Mezquita, a former mosque that is now a cathedral, and its charming old town.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Cordoba.jpg'
     },
     {
         "id": 158,
@@ -1775,7 +1775,7 @@ export const cities = [
         "latitude": 41.8151,
         "longitude": 3.0671,
         "description": "Platja d’Aro is a popular resort town with a lively beach area, a variety of shops and restaurants, and numerous activities.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/PlatjadAro.jpg'
     },
     {
         "id": 188,
@@ -1784,7 +1784,7 @@ export const cities = [
         "latitude": 41.8457,
         "longitude": 3.0834,
         "description": "Sant Antoni de Calonge is a coastal town known for its long sandy beaches, family-friendly atmosphere, and scenic views.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Sant%20Antoni%20de%20Calonge.jpg'
     },
     {
         "id": 189,
@@ -1874,7 +1874,7 @@ export const cities = [
         "latitude": 42.2885,
         "longitude": 3.2783,
         "description": "Cadaqués is a picturesque town with whitewashed buildings, charming narrow streets, and a strong artistic heritage.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Cadaques.jpg'
     },
     {
         "id": 199,
@@ -2117,7 +2117,7 @@ export const cities = [
         "latitude": 37.9569,
         "longitude": -8.8698,
         "description": "Sines is a coastal town known for its historic castle, picturesque harbor, and beautiful beaches.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Sant%20Antoni%20de%20Calonge.jpg'
     },
     {
         "id": 226,
@@ -2126,7 +2126,7 @@ export const cities = [
         "latitude": 38.8029,
         "longitude": -9.3817,
         "description": "Sintra is famous for its romantic 19th-century architecture, including the colorful Pena Palace and Moorish Castle.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Sintra.jpg?t=2024-09-12T09%3A53%3A03.569Z'
     },
     {
         "id": 227,
