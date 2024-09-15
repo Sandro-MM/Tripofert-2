@@ -244,7 +244,7 @@ export const cities = [
         "latitude": 40.4168,
         "longitude": -3.7038,
         "description": "Spain’s vibrant capital, famous for its Royal Palace, art museums like the Prado, and lively plazas. A perfect mix of modern city life and rich historical heritage.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/madrid.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/madrid.jpg"
     },
     {
         "id": 4,
@@ -271,7 +271,7 @@ export const cities = [
         "latitude": 41.5503,
         "longitude": -8.4200,
         "description": "One of Portugal’s oldest cities, Braga is known for its beautiful churches, religious festivals, and the iconic Bom Jesus do Monte sanctuary.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/braga.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/braga_smaller.jpg"
     },
     {
         "id": 234,
@@ -658,7 +658,7 @@ export const cities = [
         "latitude": 43.5297,
         "longitude": 5.4474,
         "description": "Aix-en-Provence is known for its elegant streets, vibrant markets, and its connection to the painter Paul Cézanne.",
-        "image": "Aix-en-Provence.jpg"
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Aix-en-Provence%202.jpg'
     },
     {
         "id": 37,
@@ -667,7 +667,7 @@ export const cities = [
         "latitude": 43.2923,
         "longitude": 5.5708,
         "description": "Nestled in the hills near Marseille, Aubagne is famous for its pottery and the picturesque landscapes that inspired writer Marcel Pagnol.",
-        "image": "Aubagne.jpg"
+        "image": null
     },
     {
         "id": 38,
@@ -892,7 +892,7 @@ export const cities = [
         "latitude": 48.0061,
         "longitude": 0.1996,
         "description": "Le Mans is famous for its 24-hour car race and its beautifully preserved medieval Old Town, the Cité Plantagenêt.",
-        "image": "Le%20Mans.jpg"
+        "image": null
     },
     {
         "id": 63,
@@ -919,7 +919,7 @@ export const cities = [
         "latitude": 45.8336,
         "longitude": 1.2611,
         "description": "Limoges is renowned for its fine porcelain production and its medieval architecture, including the stunning Saint-Etienne Cathedral.",
-        "image": "Limoges.webp"
+        "image": null
     },
     {
         "id": 66,
@@ -1072,7 +1072,7 @@ export const cities = [
         "latitude": 39.9864,
         "longitude": -0.0513,
         "description": "Castellón is a sunny Mediterranean city famous for its beaches, mountainous hinterlands, and vibrant cultural festivals.",
-        "image": "Castellon.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Castellon.jpg"
     },
     {
         "id": 83,
@@ -1081,7 +1081,7 @@ export const cities = [
         "latitude": 35.8894,
         "longitude": -5.3198,
         "description": "Ceuta, located on the North African coast, is a Spanish autonomous city known for its multicultural heritage and strategic location.",
-        "image": "Ceuta.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Ceuta.jpg"
     },
     {
         "id": 84,
@@ -1090,7 +1090,7 @@ export const cities = [
         "latitude": 38.9848,
         "longitude": -3.927,
         "description": "Ciudad Real is a historic city in La Mancha, known for its connection to Don Quixote and windmills dotting the surrounding countryside.",
-        "image": "toledo%20big%20Ciudad%20Real.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Ciudad%20Real.jpg"
     },
     {
         "id": 86,
@@ -1099,7 +1099,7 @@ export const cities = [
         "latitude": 40.0704,
         "longitude": -2.1374,
         "description": "Cuenca is renowned for its dramatic cliffs and 'hanging houses,' as well as its beautifully preserved medieval old town.",
-        "image": "Cuenca.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Cuenca.jpg"
     },
     {
         "id": 87,
@@ -1117,7 +1117,7 @@ export const cities = [
         "latitude": 41.9794,
         "longitude": 2.8214,
         "description": "Girona is a picturesque city with well-preserved medieval architecture, the Jewish Quarter, and the famous Onyar River houses.",
-        "image": "Girona.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/girona.jpg"
     },
     {
         "id": 89,
@@ -1126,7 +1126,7 @@ export const cities = [
         "latitude": 37.1773,
         "longitude": -3.5986,
         "description": "Granada is home to the Alhambra Palace, a masterpiece of Moorish architecture, and the stunning Sierra Nevada mountains.",
-        "image": "Granada.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Alhambra%20granada%20.jpg"
     },
     {
         "id": 90,
@@ -1135,7 +1135,7 @@ export const cities = [
         "latitude": 40.628,
         "longitude": -3.1618,
         "description": "Guadalajara is known for its historic palaces, the Alcázar, and its close proximity to Madrid, offering a blend of modern and ancient charm.",
-        "image": 'Guadalajara-spain.jpg'
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/guadalajara.jpg'
     },
     {
         "id": 91,
@@ -1144,7 +1144,7 @@ export const cities = [
         "latitude": 43.1828,
         "longitude": -2.3897,
         "description": "Guipúzcoa is a province in the Basque Country, known for its beautiful beaches, rugged mountains, and rich cultural traditions.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Guipuzcoa.jpg'
     },
     {
         "id": 93,
@@ -1153,7 +1153,7 @@ export const cities = [
         "latitude": 42.1401,
         "longitude": -0.4089,
         "description": "Huesca is a gateway to the Pyrenees, offering stunning landscapes, medieval architecture, and a rich history.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Huesca.jpg'
     },
     {
         "id": 94,
@@ -1162,7 +1162,7 @@ export const cities = [
         "latitude": 38.9067,
         "longitude": 1.4206,
         "description": "Ibiza is a Balearic island known for its vibrant nightlife, stunning beaches, and UNESCO-listed Old Town, Dalt Vila.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Ibiza.jpg'
     },
     {
         "id": 96,
@@ -1171,7 +1171,7 @@ export const cities = [
         "latitude": 42.2871,
         "longitude": -2.5396,
         "description": "La Rioja is famous for its world-class wine, rolling vineyards, and picturesque countryside dotted with charming villages.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/La%20Rioja.jpg'
     },
     {
         "id": 97,
@@ -1180,7 +1180,7 @@ export const cities = [
         "latitude": 28.1235,
         "longitude": -15.4363,
         "description": "Las Palmas is a bustling city on Gran Canaria, known for its beaches, historical sites, and vibrant mix of cultures.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Las%20Palmas%20de%20Gran%20Canaria.jpg'
     },
     {
         "id": 98,
@@ -1198,7 +1198,7 @@ export const cities = [
         "latitude": 28.3587,
         "longitude": -14.0537,
         "description": "Fuerteventura is known for its stunning sand dunes, crystal-clear waters, and world-class windsurfing spots.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Fuerteventura.jpg'
     },
     {
         "id": 100,
@@ -1207,7 +1207,7 @@ export const cities = [
         "latitude": 29.0469,
         "longitude": -13.5899,
         "description": "Lanzarote is famous for its lunar landscapes, volcanic terrain, and César Manrique’s architectural works.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Lanzarote.jpg'
     },
     {
         "id": 101,
@@ -1216,7 +1216,7 @@ export const cities = [
         "latitude": 42.5987,
         "longitude": -5.5671,
         "description": "León is a historic city on the Camino de Santiago, home to a stunning Gothic cathedral and medieval architecture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/leon.jpg'
     },
     {
         "id": 102,
@@ -1225,7 +1225,7 @@ export const cities = [
         "latitude": 41.6148,
         "longitude": 0.6214,
         "description": "Lleida (Lerida) is a historic city in Catalonia, known for its ancient fortresses and vibrant cultural scene.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Lleida_-_panoramio_-_Jorge_Franganillo.jpg'
     },
     {
         "id": 103,
@@ -1234,7 +1234,7 @@ export const cities = [
         "latitude": 43.0121,
         "longitude": -7.555,
         "description": "Lugo is renowned for its intact Roman walls, which encircle the old town and are a UNESCO World Heritage Site.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/lugo-6955918_1920.jpg'
     },
     {
         "id": 104,
@@ -1243,7 +1243,7 @@ export const cities = [
         "latitude": 36.7213,
         "longitude": -4.4214,
         "description": "Málaga is a vibrant city on the Costa del Sol, known for its beaches, Picasso Museum, and historic Alcazaba fortress.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/malaga3.jpg'
     },
     {
         "id": 105,
@@ -1252,7 +1252,7 @@ export const cities = [
         "latitude": 39.6953,
         "longitude": 3.0176,
         "description": "Mallorca is the largest Balearic Island, famous for its beautiful beaches, stunning mountain ranges, and historic towns.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Mallorca.jpg'
     },
     {
         "id": 106,
@@ -1261,7 +1261,7 @@ export const cities = [
         "latitude": 39.9496,
         "longitude": 4.1109,
         "description": "Menorca is a peaceful island known for its turquoise waters, sandy beaches, and relaxed atmosphere.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Menorca.jpg'
     },
     {
         "id": 107,
@@ -1270,7 +1270,7 @@ export const cities = [
         "latitude": 37.9922,
         "longitude": -1.1307,
         "description": "Murcia is a historic city with Baroque architecture, vibrant markets, and a rich cultural heritage.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Murcia.jpg'
     },
     {
         "id": 108,
@@ -1279,7 +1279,7 @@ export const cities = [
         "latitude": 42.6954,
         "longitude": -1.6761,
         "description": "Navarra is known for its diverse landscapes, including the Pyrenees, and the famous Running of the Bulls in Pamplona.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Pamplona%20Navarra.jpg'
     },
     {
         "id": 109,
@@ -1288,7 +1288,7 @@ export const cities = [
         "latitude": 42.3344,
         "longitude": -7.8639,
         "description": "Orense (Ourense) is famous for its thermal springs and historic bridges, offering a mix of relaxation and history.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Ourense.jpg'
     },
     {
         "id": 110,
@@ -1297,7 +1297,7 @@ export const cities = [
         "latitude": 42.0096,
         "longitude": -4.527,
         "description": "Palencia is known for its Gothic cathedral, Romanesque churches, and peaceful parks in the heart of Castile and León.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Palencia.jpg'
     },
     {
         "id": 111,
@@ -1306,7 +1306,7 @@ export const cities = [
         "latitude": 42.431,
         "longitude": -8.6444,
         "description": "Pontevedra is a charming Galician town with a historic old quarter, lively plazas, and beautiful churches.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Pontevedra.jpg'
     },
     {
         "id": 113,
@@ -1324,7 +1324,7 @@ export const cities = [
         "latitude": 28.2916,
         "longitude": -16.6291,
         "description": "Tenerife is the largest of the Canary Islands, famous for its black-sand beaches, the towering Mount Teide, and year-round sunshine.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Tenerife.jpg'
     },
     {
         "id": 115,
@@ -1333,7 +1333,7 @@ export const cities = [
         "latitude": 28.101,
         "longitude": -17.1487,
         "description": "La Gomera is a tranquil Canary Island with lush forests, stunning cliffs, and unique whistling language, Silbo Gomero.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/La%20Gomera.jpg'
     },
     {
         "id": 116,
@@ -1342,7 +1342,7 @@ export const cities = [
         "latitude": 28.6846,
         "longitude": -17.7647,
         "description": "La Palma, also known as the 'Beautiful Island,' is a green paradise with volcanic landscapes and excellent hiking trails.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/La%20Palma.jpg'
     },
     {
         "id": 117,
@@ -1351,7 +1351,7 @@ export const cities = [
         "latitude": 27.7462,
         "longitude": -18.0204,
         "description": "El Hierro is the smallest of the Canary Islands, known for its rugged coastline, clear waters, and sustainable energy initiatives.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Canary%20Islands%20El%20Hierro.jpg'
     },
     {
         "id": 118,
@@ -1360,7 +1360,7 @@ export const cities = [
         "latitude": 37.3886,
         "longitude": -5.9823,
         "description": "Sevilla is a historic Andalusian city, famous for its Flamenco music, Gothic cathedral, and stunning Alcázar palace.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Alcazar%20palace%20sevilla.jpg'
     },
     {
         "id": 119,
@@ -1369,7 +1369,7 @@ export const cities = [
         "latitude": 41.7636,
         "longitude": -2.4645,
         "description": "Soria is a peaceful town in Castile and León, known for its Romanesque architecture and natural beauty along the Duero River.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Soria_-_P7234619_edited.jpg'
     },
 
     {
@@ -1379,7 +1379,7 @@ export const cities = [
         "latitude": 40.3438,
         "longitude": -1.1065,
         "description": "Teruel is famous for its Mudejar architecture, recognized as a UNESCO World Heritage Site, and its medieval towers.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/albarracin-%20Teruel1494760_1920.jpg'
     },
     {
         "id": 122,
@@ -1388,7 +1388,7 @@ export const cities = [
         "latitude": 39.8628,
         "longitude": -4.0273,
         "description": "Toledo, often referred to as 'The Imperial City,' is renowned for its rich history, medieval streets, and the Alcázar of Toledo.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Toledo%202.jpg'
     },
     {
         "id": 123,
@@ -1397,7 +1397,7 @@ export const cities = [
         "latitude": 39.4699,
         "longitude": -0.3763,
         "description": "Valencia is a dynamic city on Spain's east coast, known for its futuristic architecture, beaches, and the famous dish, paella.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Valencia%20.jpg'
     },
     {
         "id": 124,
@@ -1406,7 +1406,7 @@ export const cities = [
         "latitude": 41.6523,
         "longitude": -4.7245,
         "description": "Valladolid is a historic city with a rich cultural heritage, featuring Renaissance architecture and lively squares.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Valladolid.jpg'
     },
     {
         "id": 125,
@@ -1415,7 +1415,7 @@ export const cities = [
         "latitude": 43.251,
         "longitude": -2.9263,
         "description": "Vizcaya (Biscay) is a province in the Basque Country, known for its scenic coastline, Bilbao's Guggenheim Museum, and vibrant culture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Vizcaya%20Bilbao.jpg'
     },
     {
         "id": 126,
@@ -1424,7 +1424,7 @@ export const cities = [
         "latitude": 41.5033,
         "longitude": -5.7441,
         "description": "Zamora is a city rich in Romanesque architecture, featuring numerous historic churches and a stunning medieval castle.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Zamora%202.jpg'
     },
     {
         "id": 127,
@@ -1433,7 +1433,7 @@ export const cities = [
         "latitude": 41.649,
         "longitude": -0.8859,
         "description": "Zaragoza is a vibrant city known for its stunning Basilica del Pilar, Roman history, and lively cultural festivals.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Zaragoza%20good.jpg'
     },
     {
         "id": 128,
@@ -1442,7 +1442,7 @@ export const cities = [
         "latitude": 42.5078,
         "longitude": 1.5211,
         "description": "Andorra la Vella is the capital of Andorra, a picturesque town nestled in the Pyrenees, known for its ski resorts and tax-free shopping.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Andorra%20la%20Vella.jpg'
     },
     {
         "id": 129,
@@ -1451,7 +1451,7 @@ export const cities = [
         "latitude": 43.3183,
         "longitude": -1.9812,
         "description": "San Sebastián, located in the Basque Country, is renowned for its stunning beaches, world-class cuisine, and picturesque bay.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/san_sebastian/david-vives-w0YXhleG-KE-unsplash.jpg'
     },
     {
         "id": 130,
@@ -1460,7 +1460,7 @@ export const cities = [
         "latitude": 42.8125,
         "longitude": -1.6458,
         "description": "Pamplona is famous for its annual Running of the Bulls festival, charming medieval streets, and rich Basque culture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Pamplona%20(3).jpg'
     },
     {
         "id": 133,
@@ -1469,7 +1469,7 @@ export const cities = [
         "latitude": 42.4317,
         "longitude": 1.928,
         "description": "Puigcerdà is a picturesque town in the Catalan Pyrenees, known for its beautiful lakes, historic architecture, and skiing opportunities.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/puigcerda-4953210_1920.jpg'
     },
     {
         "id": 134,
@@ -1478,7 +1478,7 @@ export const cities = [
         "latitude": 43.263,
         "longitude": -2.935,
         "description": "Bilbao, the largest city in the Basque Country, is renowned for its modern architecture, including the Guggenheim Museum, and vibrant cultural scene.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Bilbao.jpg'
     },
     {
         "id": 135,
@@ -1487,7 +1487,7 @@ export const cities = [
         "latitude": 42.8469,
         "longitude": -2.6735,
         "description": "Vitoria-Gasteiz, the capital of the Basque Country, is known for its medieval old town, green spaces, and rich history.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Vitoria-Gasteiz%20(2).jpg'
     },
     {
         "id": 136,
@@ -1541,7 +1541,7 @@ export const cities = [
         "latitude": 36.5099,
         "longitude": -4.8851,
         "description": "Marbella is a glamorous city on the Costa del Sol, known for its luxurious resorts, vibrant nightlife, and beautiful beaches.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/marbella%20coast.jpg'
     },
     {
         "id": 156,
@@ -2162,7 +2162,7 @@ export const cities = [
         "latitude": 39.6590,
         "longitude": -8.8254,
         "description": "Batalha is known for the stunning Batalha Monastery, a masterpiece of Gothic architecture and a UNESCO World Heritage site.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Batalha.jpg'
     },
     {
         "id": 231,
