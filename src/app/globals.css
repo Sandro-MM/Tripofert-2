@@ -180,7 +180,7 @@
     border: 1px solid var(--borderHex);
     z-index: 10 !important;
     width: 340px;
-    height: 330px;
+    height: 350px;
 
     .marker-label{
       margin: 0 auto;
@@ -204,7 +204,7 @@
     .action_area{
       display: flex;
       justify-content: space-between;
-      margin: 10px 0;
+      margin: 10px 0 0;
       align-items: center;
       .add-button{
         font-weight: 500;
@@ -329,7 +329,7 @@
   font-size: 18px;
   font-weight: 500;
   position: absolute;
-  bottom: -280px;
+  bottom: -295px;
   left: calc(340px/2 - 45px);
 }
 
@@ -360,7 +360,7 @@
   font-size: 18px;
   font-weight: 500;
   position: absolute;
-  bottom: -280px;
+  bottom: -295px;
   left: calc(340px/2 - 42.5px);
 }
 
@@ -372,7 +372,7 @@
   font-weight: 500;
   position: absolute;
   display: none;
-  bottom: -230px;
+  bottom: -250px;
 }
 .remove_area{
   display: none;

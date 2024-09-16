@@ -14,6 +14,17 @@ import {calculatePrice, cities, getCitiesInRange} from "@/directions-functions/d
 import { useRouter } from 'next/navigation';
 import Checkout from "@/app/searchResults/checkout";
 import {Spinner} from "@/components/ui/spinner";
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "@/components/ui/dialog";
+import {Input} from "@/components/ui/input";
+import MapPicker from "@/components/map/mapPicker";
 
 
 export default function SearchFilter({departure, setDeparture, destination,setDestination,date,setDate, passengers, setPassengers, setMapDeparture,setMapDestination, distance, points}) {
@@ -257,24 +268,49 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                 </div>
                 {
                     +passengers < 5 &&
-                    <div><Checkbox
-                        className='cursor-pointer'
-                        checked={checked}
-                        onCheckedChange={(checked) => {
-                            if (carType === 'Premium Sedan') {
-                                setCarType('Sedan')
-                                setChecked(false)
-                            } else {
-                                setCarType('Premium Sedan')
-                                setChecked(true)
-                            }
-                        }}
-                    />
-                        <label
-                            htmlFor="terms2"
-                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        > Upgrade to premium class
-                        </label>
+                    <div className={'sm:flex w-full !flex-wrap justify-center items-center'}>
+
+                        <div className={' flex flex-nowrap gap-2'}>
+                            <Checkbox
+                                className='cursor-pointer'
+                                checked={checked}
+                                onCheckedChange={(checked) => {
+                                    if (carType === 'Premium Sedan') {
+                                        setCarType('Sedan')
+                                        setChecked(false)
+                                    } else {
+                                        setCarType('Premium Sedan')
+                                        setChecked(true)
+                                    }
+                                }}
+                            />
+                            <label
+                                htmlFor="terms2"
+                                className="text-sm w-[200px] block font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            > Upgrade to premium class
+                            </label>
+                        </div>
+
+
+                        <Dialog>
+                            <DialogTrigger                             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 underline"
+                            >
+                                more Options
+                            </DialogTrigger>
+                            <DialogContent>
+                                <DialogHeader>
+                                    <DialogTitle>Select Car</DialogTitle>
+                                    <DialogDescription></DialogDescription>
+                                   cacacaca
+
+                                    <DialogClose asChild>
+                                        <Button type="button">
+                                            Select
+                                        </Button>
+                                    </DialogClose>
+                                </DialogHeader>
+                            </DialogContent>
+                        </Dialog>
                     </div>
 
                 }

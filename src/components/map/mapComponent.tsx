@@ -231,7 +231,7 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
             </div>
 
             {!showMap && (
-                <div className='w-full max-w-[1080px] mx-auto'>
+                <div className='w-full max-w-[1080px] mx-auto px-[8px]'>
                     {nearbyCities.map((city, index) => (
                         <StopItem
                             time={findVisitTime(city.id)}
