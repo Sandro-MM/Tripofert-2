@@ -48,15 +48,20 @@ const SearchItem = () => {
 
         const queryParams = {
             departureId: departure.id,
-            departureName: departure.name,
-            departureLatitude: departure.latitude,
-            departureLongitude: departure.longitude,
-            departureCountry: departure.country,
+
+            // departureName: departure.name,
+            // departureLatitude: departure.latitude,
+            // departureLongitude: departure.longitude,
+            // departureCountry: departure.country,
+
             destinationId:  destination.id,
-            destinationName: destination.name,
-            destinationLatitude:  destination.latitude,
-            destinationLongitude:  destination.longitude,
-            destinationCountry:  destination.country,
+
+            // destinationName: destination.name,
+            // destinationLatitude:  destination.latitude,
+            // destinationLongitude:  destination.longitude,
+            // destinationCountry:  destination.country,
+
+
             date: date,
             passengers: passengers.toString(),
         };
