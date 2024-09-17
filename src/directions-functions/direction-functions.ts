@@ -148,7 +148,7 @@ export const cities = [
         "latitude": 43.8367,
         "longitude": 4.3601,
         "description": "Known for its well-preserved Roman monuments, including the Nîmes Arena and the Maison Carrée, Nîmes is a treasure trove of ancient history.",
-        "image": "nimes.webp?t=2024-09-05T08%3A57%3A28.561Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Nimes%20.jpg?t=2024-09-17T13%3A00%3A44.606Z"
     },
     {
         "id": 14,
@@ -193,7 +193,7 @@ export const cities = [
         "latitude": 41.6097,
         "longitude": 2.2879,
         "description": "A bustling city near Barcelona, Granollers is known for its vibrant markets, cultural festivals, and modernist architecture.",
-        "image": "Granollers.webp?t=2024-09-05T08%3A58%3A25.146Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Granollers.jpg"
     },
     {
         "id": 166,
@@ -202,7 +202,7 @@ export const cities = [
         "latitude": 41.5611,
         "longitude": 2.0088,
         "description": "Located near Barcelona, Terrassa is known for its industrial heritage, Romanesque churches, and modernist buildings. It’s also a hub for arts and culture.",
-        "image": "Terrassa.jpeg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Terrassa-MasiaFreixa.jpg"
     },
     {
         "id": 167,
@@ -220,7 +220,7 @@ export const cities = [
         "latitude": 41.5483,
         "longitude": 2.1071,
         "description": "A modern industrial city near Barcelona, Sabadell has a rich cultural scene, parks, and museums, along with vibrant shopping districts.",
-        "image": "Sabadell.jpg?t=2024-09-05T08%3A58%3A50.512Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Sabadell_.jpg"
     },
     {
         "id": 169,
@@ -247,7 +247,7 @@ export const cities = [
         "latitude": 43.2674,
         "longitude": 6.6407,
         "description": "A glamorous town on the French Riviera, Saint-Tropez is known for its beautiful beaches, luxury yachts, and vibrant nightlife.",
-        "image": "Saint-Tropez.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Saint-Tropez.jpg"
     },
     {
         "id": 6,
@@ -256,7 +256,7 @@ export const cities = [
         "latitude": 48.5734,
         "longitude": 7.7521,
         "description": "A picturesque city on the French-German border, Strasbourg is famous for its Gothic cathedral, medieval architecture, and its role as the seat of European Parliament.",
-        "image": "Strasbourg.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Strasbourg.jpg"
     },
     {
         "id": 7,
@@ -310,7 +310,7 @@ export const cities = [
         "latitude": 48.9362,
         "longitude": 2.3574,
         "description": "Located just north of Paris, Saint-Denis is home to the famous Saint-Denis Basilica, the burial place of French kings, and the Stade de France.",
-        "image": "Saint-Denis2.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Stade%20de%20France.jpg"
     },
     {
         "id": 23,
@@ -328,7 +328,7 @@ export const cities = [
         "latitude": 43.2328,
         "longitude": 0.0722,
         "description": "A gateway to the Pyrenees mountains, Tarbes is known for its pleasant parks, beautiful views, and proximity to the famous pilgrimage site of Lourdes.",
-        "image": "Tarbes.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Tarbes.jpg"
     },
     {
         "id": 25,
@@ -337,7 +337,7 @@ export const cities = [
         "latitude": 43.6045,
         "longitude": 1.4442,
         "description": "Nicknamed 'La Ville Rose' for its pink terracotta buildings, Toulouse is a bustling city known for its aerospace industry and vibrant cultural scene.",
-        "image": "Toulouse.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Toulouse.jpg"
     },
     {
         "id": 26,
@@ -346,7 +346,7 @@ export const cities = [
         "latitude": 44.2049,
         "longitude": 0.6163,
         "description": "Known for its famous prunes, Agen is a charming town in the Lot-et-Garonne region, with picturesque streets and a rich agricultural history.",
-        "image": "Agen.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Agen.jpg"
     },
     {
         "id": 27,
@@ -409,7 +409,7 @@ export const cities = [
         "latitude": 43.6768,
         "longitude": 4.627,
         "description": "Arles is known for its Roman monuments, including an amphitheater, and its connection to the famous painter Vincent van Gogh.",
-        "image": "Arles.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Arles.jpg"
     },
     {
         "id": 34,
@@ -445,7 +445,7 @@ export const cities = [
         "latitude": 43.2923,
         "longitude": 5.5708,
         "description": "Nestled in the hills near Marseille, Aubagne is famous for its pottery and the picturesque landscapes that inspired writer Marcel Pagnol.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Aubagne.jpeg'
     },
     {
         "id": 38,
@@ -670,7 +670,7 @@ export const cities = [
         "latitude": 48.0061,
         "longitude": 0.1996,
         "description": "Le Mans is famous for its 24-hour car race and its beautifully preserved medieval Old Town, the Cité Plantagenêt.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Le%20Mans.jpg'
     },
     {
         "id": 63,
@@ -697,7 +697,7 @@ export const cities = [
         "latitude": 45.8336,
         "longitude": 1.2611,
         "description": "Limoges is renowned for its fine porcelain production and its medieval architecture, including the stunning Saint-Etienne Cathedral.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Limoges.jpg'
     },
     {
         "id": 66,
@@ -886,7 +886,7 @@ export const cities = [
         "latitude": 38.7069,
         "longitude": 1.436,
         "description": "Formentera is a small Balearic island known for its pristine beaches, crystal-clear waters, and relaxed vibe.",
-        "image": "formentera%202.webp"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Formentera.jpg"
     },
     {
         "id": 88,
@@ -967,7 +967,7 @@ export const cities = [
         "latitude": 27.9202,
         "longitude": -15.5476,
         "description": "Gran Canaria offers diverse landscapes, from golden beaches to volcanic mountains, and is a popular destination for nature lovers and sunseekers.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Gran%20Canaria.jpg'
     },
     {
         "id": 99,
@@ -1093,7 +1093,7 @@ export const cities = [
         "latitude": 28.4636,
         "longitude": -16.2518,
         "description": "Santa Cruz de Tenerife is the capital of Tenerife, known for its beautiful beaches, vibrant Carnival, and modernist architecture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Santa%20Cruz%20de%20Tenerife.jpg?t=2024-09-17T13%3A00%3A06.242Z'
     },
     {
         "id": 114,
@@ -1274,7 +1274,7 @@ export const cities = [
         "latitude": 43.4623,
         "longitude": -3.8099,
         "description": "Santander is a beautiful coastal city with stunning beaches, a historic lighthouse, and a vibrant cultural life.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Santander.jpg'
     },
     {
         "id": 138,
@@ -1283,7 +1283,7 @@ export const cities = [
         "latitude": 42.4627,
         "longitude": -2.4445,
         "description": "Logroño is a charming city known for its wine culture, tapas bars, and its location along the Camino de Santiago pilgrimage route.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Logrono.jpg'
     },
     {
         "id": 139,
@@ -1292,7 +1292,7 @@ export const cities = [
         "latitude": 43.5322,
         "longitude": -5.6611,
         "description": "Gijon is a coastal city in Asturias, known for its lively waterfront, beautiful beaches, and cultural festivals.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Gijon.jpeg'
     },
     {
         "id": 140,
@@ -1301,7 +1301,7 @@ export const cities = [
         "latitude": 43.3619,
         "longitude": -5.8494,
         "description": "Oviedo, the capital of Asturias, is known for its well-preserved medieval old town, beautiful churches, and lush surroundings.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Oviedo.jpg'
     },
     {
         "id": 149,
@@ -1310,7 +1310,7 @@ export const cities = [
         "latitude": 37.6257,
         "longitude": -0.9966,
         "description": "Cartagena is a historic port city known for its Roman ruins, including a well-preserved amphitheater, and scenic harbor.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Cartagena.jpeg'
     },
     {
         "id": 153,
@@ -1328,7 +1328,7 @@ export const cities = [
         "latitude": 37.102,
         "longitude": -8.6742,
         "description": "Lagos is a picturesque coastal town in the Algarve region of Portugal, famous for its stunning cliffs, golden beaches, and historic architecture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Lagos.jpg'
     },
     {
         "id": 157,
@@ -1346,7 +1346,7 @@ export const cities = [
         "latitude": 37.7796,
         "longitude": -3.7849,
         "description": "Jaen is a city in Andalusia known for its impressive castle, olive oil production, and rich history dating back to the Roman era.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Jaen.jpg'
     },
     {
         "id": 159,
@@ -1958,7 +1958,7 @@ export const cities = [
         "latitude": 39.5696,
         "longitude": 2.6502,
         "description": "Palma de Mallorca is famous for its stunning Gothic cathedral, beautiful beaches, and vibrant city life.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Palma%20de%20Mallorca.jpg'
     },
     {
         "id": 240,
@@ -1967,7 +1967,7 @@ export const cities = [
         "latitude": 39.5491,
         "longitude": 2.3804,
         "description": "Port d’Andratx is a charming port town with luxurious villas, restaurants, and scenic views of the Mediterranean.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Port%20dAndratx.jpg'
     },
     {
         "id": 241,
@@ -1985,7 +1985,7 @@ export const cities = [
         "latitude": 39.5210,
         "longitude": 2.4783,
         "description": "Costa de la Calma offers tranquility with its peaceful beaches and beautiful sea views, perfect for a relaxing getaway.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Costa%20de%20la%20Calma.jpg'
     },
     {
         "id": 243,
@@ -2003,7 +2003,7 @@ export const cities = [
         "latitude": 39.4956,
         "longitude": 2.4823,
         "description": "El Toro is a small coastal town with stunning marinas and a peaceful atmosphere, perfect for a quiet escape.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/El%20Toro%20beach.jpg'
     },
     {
         "id": 245,
@@ -2012,7 +2012,7 @@ export const cities = [
         "latitude": 39.4708,
         "longitude": 2.5296,
         "description": "Portals Vells is known for its hidden coves and clear waters, a popular spot for yachting and swimming.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Portals%20Vells.jpg'
     },
     {
         "id": 246,
@@ -2021,7 +2021,7 @@ export const cities = [
         "latitude": 39.4914,
         "longitude": 2.5356,
         "description": "Cala Vinyes is a quiet coastal village offering serene beaches, perfect for families and couples looking to relax.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Cala%20Vinyes.jpg'
     },
     {
         "id": 247,
@@ -2039,7 +2039,7 @@ export const cities = [
         "latitude": 39.3739,
         "longitude": 3.2281,
         "description": "Cala D’or is famous for its stylish marina, picturesque coves, and whitewashed architecture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Cala%20Dor.jpg?t=2024-09-17T13%3A06%3A48.095Z'
     },
     {
         "id": 249,
@@ -2048,7 +2048,7 @@ export const cities = [
         "latitude": 39.3369,
         "longitude": 3.1586,
         "description": "Cala Figuera is a small fishing village with natural beauty and secluded coves, perfect for a peaceful retreat.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Cala%20Figuera.jpg'
     },
     {
         "id": 250,
@@ -2066,7 +2066,7 @@ export const cities = [
         "latitude": 39.5693,
         "longitude": 3.2096,
         "description": "Manacor is known for its pearl factories and as the birthplace of tennis star Rafael Nadal.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/18-10-29-Mallorca-Manacor-RalfR-DJI_0268.jpg?t=2024-09-17T13%3A03%3A36.565Z'
     },
     {
         "id": 252,
@@ -2075,7 +2075,7 @@ export const cities = [
         "latitude": 39.7050,
         "longitude": 3.4341,
         "description": "Capdepera is home to a medieval castle and offers stunning views of the surrounding landscape.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Capdepera.jpg'
     },
     {
         "id": 253,
@@ -2084,7 +2084,7 @@ export const cities = [
         "latitude": 39.7461,
         "longitude": 3.4425,
         "description": "Cala Mesquida is a pristine beach with fine white sand and turquoise waters, surrounded by dunes and pine trees.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Cala%20Mesquida.jpg'
     },
     {
         "id": 254,
@@ -2093,7 +2093,7 @@ export const cities = [
         "latitude": 39.8537,
         "longitude": 3.1214,
         "description": "Alcudia is a historic town with medieval walls, beautiful beaches, and Roman ruins nearby.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/alcudia.jpg?t=2024-09-17T13%3A04%3A57.052Z'
     },
     {
         "id": 255,
@@ -2102,7 +2102,7 @@ export const cities = [
         "latitude": 39.9075,
         "longitude": 3.0876,
         "description": "Puerto de Pollensa is a picturesque resort town with sandy beaches, stunning views, and a laid-back atmosphere.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Puerto%20de%20Pollensa.jpg'
     },
     {
         "id": 256,
@@ -2120,7 +2120,7 @@ export const cities = [
         "latitude": 39.7475,
         "longitude": 2.6486,
         "description": "Deyá is a charming village nestled in the Tramuntana mountains, known for its artistic community and scenic beauty.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Deya.jpg?t=2024-09-17T13%3A06%3A58.824Z'
     },
     {
         "id": 258,
@@ -2129,7 +2129,7 @@ export const cities = [
         "latitude": 39.7678,
         "longitude": 2.7140,
         "description": "Soller is a beautiful town in a valley surrounded by mountains, famous for its orange groves and historic tramway.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Soller.jpg'
     },
     {
         "id": 259,
@@ -2138,7 +2138,7 @@ export const cities = [
         "latitude": 43.0955,
         "longitude": -0.0463,
         "description": "Lourdes is a world-famous pilgrimage site known for its healing waters and the Sanctuary of Our Lady of Lourdes.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_5/Lourdes.jpg'
     }
 ]
 
