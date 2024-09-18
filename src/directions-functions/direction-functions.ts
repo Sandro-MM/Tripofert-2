@@ -1373,7 +1373,7 @@ export const cities = [
         "latitude": 41.9794,
         "longitude": 2.8214,
         "description": "Girona is a historic city in Catalonia known for its medieval old town, well-preserved Jewish quarter, and stunning architecture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Girona.jpeg?t=2024-09-18T19%3A02%3A59.936Z'
     },
     {
         "id": 162,
@@ -1382,7 +1382,7 @@ export const cities = [
         "latitude": 42.1161,
         "longitude": 2.7631,
         "description": "Banyoles is a charming town in Catalonia known for its scenic lake, historic buildings, and vibrant local culture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Banyoles.jpg'
     },
     {
         "id": 163,
@@ -1391,7 +1391,7 @@ export const cities = [
         "latitude": 41.9302,
         "longitude": 2.2545,
         "description": "Vic is a historic town in Catalonia known for its medieval architecture, lively market square, and rich cultural heritage.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Vic.jpg'
     },
     {
         "id": 164,
@@ -1409,7 +1409,7 @@ export const cities = [
         "latitude": 41.4469,
         "longitude": 2.2450,
         "description": "Badalona is a city on the Mediterranean coast near Barcelona, known for its beautiful beaches and vibrant cultural scene.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Badalona.jpeg?t=2024-09-18T19%3A09%3A14.161Z'
     },
     {
         "id": 172,
@@ -1418,7 +1418,7 @@ export const cities = [
         "latitude": 41.4934,
         "longitude": 2.3642,
         "description": "Premia de Mar is a coastal town known for its beaches, traditional architecture, and pleasant seaside atmosphere.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Lametlla%20de%20Mar.jpg'
     },
     {
         "id": 173,
@@ -1580,7 +1580,7 @@ export const cities = [
         "latitude": 41.8864,
         "longitude": 3.1783,
         "description": "Calella de Palafrugell is a charming seaside village known for its whitewashed houses, clear blue waters, and relaxed ambiance.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Calella%20de%20Palafrugell.jpg'
     },
     {
         "id": 191,
@@ -1589,7 +1589,7 @@ export const cities = [
         "latitude": 41.9124,
         "longitude": 3.2073,
         "description": "Tamariu is a small, picturesque beach town with crystal-clear waters, a relaxed atmosphere, and stunning coastal scenery.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Palamos%20coast%20no.jpg'
     },
     {
         "id": 192,
@@ -1616,7 +1616,7 @@ export const cities = [
         "latitude": 42.0517,
         "longitude": 3.1994,
         "description": "L’Estartit is a popular beach town famous for its long sandy beaches and its proximity to the Medes Islands marine reserve.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Medes%20Islands.jpg'
     },
     {
         "id": 195,
@@ -1625,7 +1625,7 @@ export const cities = [
         "latitude": 42.1230,
         "longitude": 3.1322,
         "description": "L’Escala is a charming coastal town known for its beautiful beaches, historical sites, and delicious seafood.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/LEscala.jpg'
     },
     {
         "id": 196,
@@ -1634,7 +1634,7 @@ export const cities = [
         "latitude": 42.2451,
         "longitude": 3.1137,
         "description": "Empuriabrava is renowned for its extensive network of canals, offering a unique seaside experience and various water sports activities.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Empuriabrava.jpeg'
     },
     {
         "id": 197,
@@ -1661,7 +1661,7 @@ export const cities = [
         "latitude": 42.2679,
         "longitude": 2.9613,
         "description": "Figueres is known for its rich cultural heritage and is home to the Salvador Dalí Theatre-Museum, a major attraction in the region.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Figueres.jpeg?t=2024-09-18T18%3A51%3A10.620Z'
     },
     {
         "id": 200,
@@ -1688,7 +1688,7 @@ export const cities = [
         "latitude": 41.2225,
         "longitude": 1.7281,
         "description": "Vilanova i la Geltrú is a bustling port city with a lively marina, beautiful beaches, and a rich local history.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Vilanova%20i%20la%20Geltru.jpg?t=2024-09-18T18%3A54%3A43.870Z'
     },
     {
         "id": 203,
@@ -1697,7 +1697,7 @@ export const cities = [
         "latitude": 41.1989,
         "longitude": 1.5681,
         "description": "Calafell is a coastal town known for its beautiful beaches, lively promenade, and historical sites.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Calafell.jpeg'
     },
     {
         "id": 204,
@@ -1706,7 +1706,7 @@ export const cities = [
         "latitude": 41.1458,
         "longitude": 1.4022,
         "description": "Torredembarra is a charming town with a relaxed beach atmosphere, historic buildings, and a bustling marina.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Torredembarra.jpg'
     },
     {
         "id": 205,
@@ -1733,7 +1733,7 @@ export const cities = [
         "latitude": 41.0767,
         "longitude": 1.1397,
         "description": "Salou is renowned for its vibrant nightlife, beautiful beaches, and the famous PortAventura World theme park.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Salou.jpg'
     },
     {
         "id": 208,
@@ -1751,7 +1751,7 @@ export const cities = [
         "latitude": 41.0021,
         "longitude": 0.9922,
         "description": "Miami Playa is a popular beach destination known for its clear waters, beautiful beaches, and family-friendly resorts.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Miami%20Playa.jpg'
     },
     {
         "id": 210,
@@ -1769,7 +1769,7 @@ export const cities = [
         "latitude": 40.8123,
         "longitude": 0.7102,
         "description": "L’Ampolla is known for its beautiful beaches, tranquil setting, and excellent seafood restaurants.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/LAmpolla.jpeg?t=2024-09-18T18%3A49%3A54.863Z'
     },
     {
         "id": 212,
@@ -1783,11 +1783,12 @@ export const cities = [
     {
         "id": 213,
         "name": "Vinaròs",
+
         "country": "Spain",
         "latitude": 40.4707,
         "longitude": 0.4720,
         "description": "Vinaròs is known for its beautiful beaches, historic sites, and vibrant local culture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Vinaros.jpg'
     },
     {
         "id": 214,
@@ -1796,7 +1797,7 @@ export const cities = [
         "latitude": 40.4167,
         "longitude": 0.4216,
         "description": "Benicarló is a small town known for its charming beaches, historic sites, and vibrant local festivals.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Benicarlo.jpg'
     },
     {
         "id": 215,
@@ -1805,7 +1806,7 @@ export const cities = [
         "latitude": 40.1017,
         "longitude": -0.1412,
         "description": "Oropesa del Mar is known for its beautiful beaches, Mediterranean climate, and lively tourism.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Oropesa%20del%20Mar.jpg?t=2024-09-18T18%3A52%3A10.913Z'
     },
     {
         "id": 216,
@@ -1823,7 +1824,7 @@ export const cities = [
         "latitude": 39.9864,
         "longitude": -0.0513,
         "description": "Castelló de la Plana offers a mix of historic architecture, beaches, and cultural events.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Castello%20de%20la%20Plana.jpeg?t=2024-09-18T18%3A51%3A25.308Z'
     },
     {
         "id": 218,
@@ -1832,7 +1833,7 @@ export const cities = [
         "latitude": 39.8892,
         "longitude": -0.0840,
         "description": "Burriana is a town with a beautiful beach, historic charm, and a variety of local restaurants.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Burriana.jpg'
     },
     {
         "id": 219,
@@ -1976,7 +1977,7 @@ export const cities = [
         "latitude": 39.5370,
         "longitude": 2.4478,
         "description": "Peguera is a popular beach resort town on the island of Mallorca, ideal for sunbathing and watersports.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Peguera.jpg?t=2024-09-18T18%3A53%3A09.044Z'
     },
     {
         "id": 242,
@@ -1994,7 +1995,7 @@ export const cities = [
         "latitude": 39.5052,
         "longitude": 2.4727,
         "description": "Santa Ponsa is a lively tourist town known for its sandy beaches and a rich selection of restaurants and shops.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Santa%20Ponsa.jpg?t=2024-09-18T18%3A54%3A19.491Z'
     },
     {
         "id": 244,
@@ -2030,7 +2031,7 @@ export const cities = [
         "latitude": 39.5244,
         "longitude": 2.5361,
         "description": "Palmanova is a family-friendly resort with long sandy beaches, bustling promenades, and plenty of entertainment options.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Palmanova.jpg?t=2024-09-18T18%3A52%3A33.205Z'
     },
     {
         "id": 248,
@@ -2057,7 +2058,7 @@ export const cities = [
         "latitude": 39.4197,
         "longitude": 3.2582,
         "description": "Portocolom is a traditional fishing village with a scenic harbor and beautiful beaches nearby.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Portocolom.jpg?t=2024-09-18T18%3A54%3A28.569Z'
     },
     {
         "id": 251,
@@ -2111,7 +2112,7 @@ export const cities = [
         "latitude": 39.7208,
         "longitude": 2.9115,
         "description": "Inca is known for its leather goods and weekly market, as well as its proximity to the Tramuntana mountains.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Inca.jpg'
     },
     {
         "id": 257,
