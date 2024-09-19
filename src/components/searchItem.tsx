@@ -9,7 +9,7 @@ import {DrawerClose} from "@/components/ui/drawer";
 import {Button} from "@/components/ui/button";
 import Counter from "@/components/counter";
 
-import {cities, getCitiesInRange, searchPlaceInterface} from "@/directions-functions/direction-functions";
+import {cities, getCitiesInRange, searchPlaceInterface , airports} from "@/directions-functions/direction-functions";
 import { useRouter } from 'next/navigation';
 import {Spinner} from "@/components/ui/spinner";
 
@@ -22,17 +22,21 @@ const SearchItem = () => {
     const [loading, seLoading] = useState<boolean>(false);
 
     const departureData = cities;
+    const airportsItems = airports;
     const [destinationDataFiltered, setDestinationDataFiltered] = useState<any>();
+    const [destinationDataAirFiltered, setDestinationDataAirFiltered] = useState<any>();
 
 
 
 
     useEffect(() => {
-        if (departure) {
+        if (departure.latitude && departure.longitude ) {
             // console.log("Departure city:", departure);
             const result = getCitiesInRange(departure.latitude, departure.longitude, 800, cities);
+            const resultAir = getCitiesInRange(departure.latitude, departure.longitude, 800, airports);
             // console.log("Filtered cities:", result);
             setDestinationDataFiltered(result);
+            setDestinationDataAirFiltered(resultAir);
             setDestination({ name:'Your Destination', id: null})
         }
     }, [departure]);
@@ -104,7 +108,7 @@ const SearchItem = () => {
                             <span
                                 className='lg:text-base md:text-sm text-subText text-[12px]  md:font-normal font-light'>{departure.name}</span>
                         </div>
-                    </div>} title={'Pick-up'} subtitle={'Your location'} content={<SearchTable setChosenItem={setDeparture} data={departureData}/>}/>
+                    </div>} title={'Pick-up'} subtitle={'Your location'} content={<SearchTable airportData={airportsItems} setChosenItem={setDeparture} data={departureData}/>}/>
 
 
                     <DrawerOpen disable={departure.id === null}  trigger={<div className={'flex lg:w-[200px] md:w-[178px]'}>
@@ -119,7 +123,7 @@ const SearchItem = () => {
                             <span
                                 className='lg:text-base  md:text-sm text-[12px] text-subText  md:font-normal font-light'> {destination.name} </span>
                         </div>
-                    </div>} title={'Destination'} subtitle={'Where are you going?'} content={<SearchTable setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
+                    </div>} title={'Destination'} subtitle={'Where are you going?'} content={<SearchTable airportData={destinationDataAirFiltered} setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
                 </div>
                 <div className='justify-around child:max-sm:w-1/2 max-sm:w-full'>
 

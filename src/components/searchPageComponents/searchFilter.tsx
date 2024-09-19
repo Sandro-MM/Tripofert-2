@@ -10,7 +10,7 @@ import {DrawerClose} from "@/components/ui/drawer";
 import {Button} from "@/components/ui/button";
 import Counter from "@/components/counter";
 import { Checkbox } from "@/components/ui/checkbox";
-import {calculatePrice, cities, getCitiesInRange} from "@/directions-functions/direction-functions";
+import {airports, calculatePrice, cities, getCitiesInRange} from "@/directions-functions/direction-functions";
 import { useRouter } from 'next/navigation';
 import Checkout from "@/app/searchResults/checkout";
 import {Spinner} from "@/components/ui/spinner";
@@ -37,7 +37,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
     const [distancePrice, setDistancePrice] = useState<number>(undefined);
     const [stopsPrice, setStopsPrice] = useState<number>(undefined);
     const [dissabled, setDissabled] = useState<boolean>(true);
-
+    const [destinationDataAirFiltered, setDestinationDataAirFiltered] = useState<any>();
     const departureChangeCount = useRef(0);
 
 
@@ -103,11 +103,13 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
 
     useEffect(() => {
-        if (departure) {
+        if (departure.latitude && departure.longitude ) {
             // console.log("Departure city:", departure);
             const result = getCitiesInRange(departure.latitude, departure.longitude, 800, cities);
+            const resultAir = getCitiesInRange(departure.latitude, departure.longitude, 800, airports);
             // console.log("Filtered cities:", result);
             setDestinationDataFiltered(result);
+            setDestinationDataAirFiltered(resultAir);
             // setDestination({ name:'Your Destination', id: null})
         }
     }, [departure]);
@@ -178,7 +180,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                             className='lg:text-base md:text-sm text-subText text-[12px]  md:font-normal font-light'>{departure.name}</span>
                                     </div>
                                 </div>} title={'Pick-up'} subtitle={'Your location'}
-                                content={<SearchTable setChosenItem={changeDeparture} data={departureData}/>}/>
+                                content={<SearchTable airportData={airports} setChosenItem={changeDeparture} data={departureData}/>}/>
 
 
                     <DrawerOpen disable={departure.id === null}
@@ -195,7 +197,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                             className='lg:text-base  md:text-sm text-[12px] text-subText  md:font-normal font-light'> {destination.name} </span>
                                     </div>
                                 </div>} title={'Destination'} subtitle={'Where are you going?'}
-                                content={<SearchTable setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
+                                content={<SearchTable airportData={destinationDataAirFiltered} setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
                 </div>
                 <div className='justify-around child:max-sm:w-1/2 max-sm:w-full'>
 
@@ -317,7 +319,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
 
             </div>
-            <div className='flex gap-9 w-full mt-4 justify-center'>
+            <button disabled={dissabled} className='flex gap-9 w-full mt-4 justify-center'>
 
                 <Checkout amount={(stopsPrice+distancePrice)} departureLat={queryParams.departureLatitude} departureLng={queryParams.departureLongitude}
                           orderData={{
@@ -359,7 +361,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                     </div>
                 }
 
-            </div>
+            </button>
 
         </div>
     );

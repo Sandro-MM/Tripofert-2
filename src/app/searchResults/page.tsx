@@ -3,7 +3,7 @@ import ThemeSwitch from "@/components/themeSwitchButton";
 import SearchFilter from "@/components/searchPageComponents/searchFilter";
 import {useRouter, useSearchParams} from 'next/navigation'
 import React, {Suspense, useEffect, useState} from "react";
-import {cities, searchPlaceInterface} from "@/directions-functions/direction-functions";
+import {airports, cities, searchPlaceInterface} from "@/directions-functions/direction-functions";
 import {MapProvider} from "@/components/map/mapProvider";
 import RouteBarComponent from "@/components/searchPageComponents/routeBarComponent";
 import dynamic from 'next/dynamic';
@@ -20,13 +20,14 @@ export default function Page({ params }) {
 
     const [searchParams] = React.useState(useSearchParams());
 
-    const[departureId, setDepartureId]= useState(+searchParams.get('departureId') || 0)
-    const [destinationId, setDestinationId]= useState(+searchParams.get('destinationId') || 0)
+    const[departureId, setDepartureId]= useState(searchParams.get('departureId') || 0)
+    const [destinationId, setDestinationId]= useState(searchParams.get('destinationId') || 0)
 
     useEffect(() => {
+        console.log(departureId)
         // Find the matching departure and destination cities based on ids
-        const foundDeparture = cities.find(city => city.id === departureId);
-        const foundDestination = cities.find(city => city.id === destinationId);
+        const foundDeparture = departureId.toString().startsWith('0')?airports.find(city => city.id === departureId.toString()):cities.find(city => city.id === +departureId);
+        const foundDestination =  destinationId.toString().startsWith('0')?airports.find(city => city.id === destinationId.toString()):cities.find(city => city.id === +destinationId);
 
         // Set the departure and destination states
         if (foundDeparture) {
