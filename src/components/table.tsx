@@ -18,15 +18,23 @@ type SearchTableProps = {
 const SearchTable : React.FC<SearchTableProps> = ({data, setChosenItem, airportData}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
-    const filteredData = data.filter(item =>
-        item.name.toLowerCase().startsWith(searchTerm.toLowerCase())
-    );
+    const combinedData = [...data, ...airportData]
+
+    const filteredData = combinedData.filter(item => {
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
+        const nameMatches = item.name.toLowerCase().startsWith(lowerCaseSearchTerm);
+        const abbreviationMatches = item.abbreviation && item.abbreviation.toLowerCase().startsWith(lowerCaseSearchTerm);
+        return nameMatches || abbreviationMatches;
+    });
 
     const [searchAirPortTerm, setSearchAirPortTerm] = useState('');
 
-    const filteredAirPortData = airportData.filter(item =>
-        item.name.toLowerCase().startsWith(searchAirPortTerm.toLowerCase())
-    );
+    const filteredAirPortData = airportData.filter(item => {
+        const lowerCaseSearchTerm = searchAirPortTerm.toLowerCase();
+        const nameMatches = item.name.toLowerCase().startsWith(lowerCaseSearchTerm);
+        const abbreviationMatches = item.abbreviation && item.abbreviation.toLowerCase().startsWith(lowerCaseSearchTerm);
+        return nameMatches || abbreviationMatches;
+    });
 
     return (
         <div>
@@ -61,7 +69,7 @@ const SearchTable : React.FC<SearchTableProps> = ({data, setChosenItem, airportD
                             <DrawerClose key={index} asChild>
                             <TableRow onClick={()=>setChosenItem({id: item.id, name: item.name, country: item.country, latitude: item.latitude, longitude: item.longitude},)} className='w-full' >
                                 <TableCell className="font-medium w-1/3">{item.name}</TableCell>
-                                <TableCell>{item.country}</TableCell>
+                                <TableCell>{item?.abbreviation}  {item.country}</TableCell>
                                 <TableCell className='p-0 w-7 h-7'>
                                     <Image
                                         src="/direction-left.svg"
@@ -85,7 +93,7 @@ const SearchTable : React.FC<SearchTableProps> = ({data, setChosenItem, airportD
                                     <DrawerClose key={index} asChild>
                                         <TableRow onClick={()=>setChosenItem({id: item.id, name: item.name, country: item.country, latitude: item.latitude, longitude: item.longitude},)} className='w-full' >
                                             <TableCell className="font-medium w-1/3">{item.name}</TableCell>
-                                            <TableCell>{item.country}</TableCell>
+                                            <TableCell>{item?.abbreviation}  {item.country}</TableCell>
                                             <TableCell className='p-0 w-7 h-7'>
                                                 <Image
                                                     src="/direction-left.svg"

@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/dialog";
 import {Input} from "@/components/ui/input";
 import MapPicker from "@/components/map/mapPicker";
+import CarSelect from "@/components/carSelect";
 
 
 export default function SearchFilter({departure, setDeparture, destination,setDestination,date,setDate, passengers, setPassengers, setMapDeparture,setMapDestination, distance, points}) {
@@ -303,8 +304,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                 <DialogHeader>
                                     <DialogTitle>Select Car</DialogTitle>
                                     <DialogDescription></DialogDescription>
-                                   cacacaca
-
+                                   <CarSelect setCarType={setCarType} passengerCount={+passengers} selected={carType}/>
                                     <DialogClose asChild>
                                         <Button type="button">
                                             Select
