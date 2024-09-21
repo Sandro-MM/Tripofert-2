@@ -8,25 +8,25 @@ export default function ArticlesPreviewBlock() {
         {
             country:'Spain',
             city:'Madrid',
-            img:'/madrid-m.jpg',
+            img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/madrid.jpg',
             desc:'Vibrant capital of Spain, renowned for its culture, history, architecture, and lively atmosphere.'
         },
         {
-            country:'Portugal',
-            city:'Lisbon',
-            img:'/lisbon-s.jpg',
-            desc:'Portugal\'s coastal gem, known for its historic charm and warm hospitality.'
+            country:'Spain',
+            city:'Barcelona',
+            img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/barcelona.jpg',
+            desc:'Barcelona is a vibrant city famous for Gaudí’s architecture.'
         },
         {
             country:'France',
             city:'Paris',
-            img:'/paris-m.jpg',
+            img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/paris.jpg',
             desc:'Iconic city of lights, synonymous with romance, art, fashion, and exquisite cuisine.'
         },
         {
             country:'Spain',
             city:'Valencia',
-            img:'/valencia-s.jpg',
+            img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Valencia%20.jpg',
             desc:'Valencia is home to one of the most famous Spanish festivals, Las Fallas.'
         }
     ]
