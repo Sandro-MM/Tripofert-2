@@ -112,7 +112,7 @@ export const airports = [
     },
     {
         id: "014",
-        name: "São Jorge Airport",
+        name: "Sao Jorge Airport",
         country: "Portugal",
         latitude: 38.6653,
         longitude: -28.1758,
@@ -376,7 +376,7 @@ export const airports = [
     },
     {
         id: "047",
-        name: "Adolfo Suárez Madrid Airport",
+        name: "Adolfo Suarez Madrid Airport",
         country: "Spain",
         latitude: 40.4983,
         longitude: -3.5676,
@@ -432,7 +432,7 @@ export const airports = [
     },
     {
         id: "054",
-        name: "Málaga Airport",
+        name: "Malaga Airport",
         country: "Spain",
         latitude: 36.6749,
         longitude: -4.4998,
@@ -569,7 +569,7 @@ export const cities = [
     },
     {
         "id": 234,
-        "name": "Guimarães",
+        "name": "Guimaraes",
         "country": "Portugal",
         "latitude": 41.4418,
         "longitude": -8.2956,
@@ -1226,7 +1226,7 @@ export const cities = [
     },
     {
         "id": 67,
-        "name": "Mâcon",
+        "name": "Macon",
         "country": "France",
         "latitude": 46.3066,
         "longitude": 4.8287,
@@ -1244,7 +1244,7 @@ export const cities = [
     },
     {
         "id": 69,
-        "name": "A Coruña",
+        "name": "A Coruna",
         "country": "Spain",
         "latitude": 43.3623,
         "longitude": -8.4115,
@@ -1740,7 +1740,7 @@ export const cities = [
     },
     {
         "id": 129,
-        "name": "San Sebastián",
+        "name": "San Sebastian",
         "country": "Spain",
         "latitude": 43.3183,
         "longitude": -1.9812,
@@ -1758,7 +1758,7 @@ export const cities = [
     },
     {
         "id": 133,
-        "name": "Puigcerdà",
+        "name": "Puigcerda",
         "country": "Spain",
         "latitude": 42.4317,
         "longitude": 1.928,
@@ -1794,7 +1794,7 @@ export const cities = [
     },
     {
         "id": 138,
-        "name": "Logroño",
+        "name": "Logrono",
         "country": "Spain",
         "latitude": 42.4627,
         "longitude": -2.4445,
@@ -1848,7 +1848,7 @@ export const cities = [
     },
     {
         "id": 157,
-        "name": "Córdoba",
+        "name": "Cordoba",
         "country": "Spain",
         "latitude": 37.8882,
         "longitude": -4.7794,
@@ -2055,7 +2055,7 @@ export const cities = [
     },
     {
         "id": 186,
-        "name": "S’Agaro",
+        "name": "S'Agaro",
         "country": "Spain",
         "latitude": 41.7933,
         "longitude": 3.0551,
@@ -2127,7 +2127,7 @@ export const cities = [
     },
     {
         "id": 194,
-        "name": "L’Estartit",
+        "name": "L'Estartit",
         "country": "Spain",
         "latitude": 42.0517,
         "longitude": 3.1994,
@@ -2136,7 +2136,7 @@ export const cities = [
     },
     {
         "id": 195,
-        "name": "L’Escala",
+        "name": "L'Escala",
         "country": "Spain",
         "latitude": 42.1230,
         "longitude": 3.1322,
@@ -2163,7 +2163,7 @@ export const cities = [
     },
     {
         "id": 198,
-        "name": "Cadaqués",
+        "name": "Cadaques",
         "country": "Spain",
         "latitude": 42.2885,
         "longitude": 3.2783,
@@ -2271,7 +2271,7 @@ export const cities = [
     },
     {
         "id": 210,
-        "name": "L’Ametlla de Mar",
+        "name": "L'Ametlla de Mar",
         "country": "Spain",
         "latitude": 40.8871,
         "longitude": 0.8007,
@@ -2280,7 +2280,7 @@ export const cities = [
     },
     {
         "id": 211,
-        "name": "L’Ampolla",
+        "name": "L'Ampolla",
         "country": "Spain",
         "latitude": 40.8123,
         "longitude": 0.7102,
@@ -2298,7 +2298,7 @@ export const cities = [
     },
     {
         "id": 213,
-        "name": "Vinaròs",
+        "name": "Vinaros",
 
         "country": "Spain",
         "latitude": 40.4707,
@@ -2308,7 +2308,7 @@ export const cities = [
     },
     {
         "id": 214,
-        "name": "Benicarló",
+        "name": "Benicarlo",
         "country": "Spain",
         "latitude": 40.4167,
         "longitude": 0.4216,
@@ -2335,7 +2335,7 @@ export const cities = [
     },
     {
         "id": 217,
-        "name": "Castelló de la Plana",
+        "name": "Castello de la Plana",
         "country": "Spain",
         "latitude": 39.9864,
         "longitude": -0.0513,
@@ -2479,7 +2479,7 @@ export const cities = [
     },
     {
         "id": 240,
-        "name": "Port d’Andratx",
+        "name": "Port d'Andratx",
         "country": "Spain",
         "latitude": 39.5491,
         "longitude": 2.3804,
@@ -2632,7 +2632,7 @@ export const cities = [
     },
     {
         "id": 257,
-        "name": "Deyá",
+        "name": "Deya",
         "country": "Spain",
         "latitude": 39.7475,
         "longitude": 2.6486,
