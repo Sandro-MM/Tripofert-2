@@ -225,7 +225,7 @@ export const cities = [
         "latitude": 47.9020,
         "longitude": 1.9093,
         "description": "Famous for its association with Joan of Arc, Orléans is a beautiful city located on the banks of the Loire River, with stunning cathedrals and a rich medieval history.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Orleans.jpg?t=2024-09-12T10%3A03%3A50.439Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Orleans.jpg"
     },
     {
         "id": 15,
@@ -810,7 +810,7 @@ export const cities = [
         "latitude": 42.8514,
         "longitude": -2.6691,
         "description": "Álava is a province in the Basque Country, offering beautiful landscapes, historical sites, and renowned vineyards in Rioja Alavesa.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/alava.jpg?t=2024-09-14T14%3A57%3A14.054Z"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/ALAVA.jpeg"
     },
     {
         "id": 71,
@@ -972,7 +972,7 @@ export const cities = [
         "latitude": 37.1773,
         "longitude": -3.5986,
         "description": "Granada is home to the Alhambra Palace, a masterpiece of Moorish architecture, and the stunning Sierra Nevada mountains.",
-        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Alhambra%20granada%20.jpg"
+        "image": "https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/GRANADA.jpeg?t=2024-09-21T14%3A06%3A11.296Z"
     },
     {
         "id": 90,
@@ -1495,7 +1495,7 @@ export const cities = [
         "latitude": 41.5381,
         "longitude": 2.4445,
         "description": "Mataro is a vibrant city with a rich history, beautiful beaches, and a lively port area.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Mataro%20spain%20Arenys%20de%20Mar.jpeg?t=2024-09-21T14%3A13%3A00.290Z'
     },
     {
         "id": 174,
@@ -1504,7 +1504,7 @@ export const cities = [
         "latitude": 41.5073,
         "longitude": 2.3893,
         "description": "Vilassar de Mar is a charming coastal town with a picturesque old town, lovely beaches, and a relaxed atmosphere.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Vilassar%20de%20Mar.jpg'
     },
     {
         "id": 175,
@@ -1513,7 +1513,7 @@ export const cities = [
         "latitude": 41.5820,
         "longitude": 2.5488,
         "description": "Arenys de Mar is a coastal town known for its beautiful beaches, lively harbor, and historic charm.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Mataro%20spain%20Arenys%20de%20Mar.jpeg?t=2024-09-21T14%3A13%3A00.290Z'
     },
     {
         "id": 176,
@@ -1522,7 +1522,7 @@ export const cities = [
         "latitude": 41.5934,
         "longitude": 2.5805,
         "description": "Canet de Mar is a seaside town with a relaxed vibe, beautiful beaches, and a historic center.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Canet%20de%20Mar.jpg'
     },
     {
         "id": 177,
@@ -1531,7 +1531,7 @@ export const cities = [
         "latitude": 41.6036,
         "longitude": 2.6172,
         "description": "Sant Pol de Mar is a picturesque coastal town known for its tranquil beaches and charming atmosphere.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Sant%20Pol%20de%20Mar.jpeg?t=2024-09-21T14%3A13%3A36.410Z'
     },
     {
         "id": 178,
@@ -1549,7 +1549,7 @@ export const cities = [
         "latitude": 41.6246,
         "longitude": 2.6850,
         "description": "Pineda de Mar is a seaside town with a long stretch of beach, a lively town center, and a relaxed atmosphere.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Pineda%20de%20Mar.jpeg'
     },
     {
         "id": 180,
@@ -1558,7 +1558,7 @@ export const cities = [
         "latitude": 41.6364,
         "longitude": 2.7104,
         "description": "Santa Susanna is a coastal town known for its beautiful beaches, family-friendly atmosphere, and pleasant climate.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Santa%20Susanna%20Mas%20Pinell%20La%20Rapita.jpeg?t=2024-09-21T14%3A10%3A29.855Z'
     },
     {
         "id": 181,
@@ -1567,7 +1567,7 @@ export const cities = [
         "latitude": 41.6465,
         "longitude": 2.7415,
         "description": "Malgrat de Mar is a charming seaside town with a long sandy beach, a lively promenade, and a variety of local amenities.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Malgrat%20de%20Mar.jpeg'
     },
     {
         "id": 182,
@@ -1576,7 +1576,7 @@ export const cities = [
         "latitude": 41.6755,
         "longitude": 2.7903,
         "description": "Blanes is a coastal town known for its beautiful beaches, botanical gardens, and vibrant local culture.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Blanes.jpg'
     },
     {
         "id": 183,
@@ -1585,7 +1585,7 @@ export const cities = [
         "latitude": 41.7000,
         "longitude": 2.8451,
         "description": "Lloret de Mar is a popular tourist destination with extensive beaches, a lively nightlife scene, and numerous attractions.",
-        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/Lloret%20de%20Mar.jpg'
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Lloret%20de%20Marjpg.jpg?t=2024-09-21T14%3A04%3A45.895Zc'
     },
     {
         "id": 184,
@@ -1603,7 +1603,7 @@ export const cities = [
         "latitude": 41.7839,
         "longitude": 3.0322,
         "description": "Sant Feliu de Guíxols is a historic town with a lovely marina, beautiful beaches, and a vibrant cultural scene.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Santa%20Susanna%20Mas%20Pinell%20La%20Rapita.jpeg?t=2024-09-21T14%3A10%3A29.855Z'
     },
     {
         "id": 186,
@@ -1612,7 +1612,7 @@ export const cities = [
         "latitude": 41.7933,
         "longitude": 3.0551,
         "description": "S’Agaro is a small, upscale coastal town known for its luxurious homes, beautiful beaches, and serene environment.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/SAgaro.jpg'
     },
     {
         "id": 187,
@@ -1666,7 +1666,7 @@ export const cities = [
         "latitude": 41.9540,
         "longitude": 3.2090,
         "description": "Begur is a picturesque town known for its medieval architecture, stunning coastal views, and beautiful beaches.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Begur%20LAmetlla%20de%20Mar.jpeg'
     },
     {
         "id": 193,
@@ -1675,7 +1675,7 @@ export const cities = [
         "latitude": 42.0000,
         "longitude": 3.1533,
         "description": "Mas Pinell is a small residential area known for its tranquil environment and proximity to the Mediterranean coast.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Santa%20Susanna%20Mas%20Pinell%20La%20Rapita.jpeg?t=2024-09-21T14%3A10%3A29.855Z'
     },
     {
         "id": 194,
@@ -1828,7 +1828,7 @@ export const cities = [
         "latitude": 40.8871,
         "longitude": 0.8007,
         "description": "L’Ametlla de Mar is a quaint fishing town with charming streets, a picturesque harbor, and excellent seafood.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Begur%20LAmetlla%20de%20Mar.jpeg'
     },
     {
         "id": 211,
@@ -1846,7 +1846,7 @@ export const cities = [
         "latitude": 40.6146,
         "longitude": 0.6136,
         "description": "La Rapita is a small coastal town famous for its long sandy beaches and relaxed atmosphere.",
-        "image": null
+        "image": 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_6/Santa%20Susanna%20Mas%20Pinell%20La%20Rapita.jpeg?t=2024-09-21T14%3A10%3A29.855Z'
     },
     {
         "id": 213,
