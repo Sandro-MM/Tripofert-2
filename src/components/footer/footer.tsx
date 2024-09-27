@@ -17,11 +17,12 @@ const Footer = () => {
                 <div className='flex w-full max-w-[550px] justify-between child:text-header font-bold sm:text-lg'>
                     <div>
                         Company
-                        <ul className='child:cursor-pointer child:sm:text-sm text-xs child:font-normal mt-6 child:my-4'>
-                        <li>About</li>
-                        <li>Legal</li>
-                    </ul>
-                </div>
+                        <ul className='child:cursor-pointer child:sm:text-sm text-xs child:font-normal mt-6 child:my-4 flex gap-1'>
+                            <Link href="/privacy">Privacy</Link>
+                            <Link href="/legal">Legal</Link>
+                            <Link href="/cookies">Cookies</Link>
+                        </ul>
+                    </div>
                 <div>
                     Contact
                     <ul className='child:cursor-pointer child:sm:text-sm text-xs child:font-normal mt-6 child:my-4'>
