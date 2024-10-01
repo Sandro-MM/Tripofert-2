@@ -296,7 +296,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
 
                         <Dialog>
-                            <DialogTrigger                             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 underline"
+                            <DialogTrigger className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 underline"
                             >
                                 more Options
                             </DialogTrigger>
