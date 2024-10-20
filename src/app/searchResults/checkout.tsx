@@ -142,8 +142,6 @@ export default function Checkout({trigger, departureLat, departureLng,amount,ord
     }
 
     const  onSubmit  = async (transactionId, dataObject) => {
-        console.log(123123123123123123)
-        console.log('formData',dataCustomer)
         const { data, error } = await supabase
             .from('order_list')
             .insert([
@@ -152,7 +150,9 @@ export default function Checkout({trigger, departureLat, departureLng,amount,ord
                     ...dataObject,
                     transaction_id:transactionId,
                     pick_up_address:location,
-                }
+                    flight_number:formData?.flight_number?.toString(),
+
+    }
             ]);
 
         if (error) {
@@ -301,6 +301,21 @@ export default function Checkout({trigger, departureLat, departureLng,amount,ord
                        </div>
                        {(errors.pickUpTime) &&
                            <p className="text-red-500 text-xs mt-[1px]">{errors.pickUpTime.message.toString()}</p>}
+
+                       {
+                           (orderData?.departure?.id && typeof orderData.departure.id === 'string' && orderData.departure.id.startsWith('0')) && (
+                               <div>
+                                   <div className="text-sm mt-3 font-medium ml-[2px] mb-[2px] w-max">Enter Your Flight Number</div>
+                                   <Input
+                                       className="!w-[70%] mx-[0px] min-[500px]:min-w-[400px] min-[400px]:min-w-[320px] min-[340px]:min-w-[290px] min-[300px]:min-w-[230px] min-[260px]:min-w-[200px] bg-background/90"
+                                       type=""
+                                       placeholder="Flight Number"
+                                       {...register('flight_number')}
+                                   />
+                               </div>
+                           )
+                       }
+
                        {
                            amount && <div
                                className={'text-header font-semibold text-lg my-[8px]'}> Total: {amount.toString()}€</div>
