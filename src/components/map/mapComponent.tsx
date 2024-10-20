@@ -40,6 +40,8 @@ const defaultMapOptions = {
     gestureHandling: 'auto',
     mapTypeId: 'roadmap',
     mapId: "ab333b49f1c59e6c",
+    mapTypeControl: false,
+    streetViewControl: false,
 };
 
 const MapComponent = ({ departure, destination, setDistance, setDuration, setPoints }) => {
@@ -109,7 +111,7 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
         if (waypoints.length < 10) {
             setWaypoints([...waypoints, position]);
             setSelectedWaypoints([...selectedWaypoints, { id: cityId, visitTime }]);
-            setDirectionsRequested(false);
+            // setDirectionsRequested(false);
         } else {
             console.log('Maximum of 10 waypoints reached.');
         }
@@ -119,7 +121,7 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
     const removeWaypoint = (position, cityId) => {
         setWaypoints(waypoints.filter(wp => wp.lat !== position.lat || wp.lng !== position.lng));
         setSelectedWaypoints(selectedWaypoints.filter(waypoint => waypoint.id !== cityId));
-        setDirectionsRequested(false);
+        // setDirectionsRequested(false);
         setPoints(selectedWaypoints.filter(waypoint => waypoint.id !== cityId))
     };
 
@@ -178,18 +180,18 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
                 >
                     <DestinationDepartureMarker
                         map={mapRef.current}
-                        image={"/madrid-m.jpg"}
+                        image={departure.image}
                         label={departure.name}
                         position={{ lat: departure.latitude, lng: departure.longitude }}
-                        description={'Description of departure'}
+                        description={departure.description}
                         Pointclass={'departure-point'}
                     />
                     <DestinationDepartureMarker
                         map={mapRef.current}
-                        image={"/madrid-m.jpg"}
+                        image={destination.image}
                         label={destination.name}
                         position={{ lat: destination.latitude, lng: destination.longitude }}
-                        description={'Description of destination'}
+                        description={destination.description}
                         Pointclass={'destination-point'}
                     />
                     {directions && (
@@ -207,8 +209,8 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
                             position={{ lat: city.latitude, lng: city.longitude }}
                             label={city.name}
                             time={findVisitTime(city.id)}
-                            image={"/madrid-m.jpg"}
-                            description={'Description of city'}
+                            image={city.image}
+                            description={city.description}
                             isSelected={selectedWaypoints.some(waypoint => waypoint.id === city.id)}
                             onAdd={(visitTime) => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id, visitTime)}
                             onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}
@@ -229,15 +231,15 @@ const MapComponent = ({ departure, destination, setDistance, setDuration, setPoi
             </div>
 
             {!showMap && (
-                <div className='w-full max-w-[1080px] mx-auto'>
+                <div className='w-full max-w-[1080px] mx-auto px-[8px]'>
                     {nearbyCities.map((city, index) => (
                         <StopItem
                             time={findVisitTime(city.id)}
-                            key={city.id + index}
+                            key={city.id}
                             position={{ lat: city.latitude, lng: city.longitude }}
                             label={city.name}
-                            image={"/madrid-m.jpg"}
-                            description={'Description of city'}
+                            image={city.image}
+                            description={city.description}
                             isSelected={selectedWaypoints.some(waypoint => waypoint.id === city.id)}
                             onAdd={(visitTime) => addWaypoint({ lat: city.latitude, lng: city.longitude }, city.id, visitTime)}
                             onRemove={() => removeWaypoint({ lat: city.latitude, lng: city.longitude }, city.id)}

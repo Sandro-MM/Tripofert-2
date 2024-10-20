@@ -34,13 +34,13 @@ const StopItem = ({ position, label, onAdd, onRemove, description, isSelected, i
         <div className={`relative w-full my-[40px] max-w-[1080px] h-[430px] rounded-[1.5rem] mx-auto ${isSelected ? 'selected-marker' : ''}`}>
             <img className="object-cover w-full rounded-[1.5rem] h-full" src={image} alt="img" />
 
-            <div className={`absolute top-0 left-0 w-1/3 min-w-[240px] h-full rounded-[1.5rem] backdrop-blur-sm ${isSelected ? 'bg-buttons/70' : 'bg-bg/70'}`}>
+            <div className={`absolute top-0 left-0 w-1/4 min-w-[155px] h-full rounded-[1.5rem] sm:backdrop-blur-sm ${isSelected ? 'sm:bg-buttons/70 bg-buttons/50' : 'sm:bg-bg/70 bg-bg/50'}`}>
                 <div className="text-2xl font-bold mt-8 w-full text-center" style={{ fontWeight: 'bold' }}>{label}</div>
-                <div className="text-[15px] tracking-tighter font-normal px-4 mt-8 w-full text-center" style={{ marginTop: '10px' }}>{description}</div>
+                <div className="sm:text-[15px] text-sm tracking-tighter font-normal px-4 mt-8 w-full text-center" style={{ marginTop: '10px' }}>{description}</div>
 
                      <div className="absolute bottom-[70px] w-full text-center" >{time?time:localCount} min stop for {time?calculateLocalPrice(time):calculateLocalPrice(localCount)}€</div>
 
-                <div className="flex items-center justify-center gap-8 absolute bottom-4 left-0 w-full">
+                <div className="flex items-center justify-center sm:gap-3 gap-2 absolute bottom-4 left-0 w-full">
                     <div className='size-8'>
                     { !time &&
                         <button
@@ -55,7 +55,7 @@ const StopItem = ({ position, label, onAdd, onRemove, description, isSelected, i
                             onClick={removeItem}>
                             Remove
                         </button> : <button
-                            className="w-[95px] h-[36px] leading-[36px] rounded-[8px] px-[12px] bg-[#00Afff] text-[18px] font-medium"
+                            className="sm:w-[95px] w-max h-[36px] leading-[36px] rounded-[8px] px-[12px] bg-[#00Afff] text-[18px] font-medium"
                             onClick={addItem}>
                             Add
                         </button>

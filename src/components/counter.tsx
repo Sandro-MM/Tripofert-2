@@ -33,7 +33,7 @@ const Counter: React.FC<CounterProps> = ({ count, setCount }) => {
     const incrementCount = () => {
         setCount((prevCount:any) => {
             const newCount = typeof prevCount === "number" ? prevCount : 1;
-            return Math.min(newCount + 1, 7);
+            return Math.min(newCount + 1, 8);
         });
     };
 
@@ -41,7 +41,7 @@ const Counter: React.FC<CounterProps> = ({ count, setCount }) => {
         const value = event.target.value;
         if (/^\d*$/.test(value)) {
             const numericValue = parseInt(value, 10);
-            setCount(isNaN(numericValue) ? '' : Math.min(numericValue, 7));
+            setCount(isNaN(numericValue) ? '' : Math.min(numericValue, 8));
         }
     };
 

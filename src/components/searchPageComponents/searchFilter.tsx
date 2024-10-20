@@ -10,8 +10,22 @@ import {DrawerClose} from "@/components/ui/drawer";
 import {Button} from "@/components/ui/button";
 import Counter from "@/components/counter";
 import { Checkbox } from "@/components/ui/checkbox";
-import {calculatePrice, cities, getCitiesInRange} from "@/directions-functions/direction-functions";
+import {airports, calculatePrice, cities, getCitiesInRange} from "@/directions-functions/direction-functions";
 import { useRouter } from 'next/navigation';
+import Checkout from "@/app/searchResults/checkout";
+import {Spinner} from "@/components/ui/spinner";
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "@/components/ui/dialog";
+import {Input} from "@/components/ui/input";
+import MapPicker from "@/components/map/mapPicker";
+import CarSelect from "@/components/carSelect";
 
 
 export default function SearchFilter({departure, setDeparture, destination,setDestination,date,setDate, passengers, setPassengers, setMapDeparture,setMapDestination, distance, points}) {
@@ -23,7 +37,11 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
     const [checked, setChecked] = useState<boolean>(false);
     const [distancePrice, setDistancePrice] = useState<number>(undefined);
     const [stopsPrice, setStopsPrice] = useState<number>(undefined);
+    const [dissabled, setDissabled] = useState<boolean>(true);
+    const [destinationDataAirFiltered, setDestinationDataAirFiltered] = useState<any>();
     const departureChangeCount = useRef(0);
+
+
     useEffect(() => {
         if (hasChangedOnce) {
             setShowSearch(true);
@@ -33,15 +51,33 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
     }, [destination]);
 
     useEffect(() => {
-        const prices = calculatePrice(distance, carType, points);
-        setDistancePrice(Math.round(prices.distancePrice));
-        setStopsPrice(Math.round(prices.stopsPrice));
-        // console.log("Distance Price:", prices.distancePrice);
-        // console.log("Stops Price:", prices.stopsPrice);
-        // console.log("Total Price:", prices.totalPrice);
+        console.log(distance)
+        if (distance?.value > 0){
+            const prices = calculatePrice(distance, carType, points);
+            setDistancePrice(Math.round(prices.distancePrice));
+            setStopsPrice(Math.round(prices.stopsPrice));
+            console.log('points',points)
+            // console.log("Distance Price:", prices.distancePrice);
+            // console.log("Stops Price:", prices.stopsPrice);
+            // console.log("Total Price:", prices.totalPrice);
+            setDissabled(false)
+        }
     }, [points,distance,carType]);
 
-
+    const queryParams = {
+        departureId: departure.id,
+        departureName: departure.name,
+        departureLatitude: departure.latitude,
+        departureLongitude: departure.longitude,
+        departureCountry: departure.country,
+        destinationId:  destination.id,
+        destinationName: destination.name,
+        destinationLatitude:  destination.latitude,
+        destinationLongitude:  destination.longitude,
+        destinationCountry:  destination.country,
+        date: date,
+        passengers: passengers.toString(),
+    };
 
     const departureData = cities;
 
@@ -57,20 +93,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
         setMapDestination(destination)
 
 
-        const queryParams = {
-            departureId: departure.id,
-            departureName: departure.name,
-            departureLatitude: departure.latitude,
-            departureLongitude: departure.longitude,
-            departureCountry: departure.country,
-            destinationId:  destination.id,
-            destinationName: destination.name,
-            destinationLatitude:  destination.latitude,
-            destinationLongitude:  destination.longitude,
-            destinationCountry:  destination.country,
-            date: date,
-            passengers: passengers.toString(),
-        };
+
 
         const queryString = new URLSearchParams(queryParams).toString();
         const searchRoute = `/searchResults?${queryString}`;
@@ -81,11 +104,13 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
 
     useEffect(() => {
-        if (departure) {
+        if (departure.latitude && departure.longitude ) {
             // console.log("Departure city:", departure);
             const result = getCitiesInRange(departure.latitude, departure.longitude, 800, cities);
+            const resultAir = getCitiesInRange(departure.latitude, departure.longitude, 800, airports);
             // console.log("Filtered cities:", result);
             setDestinationDataFiltered(result);
+            setDestinationDataAirFiltered(resultAir);
             // setDestination({ name:'Your Destination', id: null})
         }
     }, [departure]);
@@ -156,7 +181,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                             className='lg:text-base md:text-sm text-subText text-[12px]  md:font-normal font-light'>{departure.name}</span>
                                     </div>
                                 </div>} title={'Pick-up'} subtitle={'Your location'}
-                                content={<SearchTable setChosenItem={changeDeparture} data={departureData}/>}/>
+                                content={<SearchTable airportData={airports} setChosenItem={changeDeparture} data={departureData}/>}/>
 
 
                     <DrawerOpen disable={departure.id === null}
@@ -173,7 +198,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                             className='lg:text-base  md:text-sm text-[12px] text-subText  md:font-normal font-light'> {destination.name} </span>
                                     </div>
                                 </div>} title={'Destination'} subtitle={'Where are you going?'}
-                                content={<SearchTable setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
+                                content={<SearchTable airportData={destinationDataAirFiltered} setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
                 </div>
                 <div className='justify-around child:max-sm:w-1/2 max-sm:w-full'>
 
@@ -232,7 +257,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                 <div className='lg:text-2xl md:text-xl text-base  text-header font-semibold'>Car details</div>
 
                 <div>
-                    <Image className='h-[60px] w-[128px]'
+                    <Image className='h-[60px] w-[128px] aspect-square'
                            src={carType === 'Sedan' ? '/sedan-eco.png' : carType === 'Minivan' ? '/van2.png' : '/sedan-premium.png'}
                            width={128} height={60} alt={'cartype'}/>
                     <div>
@@ -246,43 +271,97 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                 </div>
                 {
                     +passengers < 5 &&
-                    <div><Checkbox
-                        className='cursor-pointer'
-                        checked={checked}
-                        onCheckedChange={(checked) => {
-                            if (carType === 'Premium Sedan') {
-                                setCarType('Sedan')
-                                setChecked(false)
-                            } else {
-                                setCarType('Premium Sedan')
-                                setChecked(true)
-                            }
-                        }}
-                    />
-                        <label
-                            htmlFor="terms2"
-                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        > Upgrade to premium class
-                        </label>
+                    <div className={'sm:flex w-full !flex-wrap justify-center items-center'}>
+
+                        <div className={' flex flex-nowrap gap-2'}>
+                            <Checkbox
+                                className='cursor-pointer'
+                                checked={checked}
+                                onCheckedChange={(checked) => {
+                                    if (carType === 'Premium Sedan') {
+                                        setCarType('Sedan')
+                                        setChecked(false)
+                                    } else {
+                                        setCarType('Premium Sedan')
+                                        setChecked(true)
+                                    }
+                                }}
+                            />
+                            <label
+                                htmlFor="terms2"
+                                className="text-sm w-[200px] block font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            > Upgrade to premium class
+                            </label>
+                        </div>
+
+
+                        <Dialog>
+                            <DialogTrigger className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 underline"
+                            >
+                                more Options
+                            </DialogTrigger>
+                            <DialogContent>
+                                <DialogHeader>
+                                    <DialogTitle>Select Car</DialogTitle>
+                                    <DialogDescription></DialogDescription>
+                                   <CarSelect setCarType={setCarType} passengerCount={+passengers} selected={carType}/>
+                                    <DialogClose asChild>
+                                        <Button type="button">
+                                            Select
+                                        </Button>
+                                    </DialogClose>
+                                </DialogHeader>
+                            </DialogContent>
+                        </Dialog>
                     </div>
 
                 }
 
 
             </div>
-            <div className='flex w-full mt-4 justify-center'>
-                <div onClick={()=> console.log('buy')}
-                     className='ml-9  h-16 w-[80%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5'>
-                    Order for {stopsPrice + distancePrice }€
-                </div>
+            <button disabled={dissabled} className='flex gap-9 w-full mt-4 justify-center'>
+
+                <Checkout amount={(stopsPrice+distancePrice)} departureLat={queryParams.departureLatitude} departureLng={queryParams.departureLongitude}
+                          orderData={{
+                              departure:{
+                                  name:queryParams.departureName,
+                                  latitude:queryParams.departureLatitude,
+                                  longitude:queryParams.departureLongitude,
+                                  country:queryParams.departureCountry,
+                                  id:queryParams.departureId
+                              },
+                              destination:{
+                                  name:queryParams.destinationName,
+                                  latitude:queryParams.destinationLatitude,
+                                  longitude:queryParams.destinationLongitude,
+                                  country:queryParams.destinationCountry,
+                                  id:queryParams.destinationId
+                              },
+                              date:queryParams.date,
+                              passengersCount:queryParams.passengers,
+                              carType: carType,
+                              visitLocations:points
+                }}
+
+                          trigger={
+                             <div
+                              className='ml-9  h-16 w-[110%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5 flex justify-center items-center'>
+                                 {
+                                     dissabled?<Spinner/>: <p>Order for {stopsPrice + distancePrice}€</p>
+                                 }
+            </div> }
+                />
+
+
                 {
                     showSearch &&
-                    <div onClick={handleSearch} className='ml-9  h-16 w-32  border-border rounded-xl text-center text-base border bg-bg/90 max-[1115px]:mt-8 max-[1115px]:mx-auto text-header font-semibold px-9 py-5'>
+                    <div onClick={handleSearch}
+                         className='ml-9  h-16 w-32 border-border rounded-xl text-center text-base border bg-bg/90 max-[1115px]:mt-8 max-[1115px]:mx-auto text-header font-semibold px-9 py-5'>
                         Search
                     </div>
                 }
 
-            </div>
+            </button>
 
         </div>
     );

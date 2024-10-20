@@ -6,6 +6,8 @@ import FeaturesBlock from "@/components/mainPageBlocks/featuresBlock";
 import PopularBlock from "@/components/mainPageBlocks/popularBlock";
 import ArticlesPreviewBlock from "@/components/mainPageBlocks/articlesPreviewBlock";
 import Footer from "@/components/footer/footer";
+import {router} from "next/client";
+import Logo from "@/components/logo";
 
 
 
@@ -15,6 +17,8 @@ export default function Home() {
             <BackgroundVideo />
             <div className="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center z-10">
                 <ThemeSwitch />
+              <Logo/>
+
                 <SearchItem />
             </div>
             <div className="relative w-full mt-[100vh] z-20  bg-bg/90 backdrop-blur-sm">
