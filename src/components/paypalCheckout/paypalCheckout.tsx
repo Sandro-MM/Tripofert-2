@@ -56,6 +56,7 @@ const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
     };
 
 
+    const prewDate = format(new Date(orderData.date), 'yyyy-MM-dd HH:mm');
 
 
 
@@ -74,8 +75,7 @@ const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
                             intent: "CAPTURE",
                             purchase_units: [
                                 {
-                                    description: `Car transfer: ${orderData.departure.name} to ${orderData.destination.name}, ${orderData.carType},
-                                     ${orderData.passengersCount} passengers, Date: ${format(new Date(orderData.date), 'yyyy-MM-dd HH:mm')}`
+                                    description: `Transfer: ${orderData.departure.name} to ${orderData.destination.name}, Date: ${prewDate}`
                                     ,
                                     amount: {
                                         currency_code: "EUR",
