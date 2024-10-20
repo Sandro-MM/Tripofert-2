@@ -74,9 +74,9 @@ const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
                             intent: "CAPTURE",
                             purchase_units: [
                                 {
-                                    description: `Car transfer service from ${orderData.departure.name} to
-                                     ${orderData.destination.name} Car type: ${orderData.carType}, Passengers: ${orderData.passengersCount}, 
-                                     Pick up date:${format(new Date(orderData.date), 'yyyy-MM-dd HH:mm')}`,
+                                    description: `Car transfer: ${orderData.departure.name} to ${orderData.destination.name}, ${orderData.carType},
+                                     ${orderData.passengersCount} passengers, Date: ${format(new Date(orderData.date), 'yyyy-MM-dd HH:mm')}`
+                                    ,
                                     amount: {
                                         currency_code: "EUR",
                                         value: amount,
