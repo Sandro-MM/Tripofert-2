@@ -31,14 +31,14 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
     const centerTimeoutRef = useRef(null);
 
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: 'AIzaSyDaS2UHnLtpquY4hupwPoDlvYrCiOGg1QM',
+        googleMapsApiKey: 'AIzaSyBr1rXP2OwtxCKz8LeSwPmjLSUZdWoyeBI',
         libraries: ['places'],
     });
 
     const reverseGeocode = async (lat, lng) => {
         try {
             const response = await fetch(
-                `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyDaS2UHnLtpquY4hupwPoDlvYrCiOGg1QM`
+                `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyBr1rXP2OwtxCKz8LeSwPmjLSUZdWoyeBI`
             );
             const data = await response.json();
             if (data.status === 'OK' && data.results.length > 0) {
@@ -113,7 +113,7 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
         <div className="relative">
             <div className="p-4 z-1">
                 <GooglePlacesAutocomplete
-                    apiKey="AIzaSyDaS2UHnLtpquY4hupwPoDlvYrCiOGg1QM"
+                    apiKey="AIzaSyBr1rXP2OwtxCKz8LeSwPmjLSUZdWoyeBI"
                     selectProps={{
                         value: addressValue,
                         onChange: (value) => {handlePlaceSelect(value); console.log(value)},
