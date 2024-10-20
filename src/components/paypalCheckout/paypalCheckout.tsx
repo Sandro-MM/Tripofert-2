@@ -59,7 +59,7 @@ const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
 
 
     return (
-        <PayPalScriptProvider options={{ clientId: "AZzPnuGXhV1z08hjwxyC00a86LGqPxI4n0laqXwfIEEwtXyaQ1oogQk6pnqdOmIix-zfhjhKle5GK02n" }}>
+        <PayPalScriptProvider options={{ clientId: "ARGLK0LP2HLeFpyJ4qWiTWlW4kseeCM1fVDPz_pBmBSgk2mzDd9-wngtNjihTrFawZtmr_5R4GOcv8Yq" }}>
             <PayPalButtons
                 className={'bg-transparent'}
                 style={{color:'silver'}}
