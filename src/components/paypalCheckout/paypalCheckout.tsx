@@ -74,8 +74,8 @@ const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
                             purchase_units: [
                                 {
                                     amount: {
-                                        currency_code: "USD",
-                                        value: '0.1',
+                                        currency_code: "EUR",
+                                        value: amount,
                                     },
                                 },
                             ]
