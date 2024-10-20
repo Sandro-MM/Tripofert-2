@@ -4,6 +4,7 @@ import {cities} from "@/directions-functions/direction-functions";
 import {useState} from "react";
 import DialogOpen from "@/components/dialogOpen";
 import {useRouter} from "next/navigation";
+import {format} from "date-fns";
 
 const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
     const router = useRouter();
@@ -59,7 +60,7 @@ const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
 
 
     return (
-        <PayPalScriptProvider options={{ clientId: "ARGLK0LP2HLeFpyJ4qWiTWlW4kseeCM1fVDPz_pBmBSgk2mzDd9-wngtNjihTrFawZtmr_5R4GOcv8Yq" }}>
+        <PayPalScriptProvider options={{ clientId: "ARGLK0LP2HLeFpyJ4qWiTWlW4kseeCM1fVDPz_pBmBSgk2mzDd9-wngtNjihTrFawZtmr_5R4GOcv8Yq", currency: "EUR" }}>
             <PayPalButtons
                 className={'bg-transparent'}
                 style={{color:'silver'}}
@@ -73,6 +74,9 @@ const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
                             intent: "CAPTURE",
                             purchase_units: [
                                 {
+                                    description: `Car transfer service from ${orderData.departure.name} to
+                                     ${orderData.destination.name} Car type: ${orderData.carType}, Passengers: ${orderData.passengersCount}, 
+                                     Pick up date:${format(new Date(orderData.date), 'yyyy-MM-dd HH:mm')}`,
                                     amount: {
                                         currency_code: "EUR",
                                         value: amount,
