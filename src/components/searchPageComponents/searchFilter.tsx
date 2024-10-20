@@ -83,7 +83,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
     const handleSearch = () => {
         console.log(123)
-        if (!departure || !destination || !date || !passengers || !/^[1-7]$/.test(passengers.toString())) {
+        if (!departure || !destination || !date || !passengers || !/^[1-8]$/.test(passengers.toString())) {
             console.error("Invalid search criteria");
             return;
         }
