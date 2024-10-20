@@ -38,7 +38,7 @@ const MapPicker = ({ onLocationSelect, initialRegion }) => {
     const reverseGeocode = async (lat, lng) => {
         try {
             const response = await fetch(
-                `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyBr1rXP2OwtxCKz8LeSwPmjLSUZdWoyeBI`
+                `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyCNkW4dMXlh-Q_ugg5VQiOws2TuPPd4qx4`
             );
             const data = await response.json();
             if (data.status === 'OK' && data.results.length > 0) {
