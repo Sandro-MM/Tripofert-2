@@ -69,7 +69,7 @@ export default function Success() {
                         <h3 className={'text-2xl min-w-[169px] font-semibold'}>IS CONFIRMED</h3>
                     </div>
                     <div className={'my-6 w-max mx-auto text-lg'}>
-                        Your order is confirmed our team will contact you soon!
+                        Your reservation is placed. Our team will find driver for you and contact you as soon as possible!
                     </div>
                     <div className={'w-max mx-auto'}>
                         Thanks for Choosing US!
