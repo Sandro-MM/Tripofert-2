@@ -329,7 +329,6 @@ export default function Checkout({trigger, departureLat, departureLng,amount,ord
                                    <Spinner className={'mx-auto'} size={70}/>
                                    Please fill information to continue
                                </button>
-
                            )}
                        </div>
                    </form>
