@@ -23,7 +23,7 @@ import {mobileNumberCodes} from "@/directions-functions/mobile-number-codes";
 import {cities} from "@/directions-functions/direction-functions";
 import {Spinner} from "@/components/ui/spinner";
 
-export default function Checkout({trigger, departureLat, departureLng,amount,orderData}) {
+export default function Checkout({trigger, departureLat, departureLng,amount,orderData,dissabled}) {
     const [location, setLocation] = useState('Choose location');
 
 
@@ -170,7 +170,7 @@ export default function Checkout({trigger, departureLat, departureLng,amount,ord
 
     return (
        <div>
-           <DrawerOpen disable={false}
+           <DrawerOpen disable={dissabled}
                        trigger={trigger} title={'Checkout'} subtitle={'Please fill information below'} content={
                <div className={'w-max h-[calc(100vh-180px)] flex flex-col'}>
 
@@ -318,7 +318,7 @@ export default function Checkout({trigger, departureLat, departureLng,amount,ord
 
                        {
                            amount && <div
-                               className={'text-header font-semibold text-lg my-[8px]'}> Total: {amount.toString()}€</div>
+                               className={'text-header font-semibold text-lg my-[8px]'}>  {orderData?.departure.name} → {orderData?.destination.name} <br/>  Total: {amount.toString()}€</div>
                        }
                        <div className={'w-full'}>
                            {isFormValid && (location !=='Choose location') ? (

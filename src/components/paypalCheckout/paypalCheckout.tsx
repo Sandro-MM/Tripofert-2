@@ -7,6 +7,10 @@ import {useRouter} from "next/navigation";
 import {format} from "date-fns";
 
 const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
+
+    // const test = 'AZzPnuGXhV1z08hjwxyC00a86LGqPxI4n0laqXwfIEEwtXyaQ1oogQk6pnqdOmIix'
+    const prod = 'ARGLK0LP2HLeFpyJ4qWiTWlW4kseeCM1fVDPz_pBmBSgk2mzDd9-wngtNjihTrFawZtmr_5R4GOcv8Yq'
+
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
     function getVisitLocationsWithCityData(visitLocations) {
@@ -61,7 +65,7 @@ const PayPalCheckout = ({amount, orderData, onSubmit,validate}) => {
 
 
     return (
-        <PayPalScriptProvider options={{ clientId: "ARGLK0LP2HLeFpyJ4qWiTWlW4kseeCM1fVDPz_pBmBSgk2mzDd9-wngtNjihTrFawZtmr_5R4GOcv8Yq", currency: "EUR" }}>
+        <PayPalScriptProvider options={{ clientId: prod, currency: "EUR" }}>
             <PayPalButtons
                 className={'bg-transparent'}
                 style={{color:'silver'}}

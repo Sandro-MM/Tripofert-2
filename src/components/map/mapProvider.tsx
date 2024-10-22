@@ -5,8 +5,11 @@ import {Spinner} from "@/components/ui/spinner";
 const libraries = ['places', 'drawing', 'geometry'];
 export function MapProvider({ children }: { children: ReactNode }) {
 
+    // const test = 'AIzaSyDaS2UHnLtpquY4hupwPoDlvYrCiOGg1QM'
+    const prod = 'AIzaSyBr1rXP2OwtxCKz8LeSwPmjLSUZdWoyeBI'
+
     const { isLoaded: scriptLoaded, loadError } = useJsApiLoader({
-        googleMapsApiKey: 'AIzaSyBr1rXP2OwtxCKz8LeSwPmjLSUZdWoyeBI' as string,
+        googleMapsApiKey: prod as string,
         libraries: libraries as Libraries,
     });
 

@@ -86,6 +86,8 @@ export default function Page({ params }) {
                         setMapDestination={setMapDestination}
                         departure={departure}
                         destination={destination}
+                        mapDeparture={mapDeparture}
+                        mapDestination={mapDestination}
                         setDeparture={setDeparture}
                         setDestination={setDestination}
                         date={date}

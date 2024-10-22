@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {addMonths, format} from "date-fns";
 import DrawerOpen from "@/components/drawer open";
 import Image from "next/image";
@@ -9,9 +9,9 @@ import {Calendar} from "@/components/ui/calendar";
 import {DrawerClose} from "@/components/ui/drawer";
 import {Button} from "@/components/ui/button";
 import Counter from "@/components/counter";
-import { Checkbox } from "@/components/ui/checkbox";
+import {Checkbox} from "@/components/ui/checkbox";
 import {airports, calculatePrice, cities, getCitiesInRange} from "@/directions-functions/direction-functions";
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import Checkout from "@/app/searchResults/checkout";
 import {Spinner} from "@/components/ui/spinner";
 import {
@@ -23,12 +23,25 @@ import {
     DialogTitle,
     DialogTrigger
 } from "@/components/ui/dialog";
-import {Input} from "@/components/ui/input";
-import MapPicker from "@/components/map/mapPicker";
 import CarSelect from "@/components/carSelect";
 
 
-export default function SearchFilter({departure, setDeparture, destination,setDestination,date,setDate, passengers, setPassengers, setMapDeparture,setMapDestination, distance, points}) {
+export default function SearchFilter({
+                                         departure,
+                                         setDeparture,
+                                         destination,
+                                         setDestination,
+                                         date,
+                                         setDate,
+                                         passengers,
+                                         setPassengers,
+                                         setMapDeparture,
+                                         setMapDestination,
+                                         mapDeparture,
+                                         mapDestination,
+                                         distance,
+                                         points
+                                     }) {
     const router = useRouter();
     const [showSearch, setShowSearch] = useState(false);
     const [hasChangedOnce, setHasChangedOnce] = useState(false);
@@ -52,29 +65,29 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
     useEffect(() => {
         console.log(distance)
-        if (distance?.value > 0){
+        if (distance?.value > 0) {
             const prices = calculatePrice(distance, carType, points);
             setDistancePrice(Math.round(prices.distancePrice));
             setStopsPrice(Math.round(prices.stopsPrice));
-            console.log('points',points)
+            console.log('points', points)
             // console.log("Distance Price:", prices.distancePrice);
             // console.log("Stops Price:", prices.stopsPrice);
             // console.log("Total Price:", prices.totalPrice);
             setDissabled(false)
         }
-    }, [points,distance,carType]);
+    }, [points, distance, carType]);
 
     const queryParams = {
-        departureId: departure.id,
-        departureName: departure.name,
-        departureLatitude: departure.latitude,
-        departureLongitude: departure.longitude,
-        departureCountry: departure.country,
-        destinationId:  destination.id,
-        destinationName: destination.name,
-        destinationLatitude:  destination.latitude,
-        destinationLongitude:  destination.longitude,
-        destinationCountry:  destination.country,
+        departureId: mapDeparture.id,
+        departureName: mapDeparture.name,
+        departureLatitude: mapDeparture.latitude,
+        departureLongitude: mapDeparture.longitude,
+        departureCountry: mapDeparture.country,
+        destinationId: mapDestination.id,
+        destinationName: mapDestination.name,
+        destinationLatitude: mapDestination.latitude,
+        destinationLongitude: mapDestination.longitude,
+        destinationCountry: mapDestination.country,
         date: date,
         passengers: passengers.toString(),
     };
@@ -93,8 +106,6 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
         setMapDestination(destination)
 
 
-
-
         const queryString = new URLSearchParams(queryParams).toString();
         const searchRoute = `/searchResults?${queryString}`;
         setShowSearch(false)
@@ -104,7 +115,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
 
     useEffect(() => {
-        if (departure.latitude && departure.longitude ) {
+        if (departure.latitude && departure.longitude) {
             // console.log("Departure city:", departure);
             const result = getCitiesInRange(departure.latitude, departure.longitude, 800, cities);
             const resultAir = getCitiesInRange(departure.latitude, departure.longitude, 800, airports);
@@ -126,9 +137,8 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
     const changeDeparture = (data) => {
         setDeparture(data)
         setShowSearch(true);
-        setDestination({ name: 'Your Destination', id: null });
+        setDestination({name: 'Your Destination', id: null});
     }
-
 
 
     const displayDate = (item: any) => {
@@ -140,7 +150,6 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
     };
 
 
-
     useEffect(() => {
         const numPassengers = typeof passengers === 'string' ? parseInt(passengers, 10) : passengers;
 
@@ -150,14 +159,13 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
             } else if (numPassengers >= 5) {
                 setCarType('Minivan');
                 setChecked(false)
-            }  else if (numPassengers < 5 && checked) {
+            } else if (numPassengers < 5 && checked) {
                 setCarType('Premium Sedan')
             }
         } else {
             setCarType('');
         }
     }, [passengers]);
-
 
 
     return (
@@ -171,34 +179,36 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                 trigger={<div className={'flex cursor-pointer lg:w-[150px] md:w-[136px]'}>
                                     <Image className='size-8'
                                         // className='max-md:hidden'
-                                        src="/arrow.svg"
-                                        width={32}
-                                        height={32}
-                                        alt="Picture of the author"/>
+                                           src="/arrow.svg"
+                                           width={32}
+                                           height={32}
+                                           alt="Picture of the author"/>
                                     <div className='ml-3 text-left'>
                                         <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Pick-up</h2>
                                         <span
                                             className='lg:text-base md:text-sm text-subText text-[12px]  md:font-normal font-light'>{departure.name}</span>
                                     </div>
                                 </div>} title={'Pick-up'} subtitle={'Your location'}
-                                content={<SearchTable airportData={airports} setChosenItem={changeDeparture} data={departureData}/>}/>
+                                content={<SearchTable airportData={airports} setChosenItem={changeDeparture}
+                                                      data={departureData}/>}/>
 
 
                     <DrawerOpen disable={departure.id === null}
                                 trigger={<div className={'flex lg:w-[200px] cursor-pointer md:w-[178px]'}>
                                     <Image className='size-8'
                                         // className='max-md:hidden'
-                                        src="/arrow.svg"
-                                        width={32}
-                                        height={32}
-                                        alt="Picture of the author"/>
+                                           src="/arrow.svg"
+                                           width={32}
+                                           height={32}
+                                           alt="Picture of the author"/>
                                     <div className='ml-3 text-left'>
                                         <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Destination</h2>
                                         <span
                                             className='lg:text-base  md:text-sm text-[12px] text-subText  md:font-normal font-light'> {destination.name} </span>
                                     </div>
                                 </div>} title={'Destination'} subtitle={'Where are you going?'}
-                                content={<SearchTable airportData={destinationDataAirFiltered} setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
+                                content={<SearchTable airportData={destinationDataAirFiltered}
+                                                      setChosenItem={setDestination} data={destinationDataFiltered}/>}/>
                 </div>
                 <div className='justify-around child:max-sm:w-1/2 max-sm:w-full'>
 
@@ -207,10 +217,10 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
                                     <Image className='size-8'
                                         // className='max-md:hidden'
-                                        src="/calendar.svg"
-                                        width={32}
-                                        height={32}
-                                        alt="Picture of the author"/>
+                                           src="/calendar.svg"
+                                           width={32}
+                                           height={32}
+                                           alt="Picture of the author"/>
                                     <div className='ml-3 text-left'>
                                         <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Date</h2>
                                         <span
@@ -239,10 +249,10 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                 trigger={<div className={'flex lg:w-[186px] cursor-pointer md:w-[162px]'}>
                                     <Image className='size-8'
                                         // className='max-md:hidden'
-                                        src="/person.svg"
-                                        width={32}
-                                        height={32}
-                                        alt="Picture of the author"/>
+                                           src="/person.svg"
+                                           width={32}
+                                           height={32}
+                                           alt="Picture of the author"/>
                                     <div className='ml-3 text-left'>
                                         <h2 className='lg:text-2xl md:text-xl sm:text-base text-xs text-header font-semibold'>Passengers</h2>
                                         <span
@@ -296,7 +306,8 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
 
                         <Dialog>
-                            <DialogTrigger className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 underline"
+                            <DialogTrigger
+                                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 underline"
                             >
                                 more Options
                             </DialogTrigger>
@@ -304,7 +315,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                                 <DialogHeader>
                                     <DialogTitle>Select Car</DialogTitle>
                                     <DialogDescription></DialogDescription>
-                                   <CarSelect setCarType={setCarType} passengerCount={+passengers} selected={carType}/>
+                                    <CarSelect setCarType={setCarType} passengerCount={+passengers} selected={carType}/>
                                     <DialogClose asChild>
                                         <Button type="button">
                                             Select
@@ -319,37 +330,39 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
 
 
             </div>
-            <button disabled={dissabled} className='flex gap-9 w-full mt-4 justify-center'>
+            <div className='flex gap-9 w-full mt-4 justify-center'>
 
-                <Checkout amount={(stopsPrice+distancePrice)} departureLat={queryParams.departureLatitude} departureLng={queryParams.departureLongitude}
+                <Checkout dissabled={dissabled} amount={(stopsPrice + distancePrice)} departureLat={queryParams.departureLatitude}
+                          departureLng={queryParams.departureLongitude}
                           orderData={{
-                              departure:{
-                                  name:queryParams.departureName,
-                                  latitude:queryParams.departureLatitude,
-                                  longitude:queryParams.departureLongitude,
-                                  country:queryParams.departureCountry,
-                                  id:queryParams.departureId
+                              departure: {
+                                  name: queryParams.departureName,
+                                  latitude: queryParams.departureLatitude,
+                                  longitude: queryParams.departureLongitude,
+                                  country: queryParams.departureCountry,
+                                  id: queryParams.departureId
                               },
-                              destination:{
-                                  name:queryParams.destinationName,
-                                  latitude:queryParams.destinationLatitude,
-                                  longitude:queryParams.destinationLongitude,
-                                  country:queryParams.destinationCountry,
-                                  id:queryParams.destinationId
+                              destination: {
+                                  name: queryParams.destinationName,
+                                  latitude: queryParams.destinationLatitude,
+                                  longitude: queryParams.destinationLongitude,
+                                  country: queryParams.destinationCountry,
+                                  id: queryParams.destinationId
                               },
-                              date:queryParams.date,
-                              passengersCount:queryParams.passengers,
+                              date: queryParams.date,
+                              passengersCount: queryParams.passengers,
                               carType: carType,
-                              visitLocations:points
-                }}
+                              visitLocations: points
+                          }}
 
                           trigger={
-                             <div
-                              className='ml-9  h-16 w-[110%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5 flex justify-center items-center'>
-                                 {
-                                     dissabled?<Spinner/>: <p>Order for {stopsPrice + distancePrice}€</p>
-                                 }
-            </div> }
+                              <div
+
+                                  className='ml-9  h-16 w-[110%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5 flex justify-center items-center'>
+                                  {
+                                      dissabled ? <Spinner/> : <p>Order for {stopsPrice + distancePrice}€</p>
+                                  }
+                              </div>}
                 />
 
 
@@ -361,7 +374,7 @@ export default function SearchFilter({departure, setDeparture, destination,setDe
                     </div>
                 }
 
-            </button>
+            </div>
 
         </div>
     );
