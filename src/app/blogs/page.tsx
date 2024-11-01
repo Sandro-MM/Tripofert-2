@@ -4,6 +4,7 @@ import {blogsData} from "@/directions-functions/blogs-data";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer/footer";
+import Head from 'next/head';
 
 const Blogs = () => {
 
@@ -11,6 +12,12 @@ const Blogs = () => {
 
 
     return (
+        <>
+            <Head>
+                <title>Travel Blogs - Tripofert</title>
+                <meta name="description" content="Read engaging travel blogs on Tripofert, where you’ll find tips, guides, and inspiration for your next journey." />
+            </Head>
+
         <div>
             <Link href="/">
                 <Logo/>
@@ -77,6 +84,7 @@ const Blogs = () => {
             </div>
             <Footer/>
         </div>
+        </>
     );
 };
 

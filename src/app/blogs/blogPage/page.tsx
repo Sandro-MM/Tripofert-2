@@ -7,20 +7,41 @@ import Logo from "@/components/logo";
 import ThemeSwitch from "@/components/themeSwitchButton";
 import Image from "next/image";
 import Footer from "@/components/footer/footer";
-
+import Head from 'next/head';
 function Page({params}) {
     const router = useRouter();
     const [searchParams] = React.useState(useSearchParams());
     const [id, setId] = useState<any>(+searchParams.get('id') || 0);
 
     const blog = blogsData[id]
+    const structuredData = {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": blog.title,
+        "image": [blog.img],
+        "author": {
+            "@type": "Person",
+            "name": blog.author
+        },
+        "datePublished": blog.datePosted,
+        "description": blog.postText[0].text,
+    };
 
     return (
-        <div className={'mb-[90px]'} >
-            <Link href="/">
-                <Logo/>
-            </Link>
-            <ThemeSwitch />
+        <>
+            <Head>
+                <title>{blog.title} - Tripofert</title>
+                <meta name="description" content={blog.postText[0].text}/>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData)}}
+                />
+            </Head>
+            <div className={'mb-[90px]'}>
+                <Link href="/">
+                    <Logo/>
+                </Link>
+                <ThemeSwitch />
             <div className={'mt-20 mb-[90px] max-w-[1280px] w-[90%] mx-auto h-max'}>
                 <div
                     className={'w-max py-[3px] px-[7.5px] bg-buttons rounded-[4.5px] text-buttonsText text-[12.5px] leading-[15px] font-medium'}>{blog?.category}</div>
@@ -71,6 +92,7 @@ function Page({params}) {
             </div>
             <Footer/>
         </div>
+        </>
     );
 }
 

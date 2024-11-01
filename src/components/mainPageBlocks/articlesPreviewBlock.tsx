@@ -9,25 +9,29 @@ export default function ArticlesPreviewBlock() {
             country:'Spain',
             city:'Madrid',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/madrid.jpg',
-            desc:'Vibrant capital of Spain, renowned for its culture, history, architecture, and lively atmosphere.'
+            desc:'Vibrant capital of Spain, renowned for its culture, history, architecture, and lively atmosphere.',
+            link:'/blogs/blogPage?id=0'
         },
         {
             country:'Spain',
             city:'Barcelona',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/barcelona.jpg',
-            desc:'Barcelona is a vibrant city famous for Gaudí’s architecture.'
+            desc:'Barcelona is a vibrant city famous for Gaudí’s architecture.',
+            link:'/blogs'
         },
         {
             country:'France',
             city:'Paris',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/paris.jpg',
-            desc:'Iconic city of lights, synonymous with romance, art, fashion, and exquisite cuisine.'
+            desc:'Iconic city of lights, synonymous with romance, art, fashion, and exquisite cuisine.',
+            link:'/blogs'
         },
         {
             country:'Spain',
             city:'Valencia',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/Valencia%20.jpg',
-            desc:'Valencia is home to one of the most famous Spanish festivals, Las Fallas.'
+            desc:'Valencia is home to one of the most famous Spanish festivals, Las Fallas.',
+            link:'/blogs'
         }
     ]
 
@@ -69,7 +73,7 @@ export default function ArticlesPreviewBlock() {
                                                 {item.desc}
                                             </div>
                                             <div className='absolute bottom-[20px] w-full mx-auto'>
-                                                <Link href="/blogs">
+                                                <Link href={item.link}>
                                                     <div
                                                         className='hidden group-hover:flex mx-auto w-[90%] bg-buttons max-[400px]:h-[30px] max-sm:h-[60px] max-[800px]:h-[40px] max-lg:h-[40px] max-lg:rounded-[4px] h-[60px] max-[800px]:rounded-[5px] max-h-[60px] rounded-[10px] items-center justify-center cursor-pointer'>
                                                         <div className='text-header w-max h-max text-lg font-semibold pointer-events-none'>

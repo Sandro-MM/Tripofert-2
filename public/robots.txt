@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.tripofert.com
+
+# Sitemaps
+Sitemap: https://www.tripofert.com/sitemap.xml
