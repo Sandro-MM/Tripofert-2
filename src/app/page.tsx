@@ -18,6 +18,10 @@ export default function Home() {
                     name="description"
                     content="Explore Tripofert, your ultimate guide for unforgettable travel experiences, tips, and insights. Discover destinations, plan trips, and travel smarter!"
                 />
+                <meta
+                    name="keywords"
+                    content="travel, destinations, travel guide, travel tips, vacation, adventure, tourism, travel planning, Tripofert"
+                />
 
                 <meta property="og:title" content="Tripofert - Discover Amazing Destinations and Travel Tips"/>
                 <meta
