@@ -5,6 +5,7 @@ import { Providers } from './providers'
 const poppins = Poppins({ subsets: ["latin"], weight:['400', '500', '600', '700', '800']});
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import {Suspense} from "react";
+import Chat from "@/components/chat";
 
 export const metadata: Metadata = {
   title: "Tripofert",
@@ -27,6 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <SpeedInsights/>
         <Providers>
             <Suspense>
+                <Chat/>
                 {children}
             </Suspense>
         </Providers>
