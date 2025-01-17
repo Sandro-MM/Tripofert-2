@@ -13,16 +13,33 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Tripofert - Discover Amazing Destinations and Travel Tips</title>
+                <title> Tripofert: Your VIP Driver for Exclusive Trips | triofert.com</title>
                 <meta
                     name="description"
-                    content="Explore Tripofert, your ultimate guide for unforgettable travel experiences, tips, and insights. Discover destinations, plan trips, and travel smarter!"
+                    content="Discover the experience of travelling in style at Tripofert. Choose
+                      your destinations and personalised stops with a VIP driver who adapts to your needs
+                , making every trip a unique and memorable experience!."
                 />
                 <meta
                     name="keywords"
                     content="travel, destinations, travel guide, travel tips, vacation, adventure, tourism, travel planning, Tripofert"
                 />
 
+
+                <script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-2W9DHBY9RT"
+                ></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-2W9DHBY9RT');
+            `,
+                    }}
+                ></script>
                 <meta property="og:title" content="Tripofert - Discover Amazing Destinations and Travel Tips"/>
                 <meta
                     property="og:description"
@@ -48,7 +65,7 @@ export default function Home() {
                     <SearchItem/>
                 </div>
                 <div className="relative w-full mt-[100vh] z-20  bg-bg/90 backdrop-blur-sm">
-                    <FeaturesBlock/>
+                <FeaturesBlock/>
                     <PopularBlock/>
                     <ArticlesPreviewBlock/>
                     <Footer/>
