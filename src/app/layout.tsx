@@ -8,8 +8,10 @@ import {Suspense} from "react";
 import Chat from "@/components/chat";
 
 export const metadata: Metadata = {
-  title: "Tripofert",
-  description: "Tripofert",
+  title: "Tripofert: Your VIP Driver for Exclusive Trips | triofert.com",
+  description: "Discover the experience of travelling in style at Tripofert. Choose\n" +
+      "                      your destinations and personalised stops with a VIP driver who adapts to your needs\n" +
+      "                , making every trip a unique and memorable experience!.",
 };
 
 
