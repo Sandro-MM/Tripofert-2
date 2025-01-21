@@ -57,6 +57,11 @@ export default function Home() {
                 <meta name="twitter:image" content="https://www.tripofert.com/tripofert-main.jpg"/>
             </Head>
             <main className="relative w-full min-h-screen">
+                <h1 className={'hidden'}>
+                    Discover the experience of travelling in style at Tripofert. Choose
+                    your destinations and personalised stops with a VIP driver who adapts to your needs
+                    , making every trip a unique and memorable experience!.
+                </h1>
                 <BackgroundVideo/>
                 <div className="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center z-10">
                     <ThemeSwitch/>
@@ -65,7 +70,7 @@ export default function Home() {
                     <SearchItem/>
                 </div>
                 <div className="relative w-full mt-[100vh] z-20  bg-bg/90 backdrop-blur-sm">
-                <FeaturesBlock/>
+                    <FeaturesBlock/>
                     <PopularBlock/>
                     <ArticlesPreviewBlock/>
                     <Footer/>
