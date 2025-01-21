@@ -23,6 +23,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <head>
             <meta charSet="UTF-8"/>
             <title>Tripofert: Your VIP Driver for Exclusive Trips | triofert.com</title>
+            <meta
+                name="description"
+                content="Discover the experience of travelling in style at Tripofert. Choose
+                      your destinations and personalised stops with a VIP driver who adapts to your needs
+                , making every trip a unique and memorable experience!."
+            />
+            <script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=G-2W9DHBY9RT"
+            ></script>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-2W9DHBY9RT');
+            `,
+                }}
+            ></script>
             <link rel="shortcut icon" href="/Logo.svg" type="image/x-icon"/>
             <link rel="icon" href="/Logo.svg" type="image/x-icon"/>
         </head>
