@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <html lang="en" suppressHydrationWarning>
         <head>
             <meta charSet="UTF-8"/>
-            <title>Tripofert</title>
+            <title>Tripofert: Your VIP Driver for Exclusive Trips | triofert.com</title>
             <link rel="shortcut icon" href="/Logo.svg" type="image/x-icon"/>
             <link rel="icon" href="/Logo.svg" type="image/x-icon"/>
         </head>
