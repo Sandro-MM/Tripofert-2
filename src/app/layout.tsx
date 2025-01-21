@@ -6,7 +6,6 @@ const poppins = Poppins({ subsets: ["latin"], weight:['400', '500', '600', '700'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import {Suspense} from "react";
 import Chat from "@/components/chat";
-import {GoogleAnalytics} from "nextjs-google-analytics";
 
 export const metadata: Metadata = {
     title: "Tripofert: Your VIP Driver for Exclusive Trips | triofert.com",
@@ -28,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <link rel="icon" href="/Logo.svg" type="image/x-icon"/>
         </head>
         <body className={poppins.className}>
-        <GoogleAnalytics gaMeasurementId="G-2W9DHBY9RT" trackPageViews />
+
         <SpeedInsights/>
         <Providers>
             <Suspense>
