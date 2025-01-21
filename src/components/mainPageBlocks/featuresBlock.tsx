@@ -3,11 +3,6 @@ import Image from "next/image";
 export default function FeaturesBlock() {
     return (
         <div className="w-full h-max  pointer-events-none">
-            <h1 className={'hidden'}>
-                Discover the experience of travelling in style at Tripofert. Choose
-                your destinations and personalised stops with a VIP driver who adapts to your needs
-                , making every trip a unique and memorable experience!.
-            </h1>
             <div className='max-w-[1280px] w-[95%] mx-auto'>
                 <div className='text-xl font-medium text-buttons py-6 text-center'>
                     Our Service
