@@ -172,7 +172,7 @@ export default function Checkout({trigger, departureLat, departureLng,amount,ord
        <div>
            <DrawerOpen disable={dissabled}
                        trigger={trigger} title={'Checkout'} subtitle={'Please fill information below'} content={
-               <div className={'w-max h-[calc(100vh-180px)] flex flex-col'}>
+               <div className={'w-max h-[calc(100vh-180px)] flex flex-col overflow-y-auto'}>
 
 
                    <form onSubmit={handleSubmit(onSubmits)}>
