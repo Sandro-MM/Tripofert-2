@@ -8,7 +8,7 @@ import {Suspense} from "react";
 import Chat from "@/components/chat";
 
 export const metadata: Metadata = {
-    title: "Tripofert: Your VIP Driver for Exclusive Trips | triofert.com",
+    title: "Tripofert: Your VIP Driver for Exclusive Trips | tripofert.com",
     description: "Discover the experience of travelling in style at Tripofert. Choose\n" +
         "                      your destinations and personalised stops with a VIP driver who adapts to your needs\n" +
         "                , making every trip a unique and memorable experience!.",
@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <html lang="en" suppressHydrationWarning>
         <head>
             <meta charSet="UTF-8"/>
-            <title>Tripofert: Your VIP Driver for Exclusive Trips | triofert.com</title>
+            <title>Tripofert: Your VIP Driver for Exclusive Trips | tripofert.com</title>
             <meta
                 name="description"
                 content="Discover the experience of travelling in style at Tripofert. Choose
