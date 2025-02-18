@@ -13,7 +13,6 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title> Tripofert: Your VIP Driver for Exclusive Trips | tripofert.com</title>
                 <meta
                     name="description"
                     content="Discover the experience of travelling in style at Tripofert. Choose
