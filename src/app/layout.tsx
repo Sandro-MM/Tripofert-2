@@ -63,6 +63,10 @@ export default async function Layout({children}: { children: React.ReactNode }) 
             ></script>
             <link rel="shortcut icon" href="/Logo.svg" type="image/x-icon"/>
             <link rel="icon" href="/Logo.svg" type="image/x-icon"/>
+            <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+            <link rel="icon" href="/Logo.svg" type="image/svg+xml"/>
+            <link rel="apple-touch-icon" href="/Logo.png"/>
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
         </head>
         <body className={poppins.className}>
 

@@ -20,7 +20,6 @@ import {Controller, useForm, useWatch} from "react-hook-form";
 import PaypalCheckout from "@/components/paypalCheckout/paypalCheckout";
 import {addDataToDatabase, supabase} from "@/directions-functions/supabaseClient";
 import {mobileNumberCodes} from "@/directions-functions/mobile-number-codes";
-import {cities} from "@/directions-functions/direction-functions";
 import {Spinner} from "@/components/ui/spinner";
 
 export default function Checkout({trigger, departureLat, departureLng,amount,orderData,dissabled}) {
