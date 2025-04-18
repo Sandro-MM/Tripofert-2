@@ -3,9 +3,10 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from './providers'
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import {Suspense} from "react";
+import React, {Suspense} from "react";
 import Chat from "@/components/chat";
 import {supabase} from "@/directions-functions/supabaseClient";
+import {Toaster} from "@/components/ui/toaster";
 const poppins = Poppins({ subsets: ["latin"], weight:['400', '500', '600', '700', '800']});
 
 // export const metadata: Metadata = {
@@ -74,6 +75,7 @@ export default async function Layout({children}: { children: React.ReactNode }) 
         <Providers>
             <Suspense>
                 <Chat/>
+                <Toaster />
                 {children}
             </Suspense>
         </Providers>

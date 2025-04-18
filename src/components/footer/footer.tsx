@@ -24,7 +24,8 @@ const Footer = () => {
                         </ul>
                     </div>
                 <div>
-                    Contact
+                    <Link href="/contact">Contact</Link>
+
                     <ul className='child:cursor-pointer child:sm:text-sm text-xs child:font-normal mt-6 child:my-4'>
                         <li>
                             <a href="mailto:tripofert@gmail.com">tripofert@gmail.com</a>

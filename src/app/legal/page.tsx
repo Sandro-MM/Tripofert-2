@@ -50,9 +50,9 @@ export default function Page() {
             <BackgroundVideo/>
             <div className="fixed top-0 left-0 w-full overflow-auto h-screen flex flex-col items-center justify-start z-10">
                 <ThemeSwitch/>
-                <Link href={'/'}>
+
                     <Logo/>
-                </Link>
+
 
                 <div
                     className={'w-full max-w-[980px]  my-[90px] bg-transparentSurface/90 backdrop-blur-sm rounded-[12px] border-border border-[1px] border-solid z-[999] p-6'}>

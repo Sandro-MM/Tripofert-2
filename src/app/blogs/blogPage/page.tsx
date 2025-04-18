@@ -38,9 +38,9 @@ function Page({params}) {
                 />
             </Head>
             <div className={'mb-[90px]'}>
-                <Link href="/">
+
                     <Logo/>
-                </Link>
+
                 <ThemeSwitch />
             <div className={'mt-20 mb-[90px] max-w-[1280px] w-[90%] mx-auto h-max'}>
                 <div

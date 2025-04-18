@@ -19,9 +19,9 @@ const Blogs = () => {
             </Head>
 
         <div>
-            <Link href="/">
+
                 <Logo/>
-            </Link>
+
             <ThemeSwitch />
             <div className={'mt-20 mb-[90px] max-w-[1280px] w-[95%] mx-auto h-max'}>
                 <Link href={`/blogs/blogPage?id=${blogsData[0].id}`}>
