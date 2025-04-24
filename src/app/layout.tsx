@@ -7,6 +7,8 @@ import React, {Suspense} from "react";
 import Chat from "@/components/chat";
 import {supabase} from "@/directions-functions/supabaseClient";
 import {Toaster} from "@/components/ui/toaster";
+import Link from "next/link";
+import {MdOutlineMailOutline} from "react-icons/md";
 const poppins = Poppins({ subsets: ["latin"], weight:['400', '500', '600', '700', '800']});
 
 // export const metadata: Metadata = {
@@ -70,16 +72,27 @@ export default async function Layout({children}: { children: React.ReactNode }) 
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
         </head>
         <body className={poppins.className}>
-
         <SpeedInsights/>
         <Providers>
             <Suspense>
-                <Chat/>
-                <Toaster />
+
+                <Toaster/>
                 {children}
             </Suspense>
         </Providers>
+        <div className={'fixed bg-amber-400 bottom-0 right-0 size-32 z-50'}>
+            <Link href="/contact">
+                <div className={'size-[60px] rounded-full bg-buttons ml-auto pt-[14px]'}>
+                    <MdOutlineMailOutline className={'mx-auto'} size={32} />
+                </div>
+            </Link>
+
+
+
+        <Chat/>
+
+        </div>
         </body>
-        </html>
+</html>
     );
 }
