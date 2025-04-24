@@ -80,7 +80,7 @@ export default async function Layout({children}: { children: React.ReactNode }) 
                 {children}
             </Suspense>
         </Providers>
-        <div className={'fixed bg-amber-400 bottom-0 right-0 h-48 w-20 z-50'}>
+        <div className={'fixed bg-amber-400 bottom-0 right-0 h-40 w-[84px] z-50'}>
             <Link href="/contact">
                 <div className={'size-[60px] rounded-full bg-buttons pt-[14px]'}>
                     <MdOutlineMailOutline className={'mx-auto'} size={32} />
