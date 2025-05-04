@@ -17,14 +17,14 @@ export default function ArticlesPreviewBlock() {
             city:'Barcelona',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/barcelona.jpg',
             desc:'Barcelona is a vibrant city famous for Gaudí’s architecture.',
-            link:'/blogs'
+            link:'/blogs/blogPage?id=1'
         },
         {
             country:'France',
             city:'Paris',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/paris.jpg',
             desc:'Iconic city of lights, synonymous with romance, art, fashion, and exquisite cuisine.',
-            link:'/blogs'
+            link:'/blogs/blogPage?id=3'
         },
         {
             country:'Spain',
