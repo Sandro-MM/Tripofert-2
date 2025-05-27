@@ -11,7 +11,7 @@ const routesList = [
 export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const route = searchParams.get("route") || "/";
-    const matchedRoute = routesList.includes(route) ? route : "default";
+    const matchedRoute = routesList.includes(route) ? route : "/";
 
     const { data, error } = await supabase
         .from("seo_data")

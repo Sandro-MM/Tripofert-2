@@ -35,7 +35,7 @@ const routesList = [
 async function fetchSeoData() {
     const headerList = headers();
     const pathname = headerList.get('x-current-path') || '/';
-    const matchedRoute = routesList.includes(pathname) ? pathname : 'default';
+    const matchedRoute = routesList.includes(pathname) ? pathname : '/';
 
     const { data, error } = await supabase
         .from('seo_data')
