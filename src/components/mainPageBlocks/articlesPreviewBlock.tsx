@@ -24,7 +24,7 @@ export default function ArticlesPreviewBlock() {
             city:'Paris',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/paris.jpg',
             desc:'Iconic city of lights, synonymous with romance, art, fashion, and exquisite cuisine.',
-            link:'/blogs/blogPage/ultimate_lisbon_travel_guide/3'
+            link:'/blogs/blogPage/ultimate_paris_travel_guide/3'
         },
         {
             country:'Spain',
