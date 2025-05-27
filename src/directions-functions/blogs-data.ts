@@ -4,6 +4,7 @@ export const blogsData =[
         img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/madrid.jpg',
         category:'Travel',
         title:'The Ultimate Madrid Travel Guide: Best Things to Do, See, and Eat',
+        blogName:'ultimate_madrid_travel_guide',
         datePosted:'November 1, 2024',
         author:{
             name:'Alejandro Martínez García',
@@ -75,6 +76,7 @@ export const blogsData =[
         img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3//barcelona.jpg',
         category:'Travel',
         title:'The Ultimate Barcelona Travel Guide: Best Things to Do, See, and Eat',
+        blogName:'ultimate_barcelona_travel_guide',
         datePosted:'April 5, 2025',
         author:{
             name:'Alejandro Martínez García',
@@ -151,6 +153,7 @@ export const blogsData =[
         img: 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2//lisbon.jpg',
         category: 'Travel',
         title: 'The Ultimate Lisbon Travel Guide: Best Things to Do, See, and Eat',
+        blogName:'ultimate_lisbon_travel_guide',
         datePosted: 'April 22, 2025',
         author: {
             name: 'Alejandro Martínez García',
@@ -220,6 +223,7 @@ export const blogsData =[
         img: 'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2//paris.jpg',
         category: 'Travel',
         title: 'The Ultimate Paris Travel Guide: Best Things to Do, See, and Eat',
+        blogName:'ultimate_paris_travel_guide',
         datePosted: 'May 1, 2025',
         author: {
             name: 'Alejandro Martínez García',

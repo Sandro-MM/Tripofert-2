@@ -1,8 +1,9 @@
 import Image from "next/image";
+import ContactForm from "@/app/contact/contactForm";
 
 export default function FeaturesBlock() {
     return (
-        <div className="w-full h-max  pointer-events-none">
+        <div className="w-full h-max">
             <div className='max-w-[1280px] w-[95%] mx-auto'>
                 <div className='text-xl font-medium text-buttons py-6 text-center'>
                     Our Service
@@ -15,8 +16,9 @@ export default function FeaturesBlock() {
                     driver are dedicated to deliver the highest quality service possible and help you with all your
                     needs on the way!
                 </div>
-                <div className='flex flex-wrap mt-6 items-center gap-[5%] sm:mt-12 px-3'>
-                    <div className='child:flex child:items-center child:gap-6 sm:max-w-[50%] child:mb-6 child:sm:mb-8'>
+                <div className='flex flex-wrap mt-6 items-center gap-[5%] sm:mt-12 px-3 justify-between w-full'>
+
+                    <div className='child:flex child:items-center child:gap-6 min-[697px]:max-w-[50%] child:mb-6 child:sm:mb-8'>
                         <div>
                             <Image className='size-12 sm:size-[84px]' src='/door2door.svg' width={84}
                                    height={84} alt='door2door'/>
@@ -54,40 +56,49 @@ export default function FeaturesBlock() {
                             </div>
                         </div>
                     </div>
-                    <div className='relative sm:max-w-[40%] max-sm:max-w-[360px] mx-auto min-w-[280px]'>
-                        <div
-                            className='flex shadow-xl bg-surface2/70 rounded-full gap-4 py-3 px-4 items-center w-[240px] absolute top-[24px] left-[-32px] backdrop-blur-md'>
-                            <Image className='size-10' src='/user1.png' width={40} height={40}
-                                   alt='user-image'/>
-                            <div>
-                                      <span>
-                                          George Martinez
-                                      </span>
-                                <div className='flex items-center gap-1 text-[12px]'>
-                                    <Image className='mt-[-2px]' src='/star.svg' height={12} width={12}
-                                           alt='star'/>
-                                    4.7
-                                </div>
-                            </div>
+
+                    <div className='relative sm:max-w-[40%] max-sm:max-w-[360px] min-[697px]:mr-auto mx-auto min-w-[280px]'>
+
+
+                        <div className={'max-w-[360px]'}>
+                            <h2 className={'font-extrabold sm:text-2xl text-base  sm:pb-2 pb-1'}>Contact Us!</h2>
+                            <ContactForm InputClassName={'min-[340px]:min-w-[271px] min-[300px]:min-w-[230px] min-[260px]:min-w-[200px]'} PhoneInputClassName={'!w-[calc(100%-132px)] min-[340px]:min-w-[144px] min-[300px]:min-w-[122px] min-[260px]:min-w-[92px]'}/>
                         </div>
-                        <Image className='sm:max-w-[65%] max-h-[400px] min-w-[280px]' height={490} width={646}
-                               src='/img.png'
-                               alt='lugage-image'/>
-                        <div
-                            className='flex shadow-xl bg-surface2/70 rounded-full gap-4 py-3 px-4 items-center w-[240px] absolute bottom-[10px] right-[-2%] sm:left-[24%] backdrop-blur-md'>
-                            <Image className='size-10' src='/user2.png' width={40} height={40}
-                                   alt='user-image'/>
-                            <div>
-                                      <span>
-                                          Tommy Peraz
-                                      </span>
-                                <div className='flex items-center gap-1 text-[12px]'>
-                                    <Image className='mt-[-2px]' src='/star.svg' height={12} width={12}
-                                           alt='star'/>
-                                    4.9
-                                </div>
-                            </div>
-                        </div>
+
+
+                        {/*<div*/}
+                        {/*    className='flex shadow-xl bg-surface2/70 rounded-full gap-4 py-3 px-4 items-center w-[240px] absolute top-[24px] left-[-32px] backdrop-blur-md'>*/}
+                        {/*    <Image className='size-10' src='/user1.png' width={40} height={40}*/}
+                        {/*           alt='user-image'/>*/}
+                        {/*    <div>*/}
+                        {/*              <span>*/}
+                        {/*                  George Martinez*/}
+                        {/*              </span>*/}
+                        {/*        <div className='flex items-center gap-1 text-[12px]'>*/}
+                        {/*            <Image className='mt-[-2px]' src='/star.svg' height={12} width={12}*/}
+                        {/*                   alt='star'/>*/}
+                        {/*            4.7*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
+                        {/*<Image className='sm:max-w-[65%] max-h-[400px] min-w-[280px]' height={490} width={646}*/}
+                        {/*       src='/img.png'*/}
+                        {/*       alt='lugage-image'/>*/}
+                        {/*<div*/}
+                        {/*    className='flex shadow-xl bg-surface2/70 rounded-full gap-4 py-3 px-4 items-center w-[240px] absolute bottom-[10px] right-[-2%] sm:left-[24%] backdrop-blur-md'>*/}
+                        {/*    <Image className='size-10' src='/user2.png' width={40} height={40}*/}
+                        {/*           alt='user-image'/>*/}
+                        {/*    <div>*/}
+                        {/*              <span>*/}
+                        {/*                  Tommy Peraz*/}
+                        {/*              </span>*/}
+                        {/*        <div className='flex items-center gap-1 text-[12px]'>*/}
+                        {/*            <Image className='mt-[-2px]' src='/star.svg' height={12} width={12}*/}
+                        {/*                   alt='star'/>*/}
+                        {/*            4.9*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </div>

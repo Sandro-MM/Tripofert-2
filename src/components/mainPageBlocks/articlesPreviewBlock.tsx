@@ -10,21 +10,21 @@ export default function ArticlesPreviewBlock() {
             city:'Madrid',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_4/madrid.jpg',
             desc:'Vibrant capital of Spain, renowned for its culture, history, architecture, and lively atmosphere.',
-            link:'/blogs/blogPage?id=0'
+            link:'/blogs/blogPage/ultimate_madrid_travel_guide/0'
         },
         {
             country:'Spain',
             city:'Barcelona',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_3/barcelona.jpg',
             desc:'Barcelona is a vibrant city famous for Gaudí’s architecture.',
-            link:'/blogs/blogPage?id=1'
+            link:'/blogs/blogPage/ultimate_barcelona_travel_guide/1'
         },
         {
             country:'France',
             city:'Paris',
             img:'https://splfsymwvlirktdoogdb.supabase.co/storage/v1/object/public/img_2/paris.jpg',
             desc:'Iconic city of lights, synonymous with romance, art, fashion, and exquisite cuisine.',
-            link:'/blogs/blogPage?id=3'
+            link:'/blogs/blogPage/ultimate_lisbon_travel_guide/3'
         },
         {
             country:'Spain',

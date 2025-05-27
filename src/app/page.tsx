@@ -7,6 +7,7 @@ import ArticlesPreviewBlock from "@/components/mainPageBlocks/articlesPreviewBlo
 import Footer from "@/components/footer/footer";
 import Logo from "@/components/logo";
 import Head from "next/head";
+import ContactForm from "@/app/contact/contactForm";
 
 
 export default function Home() {

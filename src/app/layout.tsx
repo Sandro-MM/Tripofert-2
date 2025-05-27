@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from './providers'
@@ -9,6 +8,8 @@ import {supabase} from "@/directions-functions/supabaseClient";
 import {Toaster} from "@/components/ui/toaster";
 import Link from "next/link";
 import {MdOutlineMailOutline} from "react-icons/md";
+import {headers} from "next/headers";
+import {SeoUpdater} from "@/components/seoFetcher/seo-fetcher";
 const poppins = Poppins({ subsets: ["latin"], weight:['400', '500', '600', '700', '800']});
 
 // export const metadata: Metadata = {
@@ -22,11 +23,24 @@ const poppins = Poppins({ subsets: ["latin"], weight:['400', '500', '600', '700'
 
 
 export const revalidate = 0;
+
+const routesList = [
+    '/blogs/blogPage/ultimate_madrid_travel_guide/0',
+    '/blogs/blogPage/ultimate_barcelona_travel_guide/1',
+    '/blogs/blogPage/ultimate_lisbon_travel_guide/2',
+    '/blogs/blogPage/ultimate_paris_travel_guide/3'
+];
+
+
 async function fetchSeoData() {
-    let { data, error } = await supabase
+    const headerList = headers();
+    const pathname = headerList.get('x-current-path') || '/';
+    const matchedRoute = routesList.includes(pathname) ? pathname : 'default';
+
+    const { data, error } = await supabase
         .from('seo_data')
         .select('*')
-        .eq('id', 1)
+        .eq('for_route', matchedRoute)
         .single();
 
     if (error) {
@@ -40,15 +54,14 @@ async function fetchSeoData() {
 
 export default async function Layout({children}: { children: React.ReactNode }) {
     const seoData = await fetchSeoData();
-
     return (
         <html lang="en" suppressHydrationWarning>
         <head>
             <meta charSet="UTF-8"/>
-            <title>{seoData.title}</title>
+            <title>{seoData?.title || 'Tripofert'}</title>
             <meta
                 name="description"
-                content={seoData.description}
+                content={seoData?.description || 'Tripofert'}
             />
             <script
                 async
@@ -75,8 +88,8 @@ export default async function Layout({children}: { children: React.ReactNode }) 
         <SpeedInsights/>
         <Providers>
             <Suspense>
-
                 <Toaster/>
+                <SeoUpdater/>
                 {children}
             </Suspense>
         </Providers>
@@ -86,11 +99,7 @@ export default async function Layout({children}: { children: React.ReactNode }) 
                     <MdOutlineMailOutline className={'mx-auto'} size={32} />
                 </div>
             </Link>
-
-
-
         <Chat/>
-
         </div>
         </body>
 </html>

@@ -24,7 +24,7 @@ const Blogs = () => {
 
             <ThemeSwitch />
             <div className={'mt-20 mb-[90px] max-w-[1280px] w-[95%] mx-auto h-max'}>
-                <Link href={`/blogs/blogPage?id=${blogsData[0].id}`}>
+                <Link href={`/blogs/blogPage/${blogsData[0].blogName}/${blogsData[0].id}`}>
                 <div className={'w-full max-h-[701px] relative mx-auto cursor-pointer'}>
                     <Image className={'w-full max-w-[1280px] max-h-[631px] rounded-[9px]'} width={1280} height={400}
                            src={blogsData[0].img} alt={'blog-image'}/>
@@ -53,7 +53,7 @@ const Blogs = () => {
                 </div>
                 <div className={'w-full flex gap-[15px] flex-wrap justify-center'}>
                     {blogsData.slice(1).map((item, index) => (
-                        <Link href={`/blogs/blogPage?id=${item.id}`}>
+                        <Link href={`/blogs/blogPage/${item.blogName}/${item.id}`}>
                         <div
                             className={'bg-transparentSurface cursor-pointer w-full max-w-[320px] min-[585px]:max-w-[270px]   rounded-[9px] h-[366px] border border-border border-solid px-[13.5px] py-[12px]'}
                             key={index}>

@@ -1,8 +1,7 @@
 'use client'
-import {useRouter, useSearchParams} from 'next/navigation'
-import React, {useState} from "react";
+import {usePathname, useRouter} from 'next/navigation'
+import React from "react";
 import {blogsData} from "@/directions-functions/blogs-data";
-import Link from "next/link";
 import Logo from "@/components/logo";
 import ThemeSwitch from "@/components/themeSwitchButton";
 import Image from "next/image";
@@ -10,8 +9,10 @@ import Footer from "@/components/footer/footer";
 import Head from 'next/head';
 function Page({params}) {
     const router = useRouter();
-    const [searchParams] = React.useState(useSearchParams());
-    const [id, setId] = useState<any>(+searchParams.get('id') || 0);
+    const pathname = usePathname()
+    const segments = pathname.split('/')
+    const blogName = segments[3]
+    const id = segments[4]
 
     const blog = blogsData[id]
     const structuredData = {
@@ -27,7 +28,7 @@ function Page({params}) {
         "description": blog.postText[0].text,
     };
 
-    return (
+   if (blog) return (
         <>
             <Head>
                 <title>{blog.title} - Tripofert</title>
