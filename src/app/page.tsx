@@ -7,8 +7,6 @@ import ArticlesPreviewBlock from "@/components/mainPageBlocks/articlesPreviewBlo
 import Footer from "@/components/footer/footer";
 import Logo from "@/components/logo";
 import Head from "next/head";
-import ContactForm from "@/app/contact/contactForm";
-
 
 export default function Home() {
     return (
@@ -69,7 +67,7 @@ export default function Home() {
 
                     <SearchItem/>
                 </div>
-                <div className="relative w-full mt-[100vh] z-20  bg-bg/90 backdrop-blur-sm">
+                <div className="relative w-full mt-[calc(100vh-40px)] z-20  bg-bg/90 backdrop-blur-sm">
                     <FeaturesBlock/>
                     <PopularBlock/>
                     <ArticlesPreviewBlock/>
