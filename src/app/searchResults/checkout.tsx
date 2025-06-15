@@ -324,10 +324,15 @@ export default function Checkout({trigger, departureLat, departureLng,amount,ord
                                <PaypalCheckout amount={amount} orderData={orderData}
                                                 onSubmit={onSubmit} validate={handleSubmit}/>
                            ) : (
-                               <button className={'w-full'} type='submit'>
-                                   <Spinner className={'mx-auto'} size={70}/>
+                               <div className={'text-center flex flex-col items-center justify-center gap-4'}>
+                                   <button                                   className='ml-9  h-16 w-[80%] bg-buttons rounded-xl text-center text-base max-[1115px]:mt-8 max-[1115px]:mx-auto text-buttonsText font-semibold px-9 py-5 flex justify-center items-center'
+                                                                             type='submit'>
+                                       {/*<Spinner className={'mx-auto'} size={70}/>*/}
+                                        Continue
+                                   </button>
                                    Please fill information to continue
-                               </button>
+                               </div>
+
                            )}
                        </div>
                    </form>
