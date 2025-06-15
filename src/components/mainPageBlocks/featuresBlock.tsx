@@ -1,13 +1,12 @@
 import Image from "next/image";
 import ContactForm from "@/app/contact/contactForm";
+import ScrollDownButton from "@/components/mainPageBlocks/scrollDown";
 
 export default function FeaturesBlock() {
     return (
         <div className="w-full h-max">
             <div className='max-w-[1280px] w-[95%] mx-auto'>
-                <div className='text-xl font-medium text-buttons py-6 text-center'>
-                    Our Service
-                </div>
+              <ScrollDownButton/>
                 <div
                     className='lg:text-7xl md:text-5xl text-3xl font-extrabold text-header text-center sm:max-w-[70%] mx-auto'>
                     Our Commitment to Excellence
@@ -16,7 +15,7 @@ export default function FeaturesBlock() {
                     driver are dedicated to deliver the highest quality service possible and help you with all your
                     needs on the way!
                 </div>
-                <div className='flex flex-wrap mt-6 items-center gap-[5%] sm:mt-12 px-3 justify-between w-full'>
+                <div className='flex flex-wrap mt-6 items-center gap-[5%] sm:mt-12 px-3 justify-between w-[98%]'>
 
                     <div className='child:flex child:items-center child:gap-6 min-[697px]:max-w-[50%] child:mb-6 child:sm:mb-8'>
                         <div>
@@ -57,12 +56,12 @@ export default function FeaturesBlock() {
                         </div>
                     </div>
 
-                    <div className='relative sm:max-w-[40%] max-sm:max-w-[360px] min-[697px]:mr-auto mx-auto min-w-[280px]'>
+                    <div className='relative sm:max-w-[40%] max-sm:max-w-[360px] min-[697px]:mr-auto max-[697px]:mx-auto min-w-[280px]'>
 
 
-                        <div className={'max-w-[360px]'}>
+                        <div className={'max-w-[360px] flex flex-col !justify-start !items-start w-max'}>
                             <h2 className={'font-extrabold sm:text-2xl text-base  sm:pb-2 pb-1'}>Contact Us!</h2>
-                            <ContactForm InputClassName={'min-[340px]:min-w-[271px] min-[300px]:min-w-[230px] min-[260px]:min-w-[200px]'} PhoneInputClassName={'!w-[calc(100%-132px)] min-[340px]:min-w-[144px] min-[300px]:min-w-[122px] min-[260px]:min-w-[92px]'}/>
+                            <ContactForm InputClassName={'min-[340px]:min-w-[271px]  min-[1097px]:min-w-[230px]  min-[1197px]:min-w-[271px] min-[300px]:min-w-[230px] min-[260px]:min-w-[200px]'} PhoneInputClassName={'!w-[calc(100%-132px)] min-[340px]:min-w-[144px] min-[1197px]:min-w-[144px] min-[1097px]:min-w-[90px] min-[300px]:min-w-[122px] min-[260px]:min-w-[92px]'}/>
                         </div>
 
 
